@@ -54,12 +54,31 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.descricaoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.obsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.atividadesTableAdapter1 = new AdotaPatas.AbrigoDataSetTableAdapters.AtividadesTableAdapter();
             descricaoLabel = new System.Windows.Forms.Label();
             obsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animaisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animaisDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new System.Drawing.Point(24, 497);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(77, 20);
+            descricaoLabel.TabIndex = 21;
+            descricaoLabel.Text = "Descricao:";
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Location = new System.Drawing.Point(605, 497);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new System.Drawing.Size(38, 20);
+            obsLabel.TabIndex = 22;
+            obsLabel.Text = "Obs:";
             // 
             // label9
             // 
@@ -116,6 +135,7 @@
             // 
             this.animaisDataGridView.AllowUserToAddRows = false;
             this.animaisDataGridView.AutoGenerateColumns = false;
+            this.animaisDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.animaisDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.animaisDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -208,6 +228,7 @@
             this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(182)))), ((int)(((byte)(64)))));
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovo.ForeColor = System.Drawing.Color.White;
             this.btnNovo.Location = new System.Drawing.Point(343, 86);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -216,26 +237,30 @@
             this.btnNovo.TabIndex = 21;
             this.btnNovo.Text = "Novo Animal";
             this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(56)))), ((int)(((byte)(75)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(501, 86);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 42);
             this.btnEliminar.TabIndex = 20;
-            this.btnEliminar.Text = "Elliminar";
+            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.White;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(595, 86);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
@@ -243,15 +268,6 @@
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(24, 497);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(77, 20);
-            descricaoLabel.TabIndex = 21;
-            descricaoLabel.Text = "Descricao:";
             // 
             // descricaoRichTextBox
             // 
@@ -262,15 +278,6 @@
             this.descricaoRichTextBox.TabIndex = 22;
             this.descricaoRichTextBox.Text = "";
             // 
-            // obsLabel
-            // 
-            obsLabel.AutoSize = true;
-            obsLabel.Location = new System.Drawing.Point(605, 497);
-            obsLabel.Name = "obsLabel";
-            obsLabel.Size = new System.Drawing.Size(38, 20);
-            obsLabel.TabIndex = 22;
-            obsLabel.Text = "Obs:";
-            // 
             // obsRichTextBox
             // 
             this.obsRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animaisBindingSource, "Obs", true));
@@ -280,11 +287,16 @@
             this.obsRichTextBox.TabIndex = 23;
             this.obsRichTextBox.Text = "";
             // 
+            // atividadesTableAdapter1
+            // 
+            this.atividadesTableAdapter1.ClearBeforeFill = true;
+            // 
             // Animais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1106, 631);
             this.Controls.Add(obsLabel);
             this.Controls.Add(this.obsRichTextBox);
@@ -338,5 +350,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.RichTextBox descricaoRichTextBox;
         private System.Windows.Forms.RichTextBox obsRichTextBox;
+        private AbrigoDataSetTableAdapters.AtividadesTableAdapter atividadesTableAdapter1;
     }
 }

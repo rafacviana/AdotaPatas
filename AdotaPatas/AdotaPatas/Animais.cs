@@ -31,5 +31,15 @@ namespace AdotaPatas
             this.animaisTableAdapter.Fill(this.abrigoDataSet.Animais);
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
