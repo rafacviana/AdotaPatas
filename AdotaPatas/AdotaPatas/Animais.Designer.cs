@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descricaoLabel;
             System.Windows.Forms.Label obsLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
@@ -48,18 +49,37 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.descricaoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.obsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtProcurar = new System.Windows.Forms.TextBox();
             descricaoLabel = new System.Windows.Forms.Label();
             obsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animaisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animaisDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new System.Drawing.Point(24, 497);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(77, 20);
+            descricaoLabel.TabIndex = 21;
+            descricaoLabel.Text = "Descricao:";
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Location = new System.Drawing.Point(605, 497);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new System.Drawing.Size(38, 20);
+            obsLabel.TabIndex = 22;
+            obsLabel.Text = "Obs:";
             // 
             // label9
             // 
@@ -116,6 +136,16 @@
             // 
             this.animaisDataGridView.AllowUserToAddRows = false;
             this.animaisDataGridView.AutoGenerateColumns = false;
+            this.animaisDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.animaisDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.animaisDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.animaisDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.animaisDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -127,17 +157,19 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewCheckBoxColumn2,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewImageColumn1});
+            this.dataGridViewTextBoxColumn9});
             this.animaisDataGridView.DataSource = this.animaisBindingSource;
+            this.animaisDataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.animaisDataGridView.Location = new System.Drawing.Point(12, 151);
             this.animaisDataGridView.Name = "animaisDataGridView";
             this.animaisDataGridView.RowHeadersVisible = false;
             this.animaisDataGridView.Size = new System.Drawing.Size(1082, 322);
             this.animaisDataGridView.TabIndex = 18;
+            this.animaisDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.animaisDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -174,9 +206,11 @@
             // 
             // dataGridViewCheckBoxColumn1
             // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Condicoes_Especiais";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Condicoes_Especiais";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Condicoes Especiais";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 133;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -187,21 +221,14 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Numero_Chip";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Numero_Chip";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Numero Chip";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Data_Entrada";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Data_Entrada";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Data Entrada";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn1.DataPropertyName = "Foto";
-            this.dataGridViewImageColumn1.HeaderText = "Foto";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // btnNovo
             // 
@@ -209,13 +236,14 @@
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(343, 86);
+            this.btnNovo.Location = new System.Drawing.Point(756, 86);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(130, 42);
             this.btnNovo.TabIndex = 21;
             this.btnNovo.Text = "Novo Animal";
             this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEliminar
             // 
@@ -223,35 +251,28 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(501, 86);
+            this.btnEliminar.Location = new System.Drawing.Point(914, 86);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 42);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Elliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.White;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(595, 86);
+            this.btnGuardar.Location = new System.Drawing.Point(1008, 86);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 42);
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // descricaoLabel
-            // 
-            descricaoLabel.AutoSize = true;
-            descricaoLabel.Location = new System.Drawing.Point(24, 497);
-            descricaoLabel.Name = "descricaoLabel";
-            descricaoLabel.Size = new System.Drawing.Size(77, 20);
-            descricaoLabel.TabIndex = 21;
-            descricaoLabel.Text = "Descricao:";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // descricaoRichTextBox
             // 
@@ -262,15 +283,6 @@
             this.descricaoRichTextBox.TabIndex = 22;
             this.descricaoRichTextBox.Text = "";
             // 
-            // obsLabel
-            // 
-            obsLabel.AutoSize = true;
-            obsLabel.Location = new System.Drawing.Point(605, 497);
-            obsLabel.Name = "obsLabel";
-            obsLabel.Size = new System.Drawing.Size(38, 20);
-            obsLabel.TabIndex = 22;
-            obsLabel.Text = "Obs:";
-            // 
             // obsRichTextBox
             // 
             this.obsRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animaisBindingSource, "Obs", true));
@@ -280,12 +292,31 @@
             this.obsRichTextBox.TabIndex = 23;
             this.obsRichTextBox.Text = "";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Procurar por Nome";
+            // 
+            // txtProcurar
+            // 
+            this.txtProcurar.Location = new System.Drawing.Point(189, 94);
+            this.txtProcurar.Name = "txtProcurar";
+            this.txtProcurar.Size = new System.Drawing.Size(168, 27);
+            this.txtProcurar.TabIndex = 25;
+            this.txtProcurar.TextChanged += new System.EventHandler(this.txtProcurar_TextChanged);
+            // 
             // Animais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1106, 631);
+            this.Controls.Add(this.txtProcurar);
+            this.Controls.Add(this.label2);
             this.Controls.Add(obsLabel);
             this.Controls.Add(this.obsRichTextBox);
             this.Controls.Add(descricaoLabel);
@@ -322,6 +353,11 @@
         private AbrigoDataSetTableAdapters.AnimaisTableAdapter animaisTableAdapter;
         private AbrigoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView animaisDataGridView;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.RichTextBox descricaoRichTextBox;
+        private System.Windows.Forms.RichTextBox obsRichTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -332,11 +368,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.RichTextBox descricaoRichTextBox;
-        private System.Windows.Forms.RichTextBox obsRichTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtProcurar;
     }
 }

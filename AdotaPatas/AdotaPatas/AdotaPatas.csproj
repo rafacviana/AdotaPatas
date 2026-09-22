@@ -59,6 +59,12 @@
     <Compile Include="Animais.Designer.cs">
       <DependentUpon>Animais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Atividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atividades.Designer.cs">
+      <DependentUpon>Atividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,8 +85,17 @@
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Animais.resx">
       <DependentUpon>Animais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atividades.resx">
+      <DependentUpon>Atividades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -100,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AbrigoDataSet.xsc">
       <DependentUpon>AbrigoDataSet.xsd</DependentUpon>
