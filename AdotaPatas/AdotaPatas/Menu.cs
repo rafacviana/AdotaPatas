@@ -32,5 +32,18 @@ namespace AdotaPatas
 
             animais.BringToFront();
         }
+
+        private void btnVoluntarios_Click(object sender, EventArgs e)
+        {
+            Voluntario Voluntarios = new Voluntario();
+            Voluntarios.Show();
+            Voluntarios.TopLevel = false;
+            panel1.Controls.Clear();
+            //Voluntarios.Dock = DockStyle.Fill;
+            panel1.Controls.Add(Voluntarios);
+
+            Voluntarios.BringToFront();
+           
+        }
     }
 }

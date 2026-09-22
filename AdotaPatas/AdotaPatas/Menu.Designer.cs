@@ -41,7 +41,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -49,15 +48,16 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusData = new System.Windows.Forms.ToolStripStatusLabel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNavegacao.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -155,6 +155,7 @@
             this.btnVoluntarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVoluntarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoluntarios.UseVisualStyleBackColor = false;
+            this.btnVoluntarios.Click += new System.EventHandler(this.btnVoluntarios_Click);
             // 
             // btnAdopcoes
             // 
@@ -212,6 +213,7 @@
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,16 +270,6 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(210, 81);
             this.flowLayoutPanel3.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AdotaPatas.Properties.Resources.imgLogin;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 70);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,7 +306,7 @@
             // 
             this.toolStripStatusUtilizador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
             this.toolStripStatusUtilizador.Name = "toolStripStatusUtilizador";
-            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(932, 17);
+            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(1001, 17);
             this.toolStripStatusUtilizador.Spring = true;
             this.toolStripStatusUtilizador.Text = "Utilizador:";
             // 
@@ -345,6 +337,17 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1106, 53);
             this.flowLayoutPanel2.TabIndex = 22;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(210, 53);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1106, 631);
+            this.panel1.TabIndex = 23;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::AdotaPatas.Properties.Resources.sair_branco_64;
@@ -356,15 +359,15 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(210, 53);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 631);
-            this.panel1.TabIndex = 23;
+            this.pictureBox1.BackgroundImage = global::AdotaPatas.Properties.Resources.imgLogin;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 70);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -376,17 +379,17 @@
             this.Controls.Add(this.panelNavegacao);
             this.Controls.Add(this.statusStrip1);
             this.MaximumSize = new System.Drawing.Size(1332, 745);
-            this.MinimumSize = new System.Drawing.Size(1332, 745);
+            this.MinimumSize = new System.Drawing.Size(1332, 718);
             this.Name = "Menu";
             this.Text = "Menu";
             this.panelNavegacao.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
