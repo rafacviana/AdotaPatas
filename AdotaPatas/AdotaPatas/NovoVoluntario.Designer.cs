@@ -41,34 +41,34 @@
             System.Windows.Forms.Label contacto_Emergencia_NomeLabel;
             System.Windows.Forms.Label contacto_Emergencia_TelemovelLabel;
             System.Windows.Forms.Label nomeLabel1;
-            this.voluntariosTableAdapter1 = new AdotaPatas.AbrigoDataSetTableAdapters.VoluntariosTableAdapter();
-            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
-            this.abrigoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.funcoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.funcoesTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.FuncoesTableAdapter();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.voluntariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
-            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pessoasTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.PessoasTableAdapter();
             this.data_NascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.telemovelTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.obs_TextBox = new System.Windows.Forms.TextBox();
             this.data_InicioDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.iD_FuncaoComboBox = new System.Windows.Forms.ComboBox();
+            this.voluntariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carta_ConducaoCheckBox = new System.Windows.Forms.CheckBox();
             this.viaturaCheckBox = new System.Windows.Forms.CheckBox();
             this.contacto_Emergencia_NomeTextBox = new System.Windows.Forms.TextBox();
             this.contacto_Emergencia_TelemovelTextBox = new System.Windows.Forms.TextBox();
             this.nomeComboBox = new System.Windows.Forms.ComboBox();
+            this.funcoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ativoCheckBox = new System.Windows.Forms.CheckBox();
             this.autorizacao_EncarregadoCheckBox = new System.Windows.Forms.CheckBox();
+            this.voluntariosTableAdapter1 = new AdotaPatas.AbrigoDataSetTableAdapters.VoluntariosTableAdapter();
+            this.abrigoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.funcoesTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.FuncoesTableAdapter();
+            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
+            this.pessoasTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.PessoasTableAdapter();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             data_NascimentoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
@@ -81,35 +81,119 @@
             contacto_Emergencia_NomeLabel = new System.Windows.Forms.Label();
             contacto_Emergencia_TelemovelLabel = new System.Windows.Forms.Label();
             nomeLabel1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcoesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voluntariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voluntariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcoesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // voluntariosTableAdapter1
+            // data_NascimentoLabel
             // 
-            this.voluntariosTableAdapter1.ClearBeforeFill = true;
+            data_NascimentoLabel.AutoSize = true;
+            data_NascimentoLabel.Location = new System.Drawing.Point(63, 130);
+            data_NascimentoLabel.Name = "data_NascimentoLabel";
+            data_NascimentoLabel.Size = new System.Drawing.Size(130, 20);
+            data_NascimentoLabel.TabIndex = 22;
+            data_NascimentoLabel.Text = "Data Nascimento:";
             // 
-            // abrigoDataSet
+            // nomeLabel
             // 
-            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
-            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(67, 99);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(55, 20);
+            nomeLabel.TabIndex = 23;
+            nomeLabel.Text = "Nome:";
             // 
-            // abrigoDataSetBindingSource
+            // moradaLabel
             // 
-            this.abrigoDataSetBindingSource.DataSource = this.abrigoDataSet;
-            this.abrigoDataSetBindingSource.Position = 0;
+            moradaLabel.AutoSize = true;
+            moradaLabel.Location = new System.Drawing.Point(64, 195);
+            moradaLabel.Name = "moradaLabel";
+            moradaLabel.Size = new System.Drawing.Size(67, 20);
+            moradaLabel.TabIndex = 24;
+            moradaLabel.Text = "Morada:";
             // 
-            // funcoesBindingSource
+            // telemovelLabel
             // 
-            this.funcoesBindingSource.DataMember = "Funcoes";
-            this.funcoesBindingSource.DataSource = this.abrigoDataSet;
+            telemovelLabel.AutoSize = true;
+            telemovelLabel.Location = new System.Drawing.Point(506, 99);
+            telemovelLabel.Name = "telemovelLabel";
+            telemovelLabel.Size = new System.Drawing.Size(82, 20);
+            telemovelLabel.TabIndex = 25;
+            telemovelLabel.Text = "Telemóvel:";
             // 
-            // funcoesTableAdapter
+            // emailLabel
             // 
-            this.funcoesTableAdapter.ClearBeforeFill = true;
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(64, 162);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(50, 20);
+            emailLabel.TabIndex = 26;
+            emailLabel.Text = "Email:";
+            // 
+            // obs_Label
+            // 
+            obs_Label.AutoSize = true;
+            obs_Label.Location = new System.Drawing.Point(64, 228);
+            obs_Label.Name = "obs_Label";
+            obs_Label.Size = new System.Drawing.Size(39, 20);
+            obs_Label.TabIndex = 27;
+            obs_Label.Text = "Obs:";
+            // 
+            // data_InicioLabel
+            // 
+            data_InicioLabel.AutoSize = true;
+            data_InicioLabel.Location = new System.Drawing.Point(447, 301);
+            data_InicioLabel.Name = "data_InicioLabel";
+            data_InicioLabel.Size = new System.Drawing.Size(107, 20);
+            data_InicioLabel.TabIndex = 28;
+            data_InicioLabel.Text = "Data de Início:";
+            // 
+            // iD_FuncaoLabel
+            // 
+            iD_FuncaoLabel.AutoSize = true;
+            iD_FuncaoLabel.Location = new System.Drawing.Point(352, 301);
+            iD_FuncaoLabel.Name = "iD_FuncaoLabel";
+            iD_FuncaoLabel.Size = new System.Drawing.Size(28, 20);
+            iD_FuncaoLabel.TabIndex = 29;
+            iD_FuncaoLabel.Text = "ID:";
+            // 
+            // carta_ConducaoLabel
+            // 
+            carta_ConducaoLabel.AutoSize = true;
+            carta_ConducaoLabel.Location = new System.Drawing.Point(506, 166);
+            carta_ConducaoLabel.Name = "carta_ConducaoLabel";
+            carta_ConducaoLabel.Size = new System.Drawing.Size(0, 20);
+            carta_ConducaoLabel.TabIndex = 30;
+            // 
+            // contacto_Emergencia_NomeLabel
+            // 
+            contacto_Emergencia_NomeLabel.AutoSize = true;
+            contacto_Emergencia_NomeLabel.Location = new System.Drawing.Point(63, 340);
+            contacto_Emergencia_NomeLabel.Name = "contacto_Emergencia_NomeLabel";
+            contacto_Emergencia_NomeLabel.Size = new System.Drawing.Size(226, 20);
+            contacto_Emergencia_NomeLabel.TabIndex = 32;
+            contacto_Emergencia_NomeLabel.Text = "Nome do Contacto Emergência:";
+            // 
+            // contacto_Emergencia_TelemovelLabel
+            // 
+            contacto_Emergencia_TelemovelLabel.AutoSize = true;
+            contacto_Emergencia_TelemovelLabel.Location = new System.Drawing.Point(522, 343);
+            contacto_Emergencia_TelemovelLabel.Name = "contacto_Emergencia_TelemovelLabel";
+            contacto_Emergencia_TelemovelLabel.Size = new System.Drawing.Size(82, 20);
+            contacto_Emergencia_TelemovelLabel.TabIndex = 33;
+            contacto_Emergencia_TelemovelLabel.Text = "Telemóvel:";
+            // 
+            // nomeLabel1
+            // 
+            nomeLabel1.AutoSize = true;
+            nomeLabel1.Location = new System.Drawing.Point(63, 301);
+            nomeLabel1.Name = "nomeLabel1";
+            nomeLabel1.Size = new System.Drawing.Size(63, 20);
+            nomeLabel1.TabIndex = 34;
+            nomeLabel1.Text = "Função:";
             // 
             // label7
             // 
@@ -169,43 +253,7 @@
             this.btnNovo.TabIndex = 22;
             this.btnNovo.Text = "Novo Voluntário";
             this.btnNovo.UseVisualStyleBackColor = false;
-            // 
-            // voluntariosBindingSource
-            // 
-            this.voluntariosBindingSource.DataMember = "Voluntarios";
-            this.voluntariosBindingSource.DataSource = this.abrigoDataSet;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AdocaoTableAdapter = null;
-            this.tableAdapterManager.AdotanteTableAdapter = null;
-            this.tableAdapterManager.AnimaisTableAdapter = null;
-            this.tableAdapterManager.AtividadesTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ConsumiveisTableAdapter = null;
-            this.tableAdapterManager.FuncoesTableAdapter = this.funcoesTableAdapter;
-            this.tableAdapterManager.PessoasTableAdapter = this.pessoasTableAdapter;
-            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtilizadoresTableAdapter = null;
-            this.tableAdapterManager.VoluntariosTableAdapter = this.voluntariosTableAdapter1;
-            // 
-            // pessoasBindingSource
-            // 
-            this.pessoasBindingSource.DataMember = "Pessoas";
-            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
-            // 
-            // pessoasTableAdapter
-            // 
-            this.pessoasTableAdapter.ClearBeforeFill = true;
-            // 
-            // data_NascimentoLabel
-            // 
-            data_NascimentoLabel.AutoSize = true;
-            data_NascimentoLabel.Location = new System.Drawing.Point(63, 130);
-            data_NascimentoLabel.Name = "data_NascimentoLabel";
-            data_NascimentoLabel.Size = new System.Drawing.Size(130, 20);
-            data_NascimentoLabel.TabIndex = 22;
-            data_NascimentoLabel.Text = "Data Nascimento:";
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // data_NascimentoDateTimePicker
             // 
@@ -215,14 +263,15 @@
             this.data_NascimentoDateTimePicker.Size = new System.Drawing.Size(200, 27);
             this.data_NascimentoDateTimePicker.TabIndex = 23;
             // 
-            // nomeLabel
+            // pessoasBindingSource
             // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(67, 99);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(55, 20);
-            nomeLabel.TabIndex = 23;
-            nomeLabel.Text = "Nome:";
+            this.pessoasBindingSource.DataMember = "Pessoas";
+            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
+            // 
+            // abrigoDataSet
+            // 
+            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
+            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nomeTextBox
             // 
@@ -232,15 +281,6 @@
             this.nomeTextBox.Size = new System.Drawing.Size(365, 27);
             this.nomeTextBox.TabIndex = 24;
             // 
-            // moradaLabel
-            // 
-            moradaLabel.AutoSize = true;
-            moradaLabel.Location = new System.Drawing.Point(64, 195);
-            moradaLabel.Name = "moradaLabel";
-            moradaLabel.Size = new System.Drawing.Size(67, 20);
-            moradaLabel.TabIndex = 24;
-            moradaLabel.Text = "Morada:";
-            // 
             // moradaTextBox
             // 
             this.moradaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Morada", true));
@@ -248,15 +288,6 @@
             this.moradaTextBox.Name = "moradaTextBox";
             this.moradaTextBox.Size = new System.Drawing.Size(352, 27);
             this.moradaTextBox.TabIndex = 25;
-            // 
-            // telemovelLabel
-            // 
-            telemovelLabel.AutoSize = true;
-            telemovelLabel.Location = new System.Drawing.Point(506, 99);
-            telemovelLabel.Name = "telemovelLabel";
-            telemovelLabel.Size = new System.Drawing.Size(82, 20);
-            telemovelLabel.TabIndex = 25;
-            telemovelLabel.Text = "Telemóvel:";
             // 
             // telemovelTextBox
             // 
@@ -266,15 +297,6 @@
             this.telemovelTextBox.Size = new System.Drawing.Size(134, 27);
             this.telemovelTextBox.TabIndex = 26;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(64, 162);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(50, 20);
-            emailLabel.TabIndex = 26;
-            emailLabel.Text = "Email:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Email", true));
@@ -282,15 +304,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(365, 27);
             this.emailTextBox.TabIndex = 27;
-            // 
-            // obs_Label
-            // 
-            obs_Label.AutoSize = true;
-            obs_Label.Location = new System.Drawing.Point(64, 228);
-            obs_Label.Name = "obs_Label";
-            obs_Label.Size = new System.Drawing.Size(39, 20);
-            obs_Label.TabIndex = 27;
-            obs_Label.Text = "Obs:";
             // 
             // obs_TextBox
             // 
@@ -301,53 +314,23 @@
             this.obs_TextBox.Size = new System.Drawing.Size(377, 65);
             this.obs_TextBox.TabIndex = 28;
             // 
-            // data_InicioLabel
-            // 
-            data_InicioLabel.AutoSize = true;
-            data_InicioLabel.Location = new System.Drawing.Point(415, 299);
-            data_InicioLabel.Name = "data_InicioLabel";
-            data_InicioLabel.Size = new System.Drawing.Size(107, 20);
-            data_InicioLabel.TabIndex = 28;
-            data_InicioLabel.Text = "Data de Início:";
-            // 
             // data_InicioDateTimePicker
             // 
             this.data_InicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.voluntariosBindingSource, "Data_Inicio", true));
-            this.data_InicioDateTimePicker.Location = new System.Drawing.Point(528, 294);
+            this.data_InicioDateTimePicker.Location = new System.Drawing.Point(560, 296);
             this.data_InicioDateTimePicker.Name = "data_InicioDateTimePicker";
             this.data_InicioDateTimePicker.Size = new System.Drawing.Size(200, 27);
             this.data_InicioDateTimePicker.TabIndex = 29;
             // 
-            // iD_FuncaoLabel
+            // voluntariosBindingSource
             // 
-            iD_FuncaoLabel.AutoSize = true;
-            iD_FuncaoLabel.Location = new System.Drawing.Point(269, 301);
-            iD_FuncaoLabel.Name = "iD_FuncaoLabel";
-            iD_FuncaoLabel.Size = new System.Drawing.Size(28, 20);
-            iD_FuncaoLabel.TabIndex = 29;
-            iD_FuncaoLabel.Text = "ID:";
-            // 
-            // iD_FuncaoComboBox
-            // 
-            this.iD_FuncaoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluntariosBindingSource, "ID_Funcao", true));
-            this.iD_FuncaoComboBox.FormattingEnabled = true;
-            this.iD_FuncaoComboBox.Location = new System.Drawing.Point(303, 298);
-            this.iD_FuncaoComboBox.Name = "iD_FuncaoComboBox";
-            this.iD_FuncaoComboBox.Size = new System.Drawing.Size(56, 28);
-            this.iD_FuncaoComboBox.TabIndex = 30;
-            // 
-            // carta_ConducaoLabel
-            // 
-            carta_ConducaoLabel.AutoSize = true;
-            carta_ConducaoLabel.Location = new System.Drawing.Point(506, 166);
-            carta_ConducaoLabel.Name = "carta_ConducaoLabel";
-            carta_ConducaoLabel.Size = new System.Drawing.Size(0, 20);
-            carta_ConducaoLabel.TabIndex = 30;
+            this.voluntariosBindingSource.DataMember = "Voluntarios";
+            this.voluntariosBindingSource.DataSource = this.abrigoDataSet;
             // 
             // carta_ConducaoCheckBox
             // 
             this.carta_ConducaoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.voluntariosBindingSource, "Carta_Conducao", true));
-            this.carta_ConducaoCheckBox.Location = new System.Drawing.Point(430, 129);
+            this.carta_ConducaoCheckBox.Location = new System.Drawing.Point(440, 126);
             this.carta_ConducaoCheckBox.Name = "carta_ConducaoCheckBox";
             this.carta_ConducaoCheckBox.Size = new System.Drawing.Size(141, 24);
             this.carta_ConducaoCheckBox.TabIndex = 31;
@@ -364,16 +347,6 @@
             this.viaturaCheckBox.Text = "Viatura Própria";
             this.viaturaCheckBox.UseVisualStyleBackColor = true;
             // 
-            // contacto_Emergencia_NomeLabel
-            // 
-            contacto_Emergencia_NomeLabel.AutoSize = true;
-            contacto_Emergencia_NomeLabel.Location = new System.Drawing.Point(63, 340);
-            contacto_Emergencia_NomeLabel.Name = "contacto_Emergencia_NomeLabel";
-            contacto_Emergencia_NomeLabel.Size = new System.Drawing.Size(226, 20);
-            contacto_Emergencia_NomeLabel.TabIndex = 32;
-            contacto_Emergencia_NomeLabel.Text = "Nome do Contacto Emergência:";
-            contacto_Emergencia_NomeLabel.Click += new System.EventHandler(this.contacto_Emergencia_NomeLabel_Click);
-            // 
             // contacto_Emergencia_NomeTextBox
             // 
             this.contacto_Emergencia_NomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.voluntariosBindingSource, "Contacto_Emergencia_Nome", true));
@@ -381,15 +354,6 @@
             this.contacto_Emergencia_NomeTextBox.Name = "contacto_Emergencia_NomeTextBox";
             this.contacto_Emergencia_NomeTextBox.Size = new System.Drawing.Size(213, 27);
             this.contacto_Emergencia_NomeTextBox.TabIndex = 33;
-            // 
-            // contacto_Emergencia_TelemovelLabel
-            // 
-            contacto_Emergencia_TelemovelLabel.AutoSize = true;
-            contacto_Emergencia_TelemovelLabel.Location = new System.Drawing.Point(522, 343);
-            contacto_Emergencia_TelemovelLabel.Name = "contacto_Emergencia_TelemovelLabel";
-            contacto_Emergencia_TelemovelLabel.Size = new System.Drawing.Size(82, 20);
-            contacto_Emergencia_TelemovelLabel.TabIndex = 33;
-            contacto_Emergencia_TelemovelLabel.Text = "Telemóvel:";
             // 
             // contacto_Emergencia_TelemovelTextBox
             // 
@@ -399,23 +363,23 @@
             this.contacto_Emergencia_TelemovelTextBox.Size = new System.Drawing.Size(118, 27);
             this.contacto_Emergencia_TelemovelTextBox.TabIndex = 34;
             // 
-            // nomeLabel1
-            // 
-            nomeLabel1.AutoSize = true;
-            nomeLabel1.Location = new System.Drawing.Point(63, 301);
-            nomeLabel1.Name = "nomeLabel1";
-            nomeLabel1.Size = new System.Drawing.Size(63, 20);
-            nomeLabel1.TabIndex = 34;
-            nomeLabel1.Text = "Função:";
-            // 
             // nomeComboBox
             // 
             this.nomeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.funcoesBindingSource, "Nome", true));
+            this.nomeComboBox.DataSource = this.funcoesBindingSource;
+            this.nomeComboBox.DisplayMember = "Nome";
             this.nomeComboBox.FormattingEnabled = true;
             this.nomeComboBox.Location = new System.Drawing.Point(132, 298);
             this.nomeComboBox.Name = "nomeComboBox";
-            this.nomeComboBox.Size = new System.Drawing.Size(121, 28);
+            this.nomeComboBox.Size = new System.Drawing.Size(214, 28);
             this.nomeComboBox.TabIndex = 35;
+            this.nomeComboBox.ValueMember = "ID_Funcao";
+            this.nomeComboBox.SelectedIndexChanged += new System.EventHandler(this.nomeComboBox_SelectedIndexChanged);
+            // 
+            // funcoesBindingSource
+            // 
+            this.funcoesBindingSource.DataMember = "Funcoes";
+            this.funcoesBindingSource.DataSource = this.abrigoDataSet;
             // 
             // ativoCheckBox
             // 
@@ -437,12 +401,51 @@
             this.autorizacao_EncarregadoCheckBox.Text = "Autorização Encarregado";
             this.autorizacao_EncarregadoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // voluntariosTableAdapter1
+            // 
+            this.voluntariosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // abrigoDataSetBindingSource
+            // 
+            this.abrigoDataSetBindingSource.DataSource = this.abrigoDataSet;
+            this.abrigoDataSetBindingSource.Position = 0;
+            // 
+            // funcoesTableAdapter
+            // 
+            this.funcoesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AdocaoTableAdapter = null;
+            this.tableAdapterManager.AdotanteTableAdapter = null;
+            this.tableAdapterManager.AnimaisTableAdapter = null;
+            this.tableAdapterManager.AtividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ConsumiveisTableAdapter = null;
+            this.tableAdapterManager.FuncoesTableAdapter = this.funcoesTableAdapter;
+            this.tableAdapterManager.PessoasTableAdapter = this.pessoasTableAdapter;
+            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilizadoresTableAdapter = null;
+            this.tableAdapterManager.VoluntariosTableAdapter = this.voluntariosTableAdapter1;
+            // 
+            // pessoasTableAdapter
+            // 
+            this.pessoasTableAdapter.ClearBeforeFill = true;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.Location = new System.Drawing.Point(386, 298);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(43, 27);
+            this.idTextBox.TabIndex = 38;
+            // 
             // NovoVoluntario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(799, 579);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.autorizacao_EncarregadoCheckBox);
             this.Controls.Add(this.ativoCheckBox);
             this.Controls.Add(nomeLabel1);
@@ -455,7 +458,6 @@
             this.Controls.Add(carta_ConducaoLabel);
             this.Controls.Add(this.carta_ConducaoCheckBox);
             this.Controls.Add(iD_FuncaoLabel);
-            this.Controls.Add(this.iD_FuncaoComboBox);
             this.Controls.Add(data_InicioLabel);
             this.Controls.Add(this.data_InicioDateTimePicker);
             this.Controls.Add(obs_Label);
@@ -475,15 +477,16 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NovoVoluntario";
             this.Text = "NovoVoluntario";
             this.Load += new System.EventHandler(this.NovoVoluntario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcoesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voluntariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voluntariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcoesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,7 +514,6 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox obs_TextBox;
         private System.Windows.Forms.DateTimePicker data_InicioDateTimePicker;
-        private System.Windows.Forms.ComboBox iD_FuncaoComboBox;
         private System.Windows.Forms.CheckBox carta_ConducaoCheckBox;
         private System.Windows.Forms.CheckBox viaturaCheckBox;
         private System.Windows.Forms.TextBox contacto_Emergencia_NomeTextBox;
@@ -519,5 +521,6 @@
         private System.Windows.Forms.ComboBox nomeComboBox;
         private System.Windows.Forms.CheckBox ativoCheckBox;
         private System.Windows.Forms.CheckBox autorizacao_EncarregadoCheckBox;
+        private System.Windows.Forms.TextBox idTextBox;
     }
 }
