@@ -55,7 +55,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(459, 37);
             this.textBox3.TabIndex = 17;
-            this.textBox3.Text = "Idade";
+            this.textBox3.Text = "Camas:";
             // 
             // textBox2
             // 
@@ -63,7 +63,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(459, 37);
             this.textBox2.TabIndex = 16;
-            this.textBox2.Text = "Raça:";
+            this.textBox2.Text = "Snacks:";
             // 
             // textBox1
             // 
@@ -71,7 +71,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(459, 37);
             this.textBox1.TabIndex = 15;
-            this.textBox1.Text = "Animal:";
+            this.textBox1.Text = "Ração:";
             // 
             // label1
             // 
@@ -79,9 +79,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(769, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 45);
+            this.label1.Size = new System.Drawing.Size(121, 45);
             this.label1.TabIndex = 14;
-            this.label1.Text = "ATIVIDADES";
+            this.label1.Text = "STOCK";
             // 
             // textBox4
             // 
@@ -89,7 +89,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(459, 37);
             this.textBox4.TabIndex = 18;
-            this.textBox4.Text = "Género: ";
+            this.textBox4.Text = "Brinquedos: ";
             // 
             // textBox5
             // 
@@ -97,7 +97,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(459, 37);
             this.textBox5.TabIndex = 19;
-            this.textBox5.Text = "Estado:";
+            this.textBox5.Text = "Bebedouros:";
             // 
             // textBox6
             // 
@@ -105,13 +105,13 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(459, 37);
             this.textBox6.TabIndex = 20;
-            this.textBox6.Text = "Quantidade:";
+            this.textBox6.Text = "Taças:";
             // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(192)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(221)))), ((int)(((byte)(232)))));
             this.ClientSize = new System.Drawing.Size(1769, 1050);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -122,7 +122,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Stock";
             this.Text = "Stock";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
