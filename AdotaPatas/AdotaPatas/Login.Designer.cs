@@ -28,64 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label utilizadorLabel;
+            System.Windows.Forms.Label passwordLabel;
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
+            this.utilizadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utilizadoresTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.UtilizadoresTableAdapter();
+            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
+            this.txtUtil = new System.Windows.Forms.TextBox();
+            this.txtPasse = new System.Windows.Forms.TextBox();
+            utilizadorLabel = new System.Windows.Forms.Label();
+            passwordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizadoresBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(839, 171);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(397, 27);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(839, 265);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(397, 27);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(743, 174);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Email:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(704, 272);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password:";
             // 
             // button1
             // 
@@ -96,7 +57,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(923, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 60);
+            this.button1.Size = new System.Drawing.Size(256, 88);
             this.button1.TabIndex = 4;
             this.button1.Text = "ENTRAR";
             this.button1.UseVisualStyleBackColor = false;
@@ -111,10 +72,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(1078, 516);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 49);
+            this.button2.Size = new System.Drawing.Size(137, 77);
             this.button2.TabIndex = 5;
             this.button2.Text = "REGISTRAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -124,7 +86,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(878, 525);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.Size = new System.Drawing.Size(166, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "Não tem conta?";
             // 
@@ -137,40 +99,106 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // abrigoDataSet
+            // 
+            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
+            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // utilizadoresBindingSource
+            // 
+            this.utilizadoresBindingSource.DataMember = "Utilizadores";
+            this.utilizadoresBindingSource.DataSource = this.abrigoDataSet;
+            // 
+            // utilizadoresTableAdapter
+            // 
+            this.utilizadoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AdocaoTableAdapter = null;
+            this.tableAdapterManager.AdotanteTableAdapter = null;
+            this.tableAdapterManager.AnimaisTableAdapter = null;
+            this.tableAdapterManager.AtividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ConsumiveisTableAdapter = null;
+            this.tableAdapterManager.FuncoesTableAdapter = null;
+            this.tableAdapterManager.PessoasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilizadoresTableAdapter = this.utilizadoresTableAdapter;
+            this.tableAdapterManager.VoluntariosTableAdapter = null;
+            // 
+            // utilizadorLabel
+            // 
+            utilizadorLabel.AutoSize = true;
+            utilizadorLabel.Location = new System.Drawing.Point(752, 181);
+            utilizadorLabel.Name = "utilizadorLabel";
+            utilizadorLabel.Size = new System.Drawing.Size(110, 30);
+            utilizadorLabel.TabIndex = 8;
+            utilizadorLabel.Text = "Utilizador:";
+            // 
+            // txtUtil
+            // 
+            this.txtUtil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utilizadoresBindingSource, "Utilizador", true));
+            this.txtUtil.Location = new System.Drawing.Point(868, 178);
+            this.txtUtil.Name = "txtUtil";
+            this.txtUtil.Size = new System.Drawing.Size(324, 37);
+            this.txtUtil.TabIndex = 9;
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(752, 241);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(108, 30);
+            passwordLabel.TabIndex = 10;
+            passwordLabel.Text = "Password:";
+            // 
+            // txtPasse
+            // 
+            this.txtPasse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utilizadoresBindingSource, "Password", true));
+            this.txtPasse.Location = new System.Drawing.Point(868, 238);
+            this.txtPasse.Name = "txtPasse";
+            this.txtPasse.Size = new System.Drawing.Size(324, 37);
+            this.txtPasse.TabIndex = 11;
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(192)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1316, 706);
+            this.ClientSize = new System.Drawing.Size(1316, 734);
+            this.Controls.Add(utilizadorLabel);
+            this.Controls.Add(this.txtUtil);
+            this.Controls.Add(passwordLabel);
+            this.Controls.Add(this.txtPasse);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizadoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private AbrigoDataSet abrigoDataSet;
+        private System.Windows.Forms.BindingSource utilizadoresBindingSource;
+        private AbrigoDataSetTableAdapters.UtilizadoresTableAdapter utilizadoresTableAdapter;
+        private AbrigoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox txtUtil;
+        private System.Windows.Forms.TextBox txtPasse;
     }
 }
 

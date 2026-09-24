@@ -23,5 +23,33 @@ namespace AdotaPatas
             login.ShowDialog();
             this.Hide();
         }
+
+        private void utilizadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.utilizadoresBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+
+        }
+
+        private void Registrar_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'abrigoDataSet.Utilizadores'. Você pode movê-la ou removê-la conforme necessário.
+            //this.utilizadoresTableAdapter.Fill(this.abrigoDataSet.Utilizadores);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.abrigoDataSet.Utilizadores.AddUtilizadoresRow(
+        txtUser.Text,
+        txtPass.Text,
+        txtNome.Text
+    );
+
+            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+
+            MessageBox.Show("Guardado");
+        }
     }
 }
