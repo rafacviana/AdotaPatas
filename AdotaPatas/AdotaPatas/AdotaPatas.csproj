@@ -105,6 +105,7 @@
     </Compile>
     <EmbeddedResource Include="Animais.resx">
       <DependentUpon>Animais.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Atividades.resx">
       <DependentUpon>Atividades.cs</DependentUpon>

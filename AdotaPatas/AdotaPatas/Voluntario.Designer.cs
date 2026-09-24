@@ -133,6 +133,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1082, 322);
             this.dataGridView1.TabIndex = 16;
@@ -141,8 +142,10 @@
             // 
             this.iDPessoaDataGridViewTextBoxColumn.DataPropertyName = "ID_Pessoa";
             this.iDPessoaDataGridViewTextBoxColumn.HeaderText = "ID_Pessoa";
+            this.iDPessoaDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDPessoaDataGridViewTextBoxColumn.Name = "iDPessoaDataGridViewTextBoxColumn";
             this.iDPessoaDataGridViewTextBoxColumn.Visible = false;
+            this.iDPessoaDataGridViewTextBoxColumn.Width = 150;
             // 
             // Nome
             // 
@@ -151,6 +154,7 @@
             this.Nome.DataSource = this.pessoasBindingSource;
             this.Nome.DisplayMember = "Nome";
             this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 8;
             this.Nome.Name = "Nome";
             this.Nome.ValueMember = "ID_Pessoas";
             // 
@@ -168,8 +172,10 @@
             // 
             this.iDFuncaoDataGridViewTextBoxColumn.DataPropertyName = "ID_Funcao";
             this.iDFuncaoDataGridViewTextBoxColumn.HeaderText = "ID_Funcao";
+            this.iDFuncaoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDFuncaoDataGridViewTextBoxColumn.Name = "iDFuncaoDataGridViewTextBoxColumn";
             this.iDFuncaoDataGridViewTextBoxColumn.Visible = false;
+            this.iDFuncaoDataGridViewTextBoxColumn.Width = 150;
             // 
             // Função
             // 
@@ -177,8 +183,10 @@
             this.Função.DataSource = this.funcoesBindingSource;
             this.Função.DisplayMember = "Nome";
             this.Função.HeaderText = "Função";
+            this.Função.MinimumWidth = 8;
             this.Função.Name = "Função";
             this.Função.ValueMember = "ID_Funcao";
+            this.Função.Width = 150;
             // 
             // funcoesBindingSource
             // 
@@ -189,18 +197,23 @@
             // 
             this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "Data_Inicio";
             this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data_Inicio";
+            this.dataInicioDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
+            this.dataInicioDataGridViewTextBoxColumn.Width = 150;
             // 
             // dataFimDataGridViewTextBoxColumn
             // 
             this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "Data_Fim";
             this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data_Fim";
+            this.dataFimDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
+            this.dataFimDataGridViewTextBoxColumn.Width = 150;
             // 
             // ativoDataGridViewCheckBoxColumn
             // 
             this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
             this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
             this.ativoDataGridViewCheckBoxColumn.Width = 80;
             // 
@@ -208,32 +221,42 @@
             // 
             this.cartaConducaoDataGridViewCheckBoxColumn.DataPropertyName = "Carta_Conducao";
             this.cartaConducaoDataGridViewCheckBoxColumn.HeaderText = "Carta_Conducao";
+            this.cartaConducaoDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.cartaConducaoDataGridViewCheckBoxColumn.Name = "cartaConducaoDataGridViewCheckBoxColumn";
+            this.cartaConducaoDataGridViewCheckBoxColumn.Width = 150;
             // 
             // viaturaDataGridViewCheckBoxColumn
             // 
             this.viaturaDataGridViewCheckBoxColumn.DataPropertyName = "Viatura";
             this.viaturaDataGridViewCheckBoxColumn.FillWeight = 80F;
             this.viaturaDataGridViewCheckBoxColumn.HeaderText = "Viatura";
+            this.viaturaDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.viaturaDataGridViewCheckBoxColumn.Name = "viaturaDataGridViewCheckBoxColumn";
+            this.viaturaDataGridViewCheckBoxColumn.Width = 150;
             // 
             // contactoEmergenciaNomeDataGridViewTextBoxColumn
             // 
             this.contactoEmergenciaNomeDataGridViewTextBoxColumn.DataPropertyName = "Contacto_Emergencia_Nome";
             this.contactoEmergenciaNomeDataGridViewTextBoxColumn.HeaderText = "Contacto_Emergencia_Nome";
+            this.contactoEmergenciaNomeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactoEmergenciaNomeDataGridViewTextBoxColumn.Name = "contactoEmergenciaNomeDataGridViewTextBoxColumn";
+            this.contactoEmergenciaNomeDataGridViewTextBoxColumn.Width = 150;
             // 
             // contactoEmergenciaTelemovelDataGridViewTextBoxColumn
             // 
             this.contactoEmergenciaTelemovelDataGridViewTextBoxColumn.DataPropertyName = "Contacto_Emergencia_Telemovel";
             this.contactoEmergenciaTelemovelDataGridViewTextBoxColumn.HeaderText = "Contacto_Emergencia_Telemovel";
+            this.contactoEmergenciaTelemovelDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactoEmergenciaTelemovelDataGridViewTextBoxColumn.Name = "contactoEmergenciaTelemovelDataGridViewTextBoxColumn";
+            this.contactoEmergenciaTelemovelDataGridViewTextBoxColumn.Width = 150;
             // 
             // autorizacaoEncarregadoDataGridViewCheckBoxColumn
             // 
             this.autorizacaoEncarregadoDataGridViewCheckBoxColumn.DataPropertyName = "Autorizacao_Encarregado";
             this.autorizacaoEncarregadoDataGridViewCheckBoxColumn.HeaderText = "Autorizacao_Encarregado";
+            this.autorizacaoEncarregadoDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.autorizacaoEncarregadoDataGridViewCheckBoxColumn.Name = "autorizacaoEncarregadoDataGridViewCheckBoxColumn";
+            this.autorizacaoEncarregadoDataGridViewCheckBoxColumn.Width = 150;
             // 
             // voluntariosBindingSource
             // 
@@ -297,7 +320,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(172, 114);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(184, 17);
+            this.checkBox1.Size = new System.Drawing.Size(271, 24);
             this.checkBox1.TabIndex = 25;
             this.checkBox1.Text = "Mostrar apenas voluntários ativos";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -307,11 +330,12 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(224, 48);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 20);
+            this.textBox1.Size = new System.Drawing.Size(520, 26);
             this.textBox1.TabIndex = 26;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
