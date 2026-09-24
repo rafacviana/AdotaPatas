@@ -85,6 +85,12 @@ namespace AdotaPatas
                 emailTextBox.Select();
                 return false;
             }
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                MessageBox.Show("Por favor, insira um endereço de email válido (deve conter '@' e um domínio).", "Email Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                emailTextBox.Select();
+                return false;
+            }
 
             try
             {
@@ -124,7 +130,9 @@ namespace AdotaPatas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!ValidarTelemovel() || !ValidarEmail())
+            if (!ValidarTelemovel())  
+                return;
+            if (!ValidarEmail())
                 return;
 
             try
