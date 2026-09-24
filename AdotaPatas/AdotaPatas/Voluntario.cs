@@ -30,6 +30,10 @@ namespace AdotaPatas
             // TODO: esta linha de código carrega dados na tabela 'abrigoDataSet.Voluntarios'. Você pode movê-la ou removê-la conforme necessário.
             this.voluntariosTableAdapter.Fill(this.abrigoDataSet.Voluntarios);
 
+            this.tableAdapterManager.PessoasTableAdapter = this.pessoasTableAdapter;
+            this.tableAdapterManager.VoluntariosTableAdapter = this.voluntariosTableAdapter;
+            this.tableAdapterManager.FuncoesTableAdapter = this.funcoesTableAdapter;
+
             if (this.voluntariosBindingSource.Current is DataRowView voluntarioAtual)
             {
                 voluntarioAtual["Ativo"] = true;
@@ -39,9 +43,18 @@ namespace AdotaPatas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.voluntariosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+            try
+            {
+                this.Validate();
+                this.voluntariosBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+
+                MessageBox.Show("Alterações guardadas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao guardar as alterações: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -65,12 +78,31 @@ namespace AdotaPatas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (voluntariosBindingSource.Current != null)
+            if (voluntariosBindingSource.Current is DataRowView voluntarioAtual)
             {
-                DialogResult result = MessageBox.Show("Tem certeza de que deseja eliminar este voluntário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Tem certeza de que deseja eliminar este voluntário e o seu registo de pessoa?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 if (result == DialogResult.Yes)
                 {
+                    int idPessoa = Convert.ToInt32(voluntarioAtual["ID_Pessoa"]);
+
                     voluntariosBindingSource.RemoveCurrent();
+
+                    DataRow linhaPessoa = abrigoDataSet.Pessoas.FindByID_Pessoas(idPessoa);
+                    if (linhaPessoa != null)
+                    {
+                        linhaPessoa.Delete();
+                    }
+
+                    try
+                    {
+                        this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+                        MessageBox.Show("Voluntário e registo de pessoa eliminados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao eliminar da base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
