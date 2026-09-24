@@ -19,53 +19,87 @@ namespace AdotaPatas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int posicao = utilizadoresBindingSource.Find("Utilizador", txtUtil.Text);
-
-            if (posicao != -1)
+            try
             {
-                utilizadoresBindingSource.Position = posicao;
-
-                DataRowView linha = (DataRowView)utilizadoresBindingSource.Current;
-
-                if (linha["Password"].ToString() == txtPasse.Text)
+                if (txtUtilizador.Text == "")
                 {
-                    MessageBox.Show("Login efetuado com sucesso!");
+                    MessageBox.Show("Introduza o utilizador.");
+                    return;
+                }
 
-                    Menu menu = new Menu();
-                    menu.Show();
-                    this.Hide();
+                if (txtPass.Text == "")
+                {
+                    MessageBox.Show("Introduza a password.");
+                    return;
+                }
+
+                int existe = (int)this.utilizadoresTableAdapter.VerificarUser(txtUtilizador.Text);
+                int pass = (int)this.utilizadoresTableAdapter.VerificarPass(txtUtilizador.Text, txtPass.Text);
+
+                if (existe > 0)
+                {
+                    if (pass > 0)
+                    {
+                        Menu menu = new Menu(txtUtilizador.Text);
+                        menu.Show(this);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A password nao esta correta");
+                        txtPass.Text = "";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Password incorreta!");
+                    MessageBox.Show("O utilizador nao se encontra registado!");
+                    txtUtilizador.Text = "";
+                    txtPass.Text = "";
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Utilizador não existe!");
+                MessageBox.Show("Ocorreu um erro ao tentar iniciar sessão.");
             }
-            
         }
 
         private void utilizadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.utilizadoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.utilizadoresBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+            }
+            catch
+            {
+                MessageBox.Show("Ocorreu um erro ao guardar os dados.");
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'abrigoDataSet.Utilizadores'. Você pode movê-la ou removê-la conforme necessário.
-            this.utilizadoresTableAdapter.Fill(this.abrigoDataSet.Utilizadores);
-
+            try
+            {
+                this.utilizadoresTableAdapter.Fill(this.abrigoDataSet.Utilizadores);
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível carregar os utilizadores.");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Registrar regista = new Registrar();
-            regista.Show();
+            try
+            {
+                Registrar regista = new Registrar();
+                regista.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível abrir o registo.");
+            }
         }
     }
 }
