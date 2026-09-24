@@ -45,5 +45,23 @@ namespace AdotaPatas
             Voluntarios.BringToFront();
            
         }
+
+        private void btnAdopcoes_Click(object sender, EventArgs e)
+        {
+            Adopcoes Adopcoes = new Adopcoes();
+            Adopcoes.Show();
+            Adopcoes.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(Adopcoes);
+
+
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            Adoptantes Adoptantes = new Adoptantes();
+            Adoptantes.Show();
+
+        }
     }
 }

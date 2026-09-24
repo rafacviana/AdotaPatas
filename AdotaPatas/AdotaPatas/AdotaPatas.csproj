@@ -53,6 +53,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AbrigoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Adopcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adopcoes.Designer.cs">
+      <DependentUpon>Adopcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adoptantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adoptantes.Designer.cs">
+      <DependentUpon>Adoptantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Animais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <Compile Include="Voluntario.Designer.cs">
       <DependentUpon>Voluntario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adopcoes.resx">
+      <DependentUpon>Adopcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adoptantes.resx">
+      <DependentUpon>Adoptantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Animais.resx">
       <DependentUpon>Animais.cs</DependentUpon>
     </EmbeddedResource>

@@ -114,10 +114,11 @@
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(188, 40);
             this.btnDash.TabIndex = 16;
-            this.btnDash.Text = "Dashboard";
+            this.btnDash.Text = "Adoptantes";
             this.btnDash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDash.UseVisualStyleBackColor = false;
+            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
             // btnAnimais
             // 
@@ -174,6 +175,7 @@
             this.btnAdopcoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdopcoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdopcoes.UseVisualStyleBackColor = false;
+            this.btnAdopcoes.Click += new System.EventHandler(this.btnAdopcoes_Click);
             // 
             // btnEventos
             // 
