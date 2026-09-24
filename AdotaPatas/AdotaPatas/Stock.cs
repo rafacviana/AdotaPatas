@@ -59,13 +59,14 @@ namespace AdotaPatas
             }
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (txtNome.Text == "" ||
-                txtEspecie.Text == "" ||
-                txtTamanho.Text == "" ||
-                txtCategoria.Text == "" ||
-                txtQuantidade.Text == "")
+            txtEspecie.Text == "" ||
+            txtTamanho.Text == "" ||
+            txtCategoria.Text == "" ||
+            txtQuantidade.Text == "")
+
             {
                 MessageBox.Show("Preencha os campos obrigatórios.");
                 return;
@@ -74,7 +75,6 @@ namespace AdotaPatas
             AbrigoDataSet.ConsumiveisRow linha;
 
             linha = abrigoDataSet.Consumiveis.NewConsumiveisRow();
-
             linha.Nome = txtNome.Text;
             linha.Especie_Animal = txtEspecie.Text;
             linha.Tamanho = txtTamanho.Text;
@@ -94,9 +94,10 @@ namespace AdotaPatas
             LimparCampos();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             if (txtID.Text == "")
+
             {
                 MessageBox.Show("Selecione um consumível.");
                 return;
@@ -109,7 +110,9 @@ namespace AdotaPatas
             linha = abrigoDataSet.Consumiveis.FindByID(id);
 
             if (linha != null)
+
             {
+
                 linha.Nome = txtNome.Text;
                 linha.Especie_Animal = txtEspecie.Text;
                 linha.Tamanho = txtTamanho.Text;
@@ -124,13 +127,15 @@ namespace AdotaPatas
 
                 MessageBox.Show("Consumível alterado com sucesso!");
             }
+
             else
+
             {
                 MessageBox.Show("Consumível não encontrado.");
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             if (txtID.Text == "")
             {
@@ -162,7 +167,7 @@ namespace AdotaPatas
             }
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (txtPesqui.Text == "")
             {
@@ -177,6 +182,7 @@ namespace AdotaPatas
             linha = abrigoDataSet.Consumiveis.FindByID(id);
 
             if (linha != null)
+
             {
                 txtID.Text = linha.ID.ToString();
                 txtNome.Text = linha.Nome;
@@ -203,28 +209,29 @@ namespace AdotaPatas
             }
         }
 
-        private void btnLimpar_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void LimparCampos()
         {
-            txtID.Text = "";
-            txtNome.Text = "";
-            txtEspecie.Text = "";
-            txtTamanho.Text = "";
-            txtCategoria.Text = "";
-            txtQuantidade.Text = "";
-            txtObser.Text = "";
-            txtPesqui.Text = "";
+            txtAtivi.Text = "";
+            txtAnimal.Text = "";
+            txtPessoa.Text = "";
+            txtFuncao.Text = "";
+            txtDuracao.Text = "";
+            txtObs.Text = "";
+            txtPesq.Text = "";
+
+            dateTimePickerData.Value = DateTime.Now;
 
             dataGridView1.ClearSelection();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

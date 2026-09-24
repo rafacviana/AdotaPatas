@@ -81,6 +81,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.consumiveisDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(536, 85);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(39, 30);
+            iDLabel.TabIndex = 40;
+            iDLabel.Text = "ID:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(536, 128);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(78, 30);
+            nomeLabel.TabIndex = 42;
+            nomeLabel.Text = "Nome:";
+            // 
+            // especie_AnimalLabel
+            // 
+            especie_AnimalLabel.AutoSize = true;
+            especie_AnimalLabel.Location = new System.Drawing.Point(536, 171);
+            especie_AnimalLabel.Name = "especie_AnimalLabel";
+            especie_AnimalLabel.Size = new System.Drawing.Size(162, 30);
+            especie_AnimalLabel.TabIndex = 44;
+            especie_AnimalLabel.Text = "Especie Animal:";
+            // 
+            // tamanhoLabel
+            // 
+            tamanhoLabel.AutoSize = true;
+            tamanhoLabel.Location = new System.Drawing.Point(536, 214);
+            tamanhoLabel.Name = "tamanhoLabel";
+            tamanhoLabel.Size = new System.Drawing.Size(106, 30);
+            tamanhoLabel.TabIndex = 46;
+            tamanhoLabel.Text = "Tamanho:";
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(536, 257);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(112, 30);
+            categoriaLabel.TabIndex = 48;
+            categoriaLabel.Text = "Categoria:";
+            // 
+            // quantidadeLabel
+            // 
+            quantidadeLabel.AutoSize = true;
+            quantidadeLabel.Location = new System.Drawing.Point(536, 300);
+            quantidadeLabel.Name = "quantidadeLabel";
+            quantidadeLabel.Size = new System.Drawing.Size(131, 30);
+            quantidadeLabel.TabIndex = 50;
+            quantidadeLabel.Text = "Quantidade:";
+            // 
+            // data_ValidadeLabel
+            // 
+            data_ValidadeLabel.AutoSize = true;
+            data_ValidadeLabel.Location = new System.Drawing.Point(536, 345);
+            data_ValidadeLabel.Name = "data_ValidadeLabel";
+            data_ValidadeLabel.Size = new System.Drawing.Size(150, 30);
+            data_ValidadeLabel.TabIndex = 52;
+            data_ValidadeLabel.Text = "Data Validade:";
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Location = new System.Drawing.Point(536, 387);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new System.Drawing.Size(143, 30);
+            obsLabel.TabIndex = 54;
+            obsLabel.Text = "Observações:";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AdotaPatas.Properties.Resources.imgLogin;
@@ -224,6 +296,7 @@
             this.button5.TabIndex = 39;
             this.button5.Text = "Limpar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -233,6 +306,7 @@
             this.button4.TabIndex = 38;
             this.button4.Text = "Editar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -242,6 +316,7 @@
             this.button3.TabIndex = 37;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -251,6 +326,7 @@
             this.button2.TabIndex = 36;
             this.button2.Text = "Adicionar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtPesqui
             // 
@@ -267,6 +343,7 @@
             this.button1.TabIndex = 34;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -276,15 +353,7 @@
             this.button6.TabIndex = 40;
             this.button6.Text = "Voltar";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(536, 85);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(39, 30);
-            iDLabel.TabIndex = 40;
-            iDLabel.Text = "ID:";
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // txtId
             // 
@@ -294,15 +363,6 @@
             this.txtId.Size = new System.Drawing.Size(361, 37);
             this.txtId.TabIndex = 41;
             // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(536, 128);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(78, 30);
-            nomeLabel.TabIndex = 42;
-            nomeLabel.Text = "Nome:";
-            // 
             // txtNome
             // 
             this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Nome", true));
@@ -310,15 +370,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(361, 37);
             this.txtNome.TabIndex = 43;
-            // 
-            // especie_AnimalLabel
-            // 
-            especie_AnimalLabel.AutoSize = true;
-            especie_AnimalLabel.Location = new System.Drawing.Point(536, 171);
-            especie_AnimalLabel.Name = "especie_AnimalLabel";
-            especie_AnimalLabel.Size = new System.Drawing.Size(162, 30);
-            especie_AnimalLabel.TabIndex = 44;
-            especie_AnimalLabel.Text = "Especie Animal:";
             // 
             // txtEspecie
             // 
@@ -328,15 +379,6 @@
             this.txtEspecie.Size = new System.Drawing.Size(361, 37);
             this.txtEspecie.TabIndex = 45;
             // 
-            // tamanhoLabel
-            // 
-            tamanhoLabel.AutoSize = true;
-            tamanhoLabel.Location = new System.Drawing.Point(536, 214);
-            tamanhoLabel.Name = "tamanhoLabel";
-            tamanhoLabel.Size = new System.Drawing.Size(106, 30);
-            tamanhoLabel.TabIndex = 46;
-            tamanhoLabel.Text = "Tamanho:";
-            // 
             // txtTamanho
             // 
             this.txtTamanho.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Tamanho", true));
@@ -344,15 +386,6 @@
             this.txtTamanho.Name = "txtTamanho";
             this.txtTamanho.Size = new System.Drawing.Size(361, 37);
             this.txtTamanho.TabIndex = 47;
-            // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(536, 257);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new System.Drawing.Size(112, 30);
-            categoriaLabel.TabIndex = 48;
-            categoriaLabel.Text = "Categoria:";
             // 
             // txtCategoria
             // 
@@ -362,15 +395,6 @@
             this.txtCategoria.Size = new System.Drawing.Size(361, 37);
             this.txtCategoria.TabIndex = 49;
             // 
-            // quantidadeLabel
-            // 
-            quantidadeLabel.AutoSize = true;
-            quantidadeLabel.Location = new System.Drawing.Point(536, 300);
-            quantidadeLabel.Name = "quantidadeLabel";
-            quantidadeLabel.Size = new System.Drawing.Size(131, 30);
-            quantidadeLabel.TabIndex = 50;
-            quantidadeLabel.Text = "Quantidade:";
-            // 
             // txtQuantidade
             // 
             this.txtQuantidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Quantidade", true));
@@ -379,15 +403,6 @@
             this.txtQuantidade.Size = new System.Drawing.Size(361, 37);
             this.txtQuantidade.TabIndex = 51;
             // 
-            // data_ValidadeLabel
-            // 
-            data_ValidadeLabel.AutoSize = true;
-            data_ValidadeLabel.Location = new System.Drawing.Point(536, 345);
-            data_ValidadeLabel.Name = "data_ValidadeLabel";
-            data_ValidadeLabel.Size = new System.Drawing.Size(150, 30);
-            data_ValidadeLabel.TabIndex = 52;
-            data_ValidadeLabel.Text = "Data Validade:";
-            // 
             // data_ValidadeDateTimePicker
             // 
             this.data_ValidadeDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.consumiveisBindingSource, "Data_Validade", true));
@@ -395,15 +410,6 @@
             this.data_ValidadeDateTimePicker.Name = "data_ValidadeDateTimePicker";
             this.data_ValidadeDateTimePicker.Size = new System.Drawing.Size(361, 37);
             this.data_ValidadeDateTimePicker.TabIndex = 53;
-            // 
-            // obsLabel
-            // 
-            obsLabel.AutoSize = true;
-            obsLabel.Location = new System.Drawing.Point(536, 387);
-            obsLabel.Name = "obsLabel";
-            obsLabel.Size = new System.Drawing.Size(143, 30);
-            obsLabel.TabIndex = 54;
-            obsLabel.Text = "Observações:";
             // 
             // txtObser
             // 

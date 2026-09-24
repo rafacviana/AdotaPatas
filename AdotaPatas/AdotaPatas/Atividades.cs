@@ -57,7 +57,7 @@ namespace AdotaPatas
         }
 
         
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (txtAnimal.Text == "" ||
                 txtPessoa.Text == "" ||
@@ -88,8 +88,7 @@ namespace AdotaPatas
             LimparCampos();
         }
 
-        
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             if (txtAtivi.Text == "")
             {
@@ -97,9 +96,7 @@ namespace AdotaPatas
                 return;
             }
 
-            int id;
-
-            id = Convert.ToInt32(txtAtivi.Text);
+            int id = Convert.ToInt32(txtAtivi.Text);
 
             AbrigoDataSet.AtividadesRow linha;
 
@@ -126,7 +123,7 @@ namespace AdotaPatas
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             if (txtAtivi.Text == "")
             {
@@ -156,8 +153,27 @@ namespace AdotaPatas
             }
         }
 
-        
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            txtAtivi.Text = "";
+            txtAnimal.Text = "";
+            txtPessoa.Text = "";
+            txtFuncao.Text = "";
+            txtDuracao.Text = "";
+            txtObs.Text = "";
+            txtPesq.Text = "";
+
+            dateTimePickerData.Value = DateTime.Now;
+
+            dataGridView1.ClearSelection();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             if (txtPesq.Text == "")
             {
@@ -196,25 +212,6 @@ namespace AdotaPatas
                 MessageBox.Show("Atividade não encontrada.");
             }
         }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void LimparCampos()
-        {
-            txtAtivi.Text = "";
-            txtAnimal.Text = "";
-            txtPessoa.Text = "";
-            txtFuncao.Text = "";
-            txtDuracao.Text = "";
-            txtObs.Text = "";
-            txtPesq.Text = "";
-
-            dateTimePickerData.Value = DateTime.Now;
-
-            dataGridView1.ClearSelection();
-        }
+    }
     }
 }

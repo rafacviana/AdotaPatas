@@ -76,6 +76,69 @@
             ((System.ComponentModel.ISupportInitialize)(this.atividadesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // iD_AtividadeLabel
+            // 
+            iD_AtividadeLabel.AutoSize = true;
+            iD_AtividadeLabel.Location = new System.Drawing.Point(631, 101);
+            iD_AtividadeLabel.Name = "iD_AtividadeLabel";
+            iD_AtividadeLabel.Size = new System.Drawing.Size(109, 30);
+            iD_AtividadeLabel.TabIndex = 14;
+            iD_AtividadeLabel.Text = "Atividade:";
+            // 
+            // iD_AnimalLabel
+            // 
+            iD_AnimalLabel.AutoSize = true;
+            iD_AnimalLabel.Location = new System.Drawing.Point(631, 144);
+            iD_AnimalLabel.Name = "iD_AnimalLabel";
+            iD_AnimalLabel.Size = new System.Drawing.Size(84, 30);
+            iD_AnimalLabel.TabIndex = 16;
+            iD_AnimalLabel.Text = "Animal:";
+            // 
+            // iD_PessoaLabel
+            // 
+            iD_PessoaLabel.AutoSize = true;
+            iD_PessoaLabel.Location = new System.Drawing.Point(631, 187);
+            iD_PessoaLabel.Name = "iD_PessoaLabel";
+            iD_PessoaLabel.Size = new System.Drawing.Size(83, 30);
+            iD_PessoaLabel.TabIndex = 18;
+            iD_PessoaLabel.Text = "Pessoa:";
+            // 
+            // iD_FuncaoLabel
+            // 
+            iD_FuncaoLabel.AutoSize = true;
+            iD_FuncaoLabel.Location = new System.Drawing.Point(631, 230);
+            iD_FuncaoLabel.Name = "iD_FuncaoLabel";
+            iD_FuncaoLabel.Size = new System.Drawing.Size(87, 30);
+            iD_FuncaoLabel.TabIndex = 20;
+            iD_FuncaoLabel.Text = "Funcao:";
+            // 
+            // dataLabel
+            // 
+            dataLabel.AutoSize = true;
+            dataLabel.Location = new System.Drawing.Point(631, 274);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new System.Drawing.Size(62, 30);
+            dataLabel.TabIndex = 22;
+            dataLabel.Text = "Data:";
+            // 
+            // duracao_minLabel
+            // 
+            duracao_minLabel.AutoSize = true;
+            duracao_minLabel.Location = new System.Drawing.Point(631, 316);
+            duracao_minLabel.Name = "duracao_minLabel";
+            duracao_minLabel.Size = new System.Drawing.Size(98, 30);
+            duracao_minLabel.TabIndex = 24;
+            duracao_minLabel.Text = "Duracao:";
+            // 
+            // obs_Label
+            // 
+            obs_Label.AutoSize = true;
+            obs_Label.Location = new System.Drawing.Point(631, 359);
+            obs_Label.Name = "obs_Label";
+            obs_Label.Size = new System.Drawing.Size(143, 30);
+            obs_Label.TabIndex = 26;
+            obs_Label.Text = "Observações:";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AdotaPatas.Properties.Resources.imgLogin;
@@ -124,15 +187,6 @@
             this.tableAdapterManager.UtilizadoresTableAdapter = null;
             this.tableAdapterManager.VoluntariosTableAdapter = null;
             // 
-            // iD_AtividadeLabel
-            // 
-            iD_AtividadeLabel.AutoSize = true;
-            iD_AtividadeLabel.Location = new System.Drawing.Point(631, 101);
-            iD_AtividadeLabel.Name = "iD_AtividadeLabel";
-            iD_AtividadeLabel.Size = new System.Drawing.Size(109, 30);
-            iD_AtividadeLabel.TabIndex = 14;
-            iD_AtividadeLabel.Text = "Atividade:";
-            // 
             // txtAtivi
             // 
             this.txtAtivi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.atividadesBindingSource, "ID_Atividade", true));
@@ -140,15 +194,6 @@
             this.txtAtivi.Name = "txtAtivi";
             this.txtAtivi.Size = new System.Drawing.Size(340, 37);
             this.txtAtivi.TabIndex = 15;
-            // 
-            // iD_AnimalLabel
-            // 
-            iD_AnimalLabel.AutoSize = true;
-            iD_AnimalLabel.Location = new System.Drawing.Point(631, 144);
-            iD_AnimalLabel.Name = "iD_AnimalLabel";
-            iD_AnimalLabel.Size = new System.Drawing.Size(84, 30);
-            iD_AnimalLabel.TabIndex = 16;
-            iD_AnimalLabel.Text = "Animal:";
             // 
             // txtAnimal
             // 
@@ -158,15 +203,6 @@
             this.txtAnimal.Size = new System.Drawing.Size(340, 37);
             this.txtAnimal.TabIndex = 17;
             // 
-            // iD_PessoaLabel
-            // 
-            iD_PessoaLabel.AutoSize = true;
-            iD_PessoaLabel.Location = new System.Drawing.Point(631, 187);
-            iD_PessoaLabel.Name = "iD_PessoaLabel";
-            iD_PessoaLabel.Size = new System.Drawing.Size(83, 30);
-            iD_PessoaLabel.TabIndex = 18;
-            iD_PessoaLabel.Text = "Pessoa:";
-            // 
             // txtPessoa
             // 
             this.txtPessoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.atividadesBindingSource, "ID_Pessoa", true));
@@ -174,15 +210,6 @@
             this.txtPessoa.Name = "txtPessoa";
             this.txtPessoa.Size = new System.Drawing.Size(340, 37);
             this.txtPessoa.TabIndex = 19;
-            // 
-            // iD_FuncaoLabel
-            // 
-            iD_FuncaoLabel.AutoSize = true;
-            iD_FuncaoLabel.Location = new System.Drawing.Point(631, 230);
-            iD_FuncaoLabel.Name = "iD_FuncaoLabel";
-            iD_FuncaoLabel.Size = new System.Drawing.Size(87, 30);
-            iD_FuncaoLabel.TabIndex = 20;
-            iD_FuncaoLabel.Text = "Funcao:";
             // 
             // txtFuncao
             // 
@@ -192,15 +219,6 @@
             this.txtFuncao.Size = new System.Drawing.Size(340, 37);
             this.txtFuncao.TabIndex = 21;
             // 
-            // dataLabel
-            // 
-            dataLabel.AutoSize = true;
-            dataLabel.Location = new System.Drawing.Point(631, 274);
-            dataLabel.Name = "dataLabel";
-            dataLabel.Size = new System.Drawing.Size(62, 30);
-            dataLabel.TabIndex = 22;
-            dataLabel.Text = "Data:";
-            // 
             // dataDateTimePicker
             // 
             this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.atividadesBindingSource, "Data", true));
@@ -209,15 +227,6 @@
             this.dataDateTimePicker.Size = new System.Drawing.Size(340, 37);
             this.dataDateTimePicker.TabIndex = 23;
             // 
-            // duracao_minLabel
-            // 
-            duracao_minLabel.AutoSize = true;
-            duracao_minLabel.Location = new System.Drawing.Point(631, 316);
-            duracao_minLabel.Name = "duracao_minLabel";
-            duracao_minLabel.Size = new System.Drawing.Size(98, 30);
-            duracao_minLabel.TabIndex = 24;
-            duracao_minLabel.Text = "Duracao:";
-            // 
             // txtDuracao
             // 
             this.txtDuracao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.atividadesBindingSource, "Duracao_min", true));
@@ -225,15 +234,6 @@
             this.txtDuracao.Name = "txtDuracao";
             this.txtDuracao.Size = new System.Drawing.Size(340, 37);
             this.txtDuracao.TabIndex = 25;
-            // 
-            // obs_Label
-            // 
-            obs_Label.AutoSize = true;
-            obs_Label.Location = new System.Drawing.Point(631, 359);
-            obs_Label.Name = "obs_Label";
-            obs_Label.Size = new System.Drawing.Size(143, 30);
-            obs_Label.TabIndex = 26;
-            obs_Label.Text = "Observações:";
             // 
             // txtObs
             // 
@@ -252,6 +252,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPesq
             // 
@@ -346,6 +347,7 @@
             this.button2.TabIndex = 30;
             this.button2.Text = "Adicionar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -355,6 +357,7 @@
             this.button3.TabIndex = 31;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -364,6 +367,7 @@
             this.button4.TabIndex = 32;
             this.button4.Text = "Editar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -373,6 +377,7 @@
             this.button5.TabIndex = 33;
             this.button5.Text = "Limpar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Atividades
             // 
