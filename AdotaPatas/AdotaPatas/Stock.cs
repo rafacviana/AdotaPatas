@@ -31,34 +31,6 @@ namespace AdotaPatas
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                txtID.Text = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
-                txtNome.Text = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
-                txtEspecie.Text = dataGridView1.CurrentRow.Cells["Especie_Animal"].Value.ToString();
-                txtTamanho.Text = dataGridView1.CurrentRow.Cells["Tamanho"].Value.ToString();
-                txtCategoria.Text = dataGridView1.CurrentRow.Cells["Categoria"].Value.ToString();
-                txtQuantidade.Text = dataGridView1.CurrentRow.Cells["Quantidade"].Value.ToString();
-
-                if (dataGridView1.CurrentRow.Cells["Data_Validade"].Value != null)
-                {
-                    dateTimePickerValidade.Value = Convert.ToDateTime(
-                        dataGridView1.CurrentRow.Cells["Data_Validade"].Value);
-                }
-
-                if (dataGridView1.CurrentRow.Cells["Obs"].Value != null)
-                {
-                    txtObser.Text = dataGridView1.CurrentRow.Cells["Obs"].Value.ToString();
-                }
-                else
-                {
-                    txtObser.Text = "";
-                }
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (txtNome.Text == "" ||
@@ -79,8 +51,8 @@ namespace AdotaPatas
             linha.Especie_Animal = txtEspecie.Text;
             linha.Tamanho = txtTamanho.Text;
             linha.Categoria = txtCategoria.Text;
-            linha.Quantidade = Convert.ToInt32(txtQuantidade.Text);
-            linha.Data_Validade = dateTimePickerValidade.Value;
+            linha.Quantidade = txtQuantidade.Text;
+            linha.Data_Validade = data_ValidadeDateTimePicker.Value;
             linha.Obs = txtObser.Text;
 
             abrigoDataSet.Consumiveis.AddConsumiveisRow(linha);
@@ -96,14 +68,14 @@ namespace AdotaPatas
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "")
+            if (txtId.Text == "")
 
             {
                 MessageBox.Show("Selecione um consumível.");
                 return;
             }
 
-            int id = Convert.ToInt32(txtID.Text);
+            int id = Convert.ToInt32(txtId.Text);
 
             AbrigoDataSet.ConsumiveisRow linha;
 
@@ -118,7 +90,7 @@ namespace AdotaPatas
                 linha.Tamanho = txtTamanho.Text;
                 linha.Categoria = txtCategoria.Text;
                 linha.Quantidade = txtQuantidade.Text;
-                linha.Data_Validade = dateTimePickerValidade.Value;
+                linha.Data_Validade = data_ValidadeDateTimePicker.Value;
                 linha.Obs = txtObser.Text;
 
                 consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
@@ -220,7 +192,6 @@ namespace AdotaPatas
             txtNome.Text = "";
             txtEspecie.Text = "";
             txtTamanho.Text = "";
-            txtCategoria.Text = "";
             txtQuantidade.Text = "";
             txtObser.Text = "";
             txtPesqui.Text = "";
@@ -233,6 +204,34 @@ namespace AdotaPatas
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void consumiveisDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (consumiveisDataGridView.CurrentRow != null)
+            {
+                txtId.Text = consumiveisDataGridView.CurrentRow.Cells["ID"].Value.ToString();
+                txtNome.Text = consumiveisDataGridView.CurrentRow.Cells["Nome"].Value.ToString();
+                txtEspecie.Text = consumiveisDataGridView.CurrentRow.Cells["Especie_Animal"].Value.ToString();
+                txtTamanho.Text = consumiveisDataGridView.CurrentRow.Cells["Tamanho"].Value.ToString();
+                txtCategoria.Text = consumiveisDataGridView.CurrentRow.Cells["Categoria"].Value.ToString();
+                txtQuantidade.Text = consumiveisDataGridView.CurrentRow.Cells["Quantidade"].Value.ToString();
+
+                if (consumiveisDataGridView.CurrentRow.Cells["Data_Validade"].Value != null)
+                {
+                    data_ValidadeDateTimePicker.Value = Convert.ToDateTime(
+                        consumiveisDataGridView.CurrentRow.Cells["Data_Validade"].Value);
+                }
+
+                if (consumiveisDataGridView.CurrentRow.Cells["Obs"].Value != null)
+                {
+                    txtObser.Text = consumiveisDataGridView.CurrentRow.Cells["Obs"].Value.ToString();
+                }
+                else
+                {
+                    txtObser.Text = "";
+                }
+            }
         }
     }
 }

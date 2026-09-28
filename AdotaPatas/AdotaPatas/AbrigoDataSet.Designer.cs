@@ -1957,7 +1957,7 @@ namespace AdotaPatas {
             
             private global::System.Data.DataColumn columnDuracao_min;
             
-            private global::System.Data.DataColumn _columnObs_;
+            private global::System.Data.DataColumn columnObs;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -2042,9 +2042,9 @@ namespace AdotaPatas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn _Obs_Column {
+            public global::System.Data.DataColumn ObsColumn {
                 get {
-                    return this._columnObs_;
+                    return this.columnObs;
                 }
             }
             
@@ -2085,7 +2085,7 @@ namespace AdotaPatas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public AtividadesRow AddAtividadesRow(AnimaisRow parentAnimaisRowByFK_Atividades_Animais1, VoluntariosRow parentVoluntariosRowByFK_Atividades_Voluntarios, FuncoesRow parentFuncoesRowByFK_Atividades_Funcoes, System.DateTime Data, byte Duracao_min, string _Obs_) {
+            public AtividadesRow AddAtividadesRow(AnimaisRow parentAnimaisRowByFK_Atividades_Animais1, VoluntariosRow parentVoluntariosRowByFK_Atividades_Voluntarios, FuncoesRow parentFuncoesRowByFK_Atividades_Funcoes, System.DateTime Data, byte Duracao_min, string Obs) {
                 AtividadesRow rowAtividadesRow = ((AtividadesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2094,7 +2094,7 @@ namespace AdotaPatas {
                         null,
                         Data,
                         Duracao_min,
-                        _Obs_};
+                        Obs};
                 if ((parentAnimaisRowByFK_Atividades_Animais1 != null)) {
                     columnValuesArray[1] = parentAnimaisRowByFK_Atividades_Animais1[0];
                 }
@@ -2139,7 +2139,7 @@ namespace AdotaPatas {
                 this.columnID_Funcao = base.Columns["ID_Funcao"];
                 this.columnData = base.Columns["Data"];
                 this.columnDuracao_min = base.Columns["Duracao_min"];
-                this._columnObs_ = base.Columns["Obs:"];
+                this.columnObs = base.Columns["Obs"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2157,10 +2157,8 @@ namespace AdotaPatas {
                 base.Columns.Add(this.columnData);
                 this.columnDuracao_min = new global::System.Data.DataColumn("Duracao_min", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDuracao_min);
-                this._columnObs_ = new global::System.Data.DataColumn("Obs:", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnObs_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnObs_");
-                this._columnObs_.ExtendedProperties.Add("Generator_UserColumnName", "Obs:");
-                base.Columns.Add(this._columnObs_);
+                this.columnObs = new global::System.Data.DataColumn("Obs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObs);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Atividade}, true));
                 this.columnID_Atividade.AutoIncrement = true;
@@ -2173,7 +2171,7 @@ namespace AdotaPatas {
                 this.columnID_Pessoa.AllowDBNull = false;
                 this.columnID_Funcao.AllowDBNull = false;
                 this.columnData.AllowDBNull = false;
-                this._columnObs_.MaxLength = 500;
+                this.columnObs.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4767,17 +4765,17 @@ namespace AdotaPatas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string _Obs_ {
+            public string Obs {
                 get {
                     try {
-                        return ((string)(this[this.tableAtividades._Obs_Column]));
+                        return ((string)(this[this.tableAtividades.ObsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Obs:\' na tabela \'Atividades\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Obs\' na tabela \'Atividades\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAtividades._Obs_Column] = value;
+                    this[this.tableAtividades.ObsColumn] = value;
                 }
             }
             
@@ -4828,14 +4826,14 @@ namespace AdotaPatas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool Is_Obs_Null() {
-                return this.IsNull(this.tableAtividades._Obs_Column);
+            public bool IsObsNull() {
+                return this.IsNull(this.tableAtividades.ObsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void Set_Obs_Null() {
-                this[this.tableAtividades._Obs_Column] = global::System.Convert.DBNull;
+            public void SetObsNull() {
+                this[this.tableAtividades.ObsColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7642,7 +7640,7 @@ SELECT ID_Animal, Nome, Especie, Genero, Porte, Peso, Idade, Condicoes_Especiais
             tableMapping.ColumnMappings.Add("ID_Funcao", "ID_Funcao");
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("Duracao_min", "Duracao_min");
-            tableMapping.ColumnMappings.Add("Obs:", "Obs:");
+            tableMapping.ColumnMappings.Add("Obs", "Obs");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
