@@ -78,7 +78,7 @@
             obsLabel.Name = "obsLabel";
             obsLabel.Size = new System.Drawing.Size(38, 20);
             obsLabel.TabIndex = 22;
-            obsLabel.Text = "Obs:";
+            obsLabel.Text = "Obs";
             // 
             // label9
             // 

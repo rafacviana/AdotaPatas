@@ -55,8 +55,8 @@ namespace AdotaPatas
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            Atividades atividades = new Atividades();
-            atividades.Show();
+            Atividades ativity = new Atividades();
+            ativity.Show();
             this.Hide();
         }
     }

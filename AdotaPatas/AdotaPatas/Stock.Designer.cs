@@ -84,7 +84,7 @@
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(536, 85);
+            iDLabel.Location = new System.Drawing.Point(398, 73);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(39, 30);
             iDLabel.TabIndex = 40;
@@ -93,7 +93,7 @@
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(536, 128);
+            nomeLabel.Location = new System.Drawing.Point(398, 116);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(78, 30);
             nomeLabel.TabIndex = 42;
@@ -102,7 +102,7 @@
             // especie_AnimalLabel
             // 
             especie_AnimalLabel.AutoSize = true;
-            especie_AnimalLabel.Location = new System.Drawing.Point(536, 171);
+            especie_AnimalLabel.Location = new System.Drawing.Point(398, 159);
             especie_AnimalLabel.Name = "especie_AnimalLabel";
             especie_AnimalLabel.Size = new System.Drawing.Size(162, 30);
             especie_AnimalLabel.TabIndex = 44;
@@ -111,7 +111,7 @@
             // tamanhoLabel
             // 
             tamanhoLabel.AutoSize = true;
-            tamanhoLabel.Location = new System.Drawing.Point(536, 214);
+            tamanhoLabel.Location = new System.Drawing.Point(398, 202);
             tamanhoLabel.Name = "tamanhoLabel";
             tamanhoLabel.Size = new System.Drawing.Size(106, 30);
             tamanhoLabel.TabIndex = 46;
@@ -120,7 +120,7 @@
             // categoriaLabel
             // 
             categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(536, 257);
+            categoriaLabel.Location = new System.Drawing.Point(936, 69);
             categoriaLabel.Name = "categoriaLabel";
             categoriaLabel.Size = new System.Drawing.Size(112, 30);
             categoriaLabel.TabIndex = 48;
@@ -129,7 +129,7 @@
             // quantidadeLabel
             // 
             quantidadeLabel.AutoSize = true;
-            quantidadeLabel.Location = new System.Drawing.Point(536, 300);
+            quantidadeLabel.Location = new System.Drawing.Point(936, 112);
             quantidadeLabel.Name = "quantidadeLabel";
             quantidadeLabel.Size = new System.Drawing.Size(131, 30);
             quantidadeLabel.TabIndex = 50;
@@ -138,7 +138,7 @@
             // data_ValidadeLabel
             // 
             data_ValidadeLabel.AutoSize = true;
-            data_ValidadeLabel.Location = new System.Drawing.Point(536, 345);
+            data_ValidadeLabel.Location = new System.Drawing.Point(936, 157);
             data_ValidadeLabel.Name = "data_ValidadeLabel";
             data_ValidadeLabel.Size = new System.Drawing.Size(150, 30);
             data_ValidadeLabel.TabIndex = 52;
@@ -147,7 +147,7 @@
             // obsLabel
             // 
             obsLabel.AutoSize = true;
-            obsLabel.Location = new System.Drawing.Point(536, 387);
+            obsLabel.Location = new System.Drawing.Point(936, 199);
             obsLabel.Name = "obsLabel";
             obsLabel.Size = new System.Drawing.Size(143, 30);
             obsLabel.TabIndex = 54;
@@ -158,7 +158,7 @@
             this.pictureBox1.Image = global::AdotaPatas.Properties.Resources.imgLogin;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(436, 420);
+            this.pictureBox1.Size = new System.Drawing.Size(358, 360);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -167,7 +167,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(769, 9);
+            this.label1.Location = new System.Drawing.Point(769, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 45);
             this.label1.TabIndex = 14;
@@ -215,12 +215,13 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.consumiveisDataGridView.DataSource = this.consumiveisBindingSource;
-            this.consumiveisDataGridView.Location = new System.Drawing.Point(529, 455);
+            this.consumiveisDataGridView.Location = new System.Drawing.Point(392, 269);
             this.consumiveisDataGridView.Name = "consumiveisDataGridView";
             this.consumiveisDataGridView.RowHeadersVisible = false;
             this.consumiveisDataGridView.RowHeadersWidth = 62;
             this.consumiveisDataGridView.RowTemplate.Height = 28;
-            this.consumiveisDataGridView.Size = new System.Drawing.Size(1206, 399);
+            this.consumiveisDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.consumiveisDataGridView.Size = new System.Drawing.Size(1054, 371);
             this.consumiveisDataGridView.TabIndex = 21;
             this.consumiveisDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.consumiveisDataGridView_CellContentClick);
             // 
@@ -291,9 +292,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(251, 701);
+            this.button5.Location = new System.Drawing.Point(192, 537);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(224, 153);
+            this.button5.Size = new System.Drawing.Size(194, 103);
             this.button5.TabIndex = 39;
             this.button5.Text = "Limpar";
             this.button5.UseVisualStyleBackColor = true;
@@ -301,9 +302,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(0, 701);
+            this.button4.Location = new System.Drawing.Point(0, 537);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 153);
+            this.button4.Size = new System.Drawing.Size(186, 103);
             this.button4.TabIndex = 38;
             this.button4.Text = "Editar";
             this.button4.UseVisualStyleBackColor = true;
@@ -311,9 +312,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(251, 534);
+            this.button3.Location = new System.Drawing.Point(192, 436);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(224, 141);
+            this.button3.Size = new System.Drawing.Size(194, 95);
             this.button3.TabIndex = 37;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
@@ -321,9 +322,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(0, 534);
+            this.button2.Location = new System.Drawing.Point(0, 436);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(224, 141);
+            this.button2.Size = new System.Drawing.Size(186, 95);
             this.button2.TabIndex = 36;
             this.button2.Text = "Adicionar";
             this.button2.UseVisualStyleBackColor = true;
@@ -331,14 +332,15 @@
             // 
             // txtPesqui
             // 
-            this.txtPesqui.Location = new System.Drawing.Point(158, 463);
+            this.txtPesqui.Location = new System.Drawing.Point(140, 387);
             this.txtPesqui.Name = "txtPesqui";
-            this.txtPesqui.Size = new System.Drawing.Size(324, 37);
+            this.txtPesqui.Size = new System.Drawing.Size(246, 37);
             this.txtPesqui.TabIndex = 35;
+            this.txtPesqui.TextChanged += new System.EventHandler(this.txtPesqui_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 457);
+            this.button1.Location = new System.Drawing.Point(0, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 49);
             this.button1.TabIndex = 34;
@@ -348,9 +350,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(0, 873);
+            this.button6.Location = new System.Drawing.Point(0, 646);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(475, 76);
+            this.button6.Size = new System.Drawing.Size(386, 76);
             this.button6.TabIndex = 40;
             this.button6.Text = "Voltar";
             this.button6.UseVisualStyleBackColor = true;
@@ -359,7 +361,7 @@
             // txtId
             // 
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "ID", true));
-            this.txtId.Location = new System.Drawing.Point(704, 82);
+            this.txtId.Location = new System.Drawing.Point(566, 70);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(361, 37);
             this.txtId.TabIndex = 41;
@@ -367,7 +369,7 @@
             // txtNome
             // 
             this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Nome", true));
-            this.txtNome.Location = new System.Drawing.Point(704, 125);
+            this.txtNome.Location = new System.Drawing.Point(566, 113);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(361, 37);
             this.txtNome.TabIndex = 43;
@@ -375,7 +377,7 @@
             // txtEspecie
             // 
             this.txtEspecie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Especie_Animal", true));
-            this.txtEspecie.Location = new System.Drawing.Point(704, 168);
+            this.txtEspecie.Location = new System.Drawing.Point(566, 156);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(361, 37);
             this.txtEspecie.TabIndex = 45;
@@ -383,7 +385,7 @@
             // txtTamanho
             // 
             this.txtTamanho.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Tamanho", true));
-            this.txtTamanho.Location = new System.Drawing.Point(704, 211);
+            this.txtTamanho.Location = new System.Drawing.Point(566, 199);
             this.txtTamanho.Name = "txtTamanho";
             this.txtTamanho.Size = new System.Drawing.Size(361, 37);
             this.txtTamanho.TabIndex = 47;
@@ -391,7 +393,7 @@
             // txtCategoria
             // 
             this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Categoria", true));
-            this.txtCategoria.Location = new System.Drawing.Point(704, 254);
+            this.txtCategoria.Location = new System.Drawing.Point(1082, 66);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(361, 37);
             this.txtCategoria.TabIndex = 49;
@@ -399,7 +401,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Quantidade", true));
-            this.txtQuantidade.Location = new System.Drawing.Point(704, 297);
+            this.txtQuantidade.Location = new System.Drawing.Point(1082, 109);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(361, 37);
             this.txtQuantidade.TabIndex = 51;
@@ -407,7 +409,7 @@
             // data_ValidadeDateTimePicker
             // 
             this.data_ValidadeDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.consumiveisBindingSource, "Data_Validade", true));
-            this.data_ValidadeDateTimePicker.Location = new System.Drawing.Point(704, 341);
+            this.data_ValidadeDateTimePicker.Location = new System.Drawing.Point(1082, 153);
             this.data_ValidadeDateTimePicker.Name = "data_ValidadeDateTimePicker";
             this.data_ValidadeDateTimePicker.Size = new System.Drawing.Size(361, 37);
             this.data_ValidadeDateTimePicker.TabIndex = 53;
@@ -415,7 +417,7 @@
             // txtObser
             // 
             this.txtObser.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Obs", true));
-            this.txtObser.Location = new System.Drawing.Point(704, 384);
+            this.txtObser.Location = new System.Drawing.Point(1082, 196);
             this.txtObser.Name = "txtObser";
             this.txtObser.Size = new System.Drawing.Size(361, 37);
             this.txtObser.TabIndex = 55;
@@ -456,6 +458,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Stock";
             this.Text = "Stock";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();

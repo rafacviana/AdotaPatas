@@ -21,47 +21,47 @@ namespace AdotaPatas
         {
             try
             {
-                if (txtUtil.Text == "")
+                string utilizadorIntroduzido = txtUtil.Text.Trim();
+                string passwordIntroduzida = txtPasse.Text;
+
+                if (utilizadorIntroduzido == "")
                 {
                     MessageBox.Show("Introduza o utilizador.");
                     return;
                 }
 
-                if (txtPasse.Text == "")
+                if (passwordIntroduzida == "")
                 {
                     MessageBox.Show("Introduza a password.");
                     return;
                 }
 
-                DataRow utilizadorEncontrado = null;
+                AbrigoDataSet.UtilizadoresDataTable tabelaUtilizadores =
+                    new AbrigoDataSet.UtilizadoresDataTable();
 
-                foreach (DataRow linha in abrigoDataSet.Utilizadores.Rows)
+                utilizadoresTableAdapter.Fill(tabelaUtilizadores);
+
+                bool loginValido = false;
+
+                foreach (AbrigoDataSet.UtilizadoresRow linha in tabelaUtilizadores.Rows)
                 {
-                    if (linha["Utilizador"].ToString() == txtUtil.Text)
+                    string utilizadorBD = linha.Utilizador.Trim();
+                    string passwordBD = linha.Password;
+
+                    if (utilizadorBD == utilizadorIntroduzido &&
+                        passwordBD == passwordIntroduzida)
                     {
-                        utilizadorEncontrado = linha;
+                        loginValido = true;
                         break;
                     }
                 }
 
-                if (utilizadorEncontrado == null)
+                if (!loginValido)
                 {
-                    MessageBox.Show("O utilizador nao se encontra registado!");
-                    txtUtil.Text = "";
+                    MessageBox.Show("Utilizador ou password incorretos.");
                     txtPasse.Text = "";
                     return;
                 }
-
-                string passwordGuardada = utilizadorEncontrado["Password"].ToString();
-
-                if (passwordGuardada != txtPasse.Text)
-                {
-                    MessageBox.Show("A password nao esta correta");
-                    txtPasse.Text = "";
-                    return;
-                }
-
-                MessageBox.Show("Login efetuado com sucesso!");
 
                 Menu menu = new Menu();
                 menu.Show(this);

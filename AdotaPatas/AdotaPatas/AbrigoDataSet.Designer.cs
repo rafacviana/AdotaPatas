@@ -3136,7 +3136,7 @@ namespace AdotaPatas {
                 this.columnMorada = base.Columns["Morada"];
                 this.columnTelemovel = base.Columns["Telemovel"];
                 this.columnEmail = base.Columns["Email"];
-                this._columnObs_ = base.Columns["Obs:"];
+                this._columnObs_ = base.Columns["Obs"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3154,9 +3154,9 @@ namespace AdotaPatas {
                 base.Columns.Add(this.columnTelemovel);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
-                this._columnObs_ = new global::System.Data.DataColumn("Obs:", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnObs_ = new global::System.Data.DataColumn("Obs", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnObs_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnObs_");
-                this._columnObs_.ExtendedProperties.Add("Generator_UserColumnName", "Obs:");
+                this._columnObs_.ExtendedProperties.Add("Generator_UserColumnName", "Obs");
                 base.Columns.Add(this._columnObs_);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Pessoas}, true));
@@ -7644,7 +7644,7 @@ SELECT ID_Animal, Nome, Especie, Genero, Porte, Peso, Idade, Condicoes_Especiais
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Atividades] WHERE (([ID_Atividade] = @Original_ID_Atividade) AND ([ID_Animal] = @Original_ID_Animal) AND ([ID_Pessoa] = @Original_ID_Pessoa) AND ([ID_Funcao] = @Original_ID_Funcao) AND ([Data] = @Original_Data) AND ((@IsNull_Duracao_min = 1 AND [Duracao_min] IS NULL) OR ([Duracao_min] = @Original_Duracao_min)) AND ((@p3 = 1 AND [Obs:] IS NULL) OR ([Obs:] = @p2)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Atividades] WHERE (([ID_Atividade] = @Original_ID_Atividade) AND ([ID_Animal] = @Original_ID_Animal) AND ([ID_Pessoa] = @Original_ID_Pessoa) AND ([ID_Funcao] = @Original_ID_Funcao) AND ([Data] = @Original_Data) AND ((@IsNull_Duracao_min = 1 AND [Duracao_min] IS NULL) OR ([Duracao_min] = @Original_Duracao_min)) AND ((@p3 = 1 AND [Obs] IS NULL) OR ([Obs] = @p2)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Atividade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Atividade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Animal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Animal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7653,30 +7653,30 @@ SELECT ID_Animal, Nome, Especie, Genero, Porte, Peso, Idade, Condicoes_Especiais
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Duracao_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duracao_min", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Atividades] ([ID_Animal], [ID_Pessoa], [ID_Funcao], [Data], [Duracao_min], [Obs:]) VALUES (@ID_Animal, @ID_Pessoa, @ID_Funcao, @Data, @Duracao_min, @p1);
-SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs:] FROM Atividades WHERE (ID_Atividade = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Atividades] ([ID_Animal], [ID_Pessoa], [ID_Funcao], [Data], [Duracao_min], [Obs]) VALUES (@ID_Animal, @ID_Pessoa, @ID_Funcao, @Data, @Duracao_min, @p1);
+SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs] FROM Atividades WHERE (ID_Atividade = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Animal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Animal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pessoa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Funcao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Funcao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duracao_min", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Atividades] SET [ID_Animal] = @ID_Animal, [ID_Pessoa] = @ID_Pessoa, [ID_Funcao] = @ID_Funcao, [Data] = @Data, [Duracao_min] = @Duracao_min, [Obs:] = @p1 WHERE (([ID_Atividade] = @Original_ID_Atividade) AND ([ID_Animal] = @Original_ID_Animal) AND ([ID_Pessoa] = @Original_ID_Pessoa) AND ([ID_Funcao] = @Original_ID_Funcao) AND ([Data] = @Original_Data) AND ((@IsNull_Duracao_min = 1 AND [Duracao_min] IS NULL) OR ([Duracao_min] = @Original_Duracao_min)) AND ((@p3 = 1 AND [Obs:] IS NULL) OR ([Obs:] = @p2)));
-SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs:] FROM Atividades WHERE (ID_Atividade = @ID_Atividade)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Atividades] SET [ID_Animal] = @ID_Animal, [ID_Pessoa] = @ID_Pessoa, [ID_Funcao] = @ID_Funcao, [Data] = @Data, [Duracao_min] = @Duracao_min, [Obs] = @p1 WHERE (([ID_Atividade] = @Original_ID_Atividade) AND ([ID_Animal] = @Original_ID_Animal) AND ([ID_Pessoa] = @Original_ID_Pessoa) AND ([ID_Funcao] = @Original_ID_Funcao) AND ([Data] = @Original_Data) AND ((@IsNull_Duracao_min = 1 AND [Duracao_min] IS NULL) OR ([Duracao_min] = @Original_Duracao_min)) AND ((@p3 = 1 AND [Obs] IS NULL) OR ([Obs] = @p2)));
+SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs] FROM Atividades WHERE (ID_Atividade = @ID_Atividade)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Animal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Animal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pessoa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Funcao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Funcao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duracao_min", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Atividade", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Atividade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Animal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Animal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pessoa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7684,8 +7684,8 @@ SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs:] 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Duracao_min", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duracao_min", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duracao_min", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Atividade", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Atividade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7702,7 +7702,7 @@ SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs:] 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs:] F" +
+            this._commandCollection[0].CommandText = "SELECT ID_Atividade, ID_Animal, ID_Pessoa, ID_Funcao, Data, Duracao_min, [Obs] F" +
                 "ROM dbo.Atividades";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -8889,11 +8889,11 @@ SELECT ID, Nome, Especie_Animal, Tamanho, Categoria, Quantidade, Data_Validade, 
             tableMapping.ColumnMappings.Add("Morada", "Morada");
             tableMapping.ColumnMappings.Add("Telemovel", "Telemovel");
             tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Obs:", "Obs:");
+            tableMapping.ColumnMappings.Add("Obs", "Obs");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Pessoas] WHERE (([ID_Pessoas] = @Original_ID_Pessoas) AND ([Nome] = @Original_Nome) AND ([Data_Nascimento] = @Original_Data_Nascimento) AND ((@IsNull_Morada = 1 AND [Morada] IS NULL) OR ([Morada] = @Original_Morada)) AND ([Telemovel] = @Original_Telemovel) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([Obs:] = @p2))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Pessoas] WHERE (([ID_Pessoas] = @Original_ID_Pessoas) AND ([Nome] = @Original_Nome) AND ([Data_Nascimento] = @Original_Data_Nascimento) AND ((@IsNull_Morada = 1 AND [Morada] IS NULL) OR ([Morada] = @Original_Morada)) AND ([Telemovel] = @Original_Telemovel) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([Obs] = @p2))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pessoas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8903,29 +8903,29 @@ SELECT ID, Nome, Especie_Animal, Tamanho, Categoria, Quantidade, Data_Validade, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telemovel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telemovel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Pessoas] ([Nome], [Data_Nascimento], [Morada], [Telemovel], [Email], [Obs:]) VALUES (@Nome, @Data_Nascimento, @Morada, @Telemovel, @Email, @p1);
-SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs:] FROM Pessoas WHERE (ID_Pessoas = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Pessoas] ([Nome], [Data_Nascimento], [Morada], [Telemovel], [Email], [Obs]) VALUES (@Nome, @Data_Nascimento, @Morada, @Telemovel, @Email, @p1);
+SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs] FROM Pessoas WHERE (ID_Pessoas = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Nascimento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Nascimento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Morada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Morada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telemovel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telemovel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Pessoas] SET [Nome] = @Nome, [Data_Nascimento] = @Data_Nascimento, [Morada] = @Morada, [Telemovel] = @Telemovel, [Email] = @Email, [Obs:] = @p1 WHERE (([ID_Pessoas] = @Original_ID_Pessoas) AND ([Nome] = @Original_Nome) AND ([Data_Nascimento] = @Original_Data_Nascimento) AND ((@IsNull_Morada = 1 AND [Morada] IS NULL) OR ([Morada] = @Original_Morada)) AND ([Telemovel] = @Original_Telemovel) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([Obs:] = @p2));
-SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs:] FROM Pessoas WHERE (ID_Pessoas = @ID_Pessoas)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Pessoas] SET [Nome] = @Nome, [Data_Nascimento] = @Data_Nascimento, [Morada] = @Morada, [Telemovel] = @Telemovel, [Email] = @Email, [Obs] = @p1 WHERE (([ID_Pessoas] = @Original_ID_Pessoas) AND ([Nome] = @Original_Nome) AND ([Data_Nascimento] = @Original_Data_Nascimento) AND ((@IsNull_Morada = 1 AND [Morada] IS NULL) OR ([Morada] = @Original_Morada)) AND ([Telemovel] = @Original_Telemovel) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([Obs] = @p2));
+SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs] FROM Pessoas WHERE (ID_Pessoas = @ID_Pessoas)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Nascimento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Nascimento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Morada", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Morada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telemovel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telemovel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pessoas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_Nascimento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Nascimento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8934,7 +8934,7 @@ SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs:] FROM 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telemovel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telemovel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs:", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Obs", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pessoas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pessoas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -8951,7 +8951,7 @@ SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs:] FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs:] FROM d" +
+            this._commandCollection[0].CommandText = "SELECT ID_Pessoas, Nome, Data_Nascimento, Morada, Telemovel, Email, [Obs] FROM d" +
                 "bo.Pessoas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }

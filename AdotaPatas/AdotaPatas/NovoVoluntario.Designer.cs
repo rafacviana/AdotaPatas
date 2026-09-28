@@ -140,7 +140,7 @@
             obs_Label.Name = "obs_Label";
             obs_Label.Size = new System.Drawing.Size(39, 20);
             obs_Label.TabIndex = 27;
-            obs_Label.Text = "Obs:";
+            obs_Label.Text = "Obs";
             // 
             // data_InicioLabel
             // 
@@ -307,7 +307,7 @@
             // 
             // obs_TextBox
             // 
-            this.obs_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Obs:", true));
+            this.obs_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Obs", true));
             this.obs_TextBox.Location = new System.Drawing.Point(109, 225);
             this.obs_TextBox.Multiline = true;
             this.obs_TextBox.Name = "obs_TextBox";
