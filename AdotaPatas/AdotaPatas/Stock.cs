@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace AdotaPatas
 {
     public partial class Stock : Form
@@ -28,25 +27,25 @@ namespace AdotaPatas
             this.Validate();
             this.consumiveisBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (txtNome.Text == "" ||
-            txtEspecie.Text == "" ||
-            txtTamanho.Text == "" ||
-            txtCategoria.Text == "" ||
-            txtQuantidade.Text == "")
-
+                txtEspecie.Text == "" ||
+                txtTamanho.Text == "" ||
+                txtCategoria.Text == "" ||
+                txtQuantidade.Text == "")
             {
                 MessageBox.Show("Preencha os campos obrigatórios.");
                 return;
             }
+           
 
             AbrigoDataSet.ConsumiveisRow linha;
 
             linha = abrigoDataSet.Consumiveis.NewConsumiveisRow();
+
             linha.Nome = txtNome.Text;
             linha.Especie_Animal = txtEspecie.Text;
             linha.Tamanho = txtTamanho.Text;
@@ -58,7 +57,6 @@ namespace AdotaPatas
             abrigoDataSet.Consumiveis.AddConsumiveisRow(linha);
 
             consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
-
             consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
 
             MessageBox.Show("Consumível adicionado com sucesso!");
@@ -69,7 +67,6 @@ namespace AdotaPatas
         private void button4_Click(object sender, EventArgs e)
         {
             if (txtId.Text == "")
-
             {
                 MessageBox.Show("Selecione um consumível.");
                 return;
@@ -82,9 +79,7 @@ namespace AdotaPatas
             linha = abrigoDataSet.Consumiveis.FindByID(id);
 
             if (linha != null)
-
             {
-
                 linha.Nome = txtNome.Text;
                 linha.Especie_Animal = txtEspecie.Text;
                 linha.Tamanho = txtTamanho.Text;
@@ -94,14 +89,11 @@ namespace AdotaPatas
                 linha.Obs = txtObser.Text;
 
                 consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
-
                 consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
 
                 MessageBox.Show("Consumível alterado com sucesso!");
             }
-
             else
-
             {
                 MessageBox.Show("Consumível não encontrado.");
             }
@@ -126,7 +118,6 @@ namespace AdotaPatas
                 linha.Delete();
 
                 consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
-
                 consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
 
                 MessageBox.Show("Consumível eliminado com sucesso!");
@@ -143,18 +134,22 @@ namespace AdotaPatas
         {
             if (txtPesqui.Text == "")
             {
-                MessageBox.Show("Introduza o ID do consumível.");
+                consumiveisBindingSource.RemoveFilter();
                 return;
             }
 
-            int id = Convert.ToInt32(txtPesqui.Text);
+            int id;
 
-            AbrigoDataSet.ConsumiveisRow linha;
+            if (!int.TryParse(txtPesqui.Text, out id))
+            {
+                MessageBox.Show("Introduza um ID válido.");
+                return;
+            }
 
-            linha = abrigoDataSet.Consumiveis.FindByID(id);
+            AbrigoDataSet.ConsumiveisRow linha =
+                abrigoDataSet.Consumiveis.FindByID(id);
 
             if (linha != null)
-
             {
                 txtId.Text = linha.ID.ToString();
                 txtNome.Text = linha.Nome;
@@ -173,7 +168,7 @@ namespace AdotaPatas
                     txtObser.Text = linha.Obs;
                 }
 
-                MessageBox.Show("Consumível encontrado!");
+                consumiveisBindingSource.Filter = "ID = " + id;
             }
             else
             {
@@ -192,11 +187,14 @@ namespace AdotaPatas
             txtNome.Text = "";
             txtEspecie.Text = "";
             txtTamanho.Text = "";
+            txtCategoria.Text = "";
             txtQuantidade.Text = "";
             txtObser.Text = "";
             txtPesqui.Text = "";
 
             data_ValidadeDateTimePicker.Value = DateTime.Now;
+
+            consumiveisBindingSource.RemoveFilter();
 
             consumiveisDataGridView.ClearSelection();
         }
@@ -231,6 +229,16 @@ namespace AdotaPatas
                 {
                     txtObser.Text = "";
                 }
+            }
+        }
+
+        private void txtPesqui_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPesqui.Text))
+            {
+                consumiveisBindingSource.RemoveFilter();
+                consumiveisBindingSource.Position = -1;
+                consumiveisDataGridView.ClearSelection();
             }
         }
     }
