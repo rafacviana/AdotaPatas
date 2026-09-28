@@ -33,28 +33,18 @@ namespace AdotaPatas
                     return;
                 }
 
-                bool utilizadorExiste = false;
-                bool passwordCorreta = false;
+                DataRow utilizadorEncontrado = null;
 
                 foreach (DataRow linha in abrigoDataSet.Utilizadores.Rows)
                 {
-                    string utilizador = linha["Utilizador"].ToString();
-                    string password = linha["Password"].ToString();
-
-                    if (utilizador == txtUtil.Text)
+                    if (linha["Utilizador"].ToString() == txtUtil.Text)
                     {
-                        utilizadorExiste = true;
-
-                        if (password == txtPasse.Text)
-                        {
-                            passwordCorreta = true;
-                        }
-
+                        utilizadorEncontrado = linha;
                         break;
                     }
                 }
 
-                if (!utilizadorExiste)
+                if (utilizadorEncontrado == null)
                 {
                     MessageBox.Show("O utilizador nao se encontra registado!");
                     txtUtil.Text = "";
@@ -62,12 +52,16 @@ namespace AdotaPatas
                     return;
                 }
 
-                if (!passwordCorreta)
+                string passwordGuardada = utilizadorEncontrado["Password"].ToString();
+
+                if (passwordGuardada != txtPasse.Text)
                 {
                     MessageBox.Show("A password nao esta correta");
                     txtPasse.Text = "";
                     return;
                 }
+
+                MessageBox.Show("Login efetuado com sucesso!");
 
                 Menu menu = new Menu();
                 menu.Show(this);
