@@ -45,5 +45,19 @@ namespace AdotaPatas
             Voluntarios.BringToFront();
            
         }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            Stock stock = new Stock();
+            stock.Show();
+            this.Hide();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            Atividades atividades = new Atividades();
+            atividades.Show();
+            this.Hide();
+        }
     }
 }

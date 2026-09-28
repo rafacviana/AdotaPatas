@@ -41,6 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -48,26 +49,25 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusData = new System.Windows.Forms.ToolStripStatusLabel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelNavegacao.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(-4, 59);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel.Location = new System.Drawing.Point(-56, 92);
+            this.panel.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1106, 0);
+            this.panel.Size = new System.Drawing.Size(1659, 0);
             this.panel.TabIndex = 19;
             // 
             // panelNavegacao
@@ -76,8 +76,9 @@
             this.panelNavegacao.Controls.Add(this.flowLayoutPanel3);
             this.panelNavegacao.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNavegacao.Location = new System.Drawing.Point(0, 0);
+            this.panelNavegacao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelNavegacao.Name = "panelNavegacao";
-            this.panelNavegacao.Size = new System.Drawing.Size(210, 684);
+            this.panelNavegacao.Size = new System.Drawing.Size(315, 1018);
             this.panelNavegacao.TabIndex = 18;
             // 
             // flowLayoutPanel1
@@ -94,10 +95,11 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 81);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 125);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 603);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(315, 893);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -109,15 +111,16 @@
             this.btnDash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDash.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDash.ForeColor = System.Drawing.Color.White;
-            this.btnDash.Location = new System.Drawing.Point(12, 11);
-            this.btnDash.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDash.Location = new System.Drawing.Point(18, 17);
+            this.btnDash.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnDash.Name = "btnDash";
-            this.btnDash.Size = new System.Drawing.Size(188, 40);
+            this.btnDash.Size = new System.Drawing.Size(282, 62);
             this.btnDash.TabIndex = 16;
-            this.btnDash.Text = "Dashboard";
+            this.btnDash.Text = "Stock";
             this.btnDash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDash.UseVisualStyleBackColor = false;
+            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
             // btnAnimais
             // 
@@ -127,10 +130,10 @@
             this.btnAnimais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnimais.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnimais.ForeColor = System.Drawing.Color.White;
-            this.btnAnimais.Location = new System.Drawing.Point(12, 57);
-            this.btnAnimais.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAnimais.Location = new System.Drawing.Point(18, 89);
+            this.btnAnimais.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAnimais.Name = "btnAnimais";
-            this.btnAnimais.Size = new System.Drawing.Size(188, 40);
+            this.btnAnimais.Size = new System.Drawing.Size(282, 62);
             this.btnAnimais.TabIndex = 8;
             this.btnAnimais.Text = "Animais";
             this.btnAnimais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,10 +149,10 @@
             this.btnVoluntarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoluntarios.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoluntarios.ForeColor = System.Drawing.Color.White;
-            this.btnVoluntarios.Location = new System.Drawing.Point(12, 103);
-            this.btnVoluntarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnVoluntarios.Location = new System.Drawing.Point(18, 161);
+            this.btnVoluntarios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnVoluntarios.Name = "btnVoluntarios";
-            this.btnVoluntarios.Size = new System.Drawing.Size(188, 40);
+            this.btnVoluntarios.Size = new System.Drawing.Size(282, 62);
             this.btnVoluntarios.TabIndex = 9;
             this.btnVoluntarios.Text = "Voluntarios";
             this.btnVoluntarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,10 +168,10 @@
             this.btnAdopcoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdopcoes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdopcoes.ForeColor = System.Drawing.Color.White;
-            this.btnAdopcoes.Location = new System.Drawing.Point(12, 149);
-            this.btnAdopcoes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAdopcoes.Location = new System.Drawing.Point(18, 233);
+            this.btnAdopcoes.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAdopcoes.Name = "btnAdopcoes";
-            this.btnAdopcoes.Size = new System.Drawing.Size(188, 40);
+            this.btnAdopcoes.Size = new System.Drawing.Size(282, 62);
             this.btnAdopcoes.TabIndex = 10;
             this.btnAdopcoes.Text = "Adopcoes";
             this.btnAdopcoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,15 +186,16 @@
             this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEventos.ForeColor = System.Drawing.Color.White;
-            this.btnEventos.Location = new System.Drawing.Point(12, 195);
-            this.btnEventos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEventos.Location = new System.Drawing.Point(18, 305);
+            this.btnEventos.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnEventos.Name = "btnEventos";
-            this.btnEventos.Size = new System.Drawing.Size(188, 40);
+            this.btnEventos.Size = new System.Drawing.Size(282, 62);
             this.btnEventos.TabIndex = 11;
-            this.btnEventos.Text = "Eventos";
+            this.btnEventos.Text = "Atividades";
             this.btnEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEventos.UseVisualStyleBackColor = false;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // btnDefinicoes
             // 
@@ -201,10 +205,10 @@
             this.btnDefinicoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDefinicoes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDefinicoes.ForeColor = System.Drawing.Color.White;
-            this.btnDefinicoes.Location = new System.Drawing.Point(12, 241);
-            this.btnDefinicoes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDefinicoes.Location = new System.Drawing.Point(18, 377);
+            this.btnDefinicoes.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnDefinicoes.Name = "btnDefinicoes";
-            this.btnDefinicoes.Size = new System.Drawing.Size(188, 40);
+            this.btnDefinicoes.Size = new System.Drawing.Size(282, 62);
             this.btnDefinicoes.TabIndex = 12;
             this.btnDefinicoes.Text = "Definicoes";
             this.btnDefinicoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,10 +223,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(12, 287);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button6.Location = new System.Drawing.Point(18, 449);
+            this.button6.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(188, 40);
+            this.button6.Size = new System.Drawing.Size(282, 62);
             this.button6.TabIndex = 13;
             this.button6.Text = "Terminar Sessao";
             this.button6.UseVisualStyleBackColor = false;
@@ -232,9 +236,10 @@
             this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(11, 333);
+            this.button2.Location = new System.Drawing.Point(16, 521);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 283);
+            this.button2.Size = new System.Drawing.Size(112, 435);
             this.button2.TabIndex = 18;
             this.button2.Text = " ";
             this.button2.UseVisualStyleBackColor = false;
@@ -249,10 +254,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 622);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Location = new System.Drawing.Point(18, 966);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 40);
+            this.button1.Size = new System.Drawing.Size(282, 62);
             this.button1.TabIndex = 17;
             this.button1.Text = "Definicoes";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,31 +271,46 @@
             this.flowLayoutPanel3.Controls.Add(this.label3);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(210, 81);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(315, 125);
             this.flowLayoutPanel3.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::AdotaPatas.Properties.Resources.imgLogin;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 108);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(84, 0);
+            this.label3.Location = new System.Drawing.Point(124, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 73);
+            this.label3.Size = new System.Drawing.Size(150, 112);
             this.label3.TabIndex = 0;
             this.label3.Text = "AdotaPatas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusUtilizador,
             this.toolStripStatusLabel2,
             this.toolStripStatusData});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 684);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1018);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1316, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1924, 32);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -299,14 +319,14 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(158)))), ((int)(((byte)(79)))));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(117, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(180, 25);
             this.toolStripStatusLabel1.Text = "Ligado — SQL Server";
             // 
             // toolStripStatusUtilizador
             // 
             this.toolStripStatusUtilizador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
             this.toolStripStatusUtilizador.Name = "toolStripStatusUtilizador";
-            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(1001, 17);
+            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(1430, 25);
             this.toolStripStatusUtilizador.Spring = true;
             this.toolStripStatusUtilizador.Text = "Utilizador:";
             // 
@@ -315,14 +335,14 @@
             this.toolStripStatusLabel2.BackColor = System.Drawing.Color.White;
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(88, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(136, 25);
             this.toolStripStatusLabel2.Text = "AdotaPatas  1.0";
             // 
             // toolStripStatusData
             // 
             this.toolStripStatusData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
             this.toolStripStatusData.Name = "toolStripStatusData";
-            this.toolStripStatusData.Size = new System.Drawing.Size(95, 17);
+            this.toolStripStatusData.Size = new System.Drawing.Size(155, 25);
             this.toolStripStatusData.Text = "18/07/2026 16:23";
             // 
             // flowLayoutPanel2
@@ -332,64 +352,57 @@
             this.flowLayoutPanel2.Controls.Add(this.panel);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(210, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(315, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1106, 53);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1609, 82);
             this.flowLayoutPanel2.TabIndex = 22;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::AdotaPatas.Properties.Resources.sair_branco_64;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(1493, 5);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(112, 77);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(210, 53);
+            this.panel1.Location = new System.Drawing.Point(315, 82);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 631);
+            this.panel1.Size = new System.Drawing.Size(1609, 936);
             this.panel1.TabIndex = 23;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::AdotaPatas.Properties.Resources.sair_branco_64;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(1028, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 50);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AdotaPatas.Properties.Resources.imgLogin;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 70);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 706);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panelNavegacao);
             this.Controls.Add(this.statusStrip1);
-            this.MaximumSize = new System.Drawing.Size(1332, 745);
-            this.MinimumSize = new System.Drawing.Size(1332, 718);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1987, 1116);
+            this.MinimumSize = new System.Drawing.Size(1918, 1018);
             this.Name = "Menu";
             this.Text = "Menu";
             this.panelNavegacao.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
