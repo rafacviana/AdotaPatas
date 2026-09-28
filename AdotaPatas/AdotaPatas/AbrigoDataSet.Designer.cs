@@ -6404,11 +6404,39 @@ SELECT ID_Pessoa, BI, Profissao, ID_Habitacao, Espaco_Esterior, Habitacao_Arrend
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT ID_Pessoa, BI, Profissao, ID_Habitacao, Espaco_Esterior, Habitacao_Arrendada, Autorizacao_Senhorio, N_Agregados, Criancas, Outros_Animais, Horas_sozinho_dia, Experiencia_Previa, Motivo_Adocao, Aceita_Acompanhamento, Estado_Candidatura, Data_Candidatura, Motivo_Recusa FROM dbo.Adotante";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT 
+    p.ID_Pessoas, 
+    p.Nome, 
+    p.Morada, 
+    p.Telemovel, 
+    p.Email, 
+    a.ID_Pessoa, 
+    a.BI, 
+    a.Profissao, 
+    a.ID_Habitacao, 
+    a.Espaco_Esterior, 
+    a.Habitacao_Arrendada, 
+    a.Autorizacao_Senhorio, 
+    a.N_Agregados, 
+    a.Criancas, 
+    a.Outros_Animais, 
+    a.Horas_sozinho_dia, 
+    a.Experiencia_Previa, 
+    a.Motivo_Adocao, 
+    a.Aceita_Acompanhamento, 
+    a.Estado_Candidatura, 
+    a.Data_Candidatura, 
+    a.Motivo_Recusa
+FROM Pessoas p
+INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6430,6 +6458,30 @@ SELECT ID_Pessoa, BI, Profissao, ID_Habitacao, Espaco_Esterior, Habitacao_Arrend
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual AbrigoDataSet.AdotanteDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            AbrigoDataSet.AdotanteDataTable dataTable = new AbrigoDataSet.AdotanteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillComPessoas(AbrigoDataSet.AdotanteDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AbrigoDataSet.AdotanteDataTable GetDataComPessoas() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             AbrigoDataSet.AdotanteDataTable dataTable = new AbrigoDataSet.AdotanteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

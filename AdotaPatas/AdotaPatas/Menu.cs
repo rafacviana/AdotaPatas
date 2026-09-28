@@ -36,32 +36,36 @@ namespace AdotaPatas
         private void btnVoluntarios_Click(object sender, EventArgs e)
         {
             Voluntario Voluntarios = new Voluntario();
-            Voluntarios.Show();
             Voluntarios.TopLevel = false;
             panel1.Controls.Clear();
             //Voluntarios.Dock = DockStyle.Fill;
             panel1.Controls.Add(Voluntarios);
 
             Voluntarios.BringToFront();
-           
+            Voluntarios.Show();
+
         }
 
         private void btnAdopcoes_Click(object sender, EventArgs e)
         {
             Adopcoes Adopcoes = new Adopcoes();
-            Adopcoes.Show();
             Adopcoes.TopLevel = false;
             panel1.Controls.Clear();
             panel1.Controls.Add(Adopcoes);
+            Adopcoes.Show();
 
 
         }
 
         private void btnDash_Click(object sender, EventArgs e)
         {
-            Adoptantes Adoptantes = new Adoptantes();
-            Adoptantes.Show();
-
+            ListarAdotantes listarAdotantes = new ListarAdotantes();
+            listarAdotantes.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(listarAdotantes);
+            listarAdotantes.Dock = DockStyle.Fill;
+            listarAdotantes.BringToFront();
+            listarAdotantes.Show();
         }
     }
 }
