@@ -19,10 +19,18 @@ namespace AdotaPatas
 
         private void label3_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog();
             this.Hide();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Login)
+                {
+                    form.Show();
+                    return;
+                }
+            }
         }
+        
 
         private void utilizadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

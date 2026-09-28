@@ -105,6 +105,7 @@ namespace AdotaPatas
             {
                 Registrar regista = new Registrar();
                 regista.Show();
+                this.Hide();
             }
             catch
             {
