@@ -143,7 +143,6 @@
     </None>
     <None Include="AbrigoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AbrigoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="AbrigoDataSet.xss">
