@@ -48,6 +48,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.utilizadoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // utilizadorLabel
+            // 
+            utilizadorLabel.AutoSize = true;
+            utilizadorLabel.Location = new System.Drawing.Point(752, 181);
+            utilizadorLabel.Name = "utilizadorLabel";
+            utilizadorLabel.Size = new System.Drawing.Size(110, 30);
+            utilizadorLabel.TabIndex = 8;
+            utilizadorLabel.Text = "Utilizador:";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(752, 241);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(108, 30);
+            passwordLabel.TabIndex = 10;
+            passwordLabel.Text = "Password:";
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -127,35 +145,15 @@
             this.tableAdapterManager.UtilizadoresTableAdapter = this.utilizadoresTableAdapter;
             this.tableAdapterManager.VoluntariosTableAdapter = null;
             // 
-            // utilizadorLabel
-            // 
-            utilizadorLabel.AutoSize = true;
-            utilizadorLabel.Location = new System.Drawing.Point(752, 181);
-            utilizadorLabel.Name = "utilizadorLabel";
-            utilizadorLabel.Size = new System.Drawing.Size(110, 30);
-            utilizadorLabel.TabIndex = 8;
-            utilizadorLabel.Text = "Utilizador:";
-            // 
             // txtUtil
             // 
-            this.txtUtil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utilizadoresBindingSource, "Utilizador", true));
             this.txtUtil.Location = new System.Drawing.Point(868, 178);
             this.txtUtil.Name = "txtUtil";
             this.txtUtil.Size = new System.Drawing.Size(324, 37);
             this.txtUtil.TabIndex = 9;
             // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(752, 241);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(108, 30);
-            passwordLabel.TabIndex = 10;
-            passwordLabel.Text = "Password:";
-            // 
             // txtPasse
             // 
-            this.txtPasse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.utilizadoresBindingSource, "Password", true));
             this.txtPasse.Location = new System.Drawing.Point(868, 238);
             this.txtPasse.Name = "txtPasse";
             this.txtPasse.Size = new System.Drawing.Size(324, 37);
