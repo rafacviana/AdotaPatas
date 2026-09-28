@@ -222,6 +222,7 @@
             this.consumiveisDataGridView.RowTemplate.Height = 28;
             this.consumiveisDataGridView.Size = new System.Drawing.Size(1206, 399);
             this.consumiveisDataGridView.TabIndex = 21;
+            this.consumiveisDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.consumiveisDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

@@ -32,31 +32,6 @@ namespace AdotaPatas
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                txtAtivi.Text = dataGridView1.CurrentRow.Cells["ID_Atividade"].Value.ToString();
-                txtAnimal.Text = dataGridView1.CurrentRow.Cells["ID_Animal"].Value.ToString();
-                txtPessoa.Text = dataGridView1.CurrentRow.Cells["ID_Pessoa"].Value.ToString();
-                txtFuncao.Text = dataGridView1.CurrentRow.Cells["ID_Funcao"].Value.ToString();
-                txtDuracao.Text = dataGridView1.CurrentRow.Cells["Duracao_min"].Value.ToString();
-
-                dateTimePickerData.Value = Convert.ToDateTime(
-                    dataGridView1.CurrentRow.Cells["Data"].Value);
-
-                if (dataGridView1.CurrentRow.Cells["Obs"].Value != null)
-                {
-                    txtObs.Text = dataGridView1.CurrentRow.Cells["Obs"].Value.ToString();
-                }
-                else
-                {
-                    txtObs.Text = "";
-                }
-            }
-        }
-
-        
         private void button2_Click(object sender, EventArgs e)
         {
             if (txtAnimal.Text == "" ||
@@ -75,8 +50,8 @@ namespace AdotaPatas
             linha.ID_Animal = Convert.ToInt32(txtAnimal.Text);
             linha.ID_Pessoa = Convert.ToInt32(txtPessoa.Text);
             linha.ID_Funcao = Convert.ToInt32(txtFuncao.Text);
-            linha.Data = dateTimePickerData.Value;
-            linha.Duracao_min = Convert.ToInt32(txtDuracao.Text);
+            linha.Data = dataDateTimePicker.Value;
+            linha.Duracao_min = byte.Parse(txtDuracao.Text);
             linha.Obs = txtObs.Text;
 
             abrigoDataSet.Atividades.AddAtividadesRow(linha);
@@ -107,8 +82,8 @@ namespace AdotaPatas
                 linha.ID_Animal = Convert.ToInt32(txtAnimal.Text);
                 linha.ID_Pessoa = Convert.ToInt32(txtPessoa.Text);
                 linha.ID_Funcao = Convert.ToInt32(txtFuncao.Text);
-                linha.Data = dateTimePickerData.Value;
-                linha.Duracao_min = Convert.ToInt32(txtDuracao.Text);
+                linha.Data = dataDateTimePicker.Value;
+                linha.Duracao_min = byte.Parse(txtDuracao.Text);
                 linha.Obs = txtObs.Text;
 
                 atividadesTableAdapter.Update(abrigoDataSet.Atividades);
@@ -168,9 +143,9 @@ namespace AdotaPatas
             txtObs.Text = "";
             txtPesq.Text = "";
 
-            dateTimePickerData.Value = DateTime.Now;
+            dataDateTimePicker.Value = DateTime.Now;
 
-            dataGridView1.ClearSelection();
+            atividadesDataGridView.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -193,7 +168,7 @@ namespace AdotaPatas
                 txtAnimal.Text = linha.ID_Animal.ToString();
                 txtPessoa.Text = linha.ID_Pessoa.ToString();
                 txtFuncao.Text = linha.ID_Funcao.ToString();
-                dateTimePickerData.Value = linha.Data;
+                dataDateTimePicker.Value = linha.Data;
                 txtDuracao.Text = linha.Duracao_min.ToString();
 
                 if (linha.IsObsNull())
@@ -212,6 +187,29 @@ namespace AdotaPatas
                 MessageBox.Show("Atividade não encontrada.");
             }
         }
+
+        private void atividadesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (atividadesDataGridView.CurrentRow != null)
+            {
+                txtAtivi.Text = atividadesDataGridView.CurrentRow.Cells["ID_Atividade"].Value.ToString();
+                txtAnimal.Text = atividadesDataGridView.CurrentRow.Cells["ID_Animal"].Value.ToString();
+                txtPessoa.Text = atividadesDataGridView.CurrentRow.Cells["ID_Pessoa"].Value.ToString();
+                txtFuncao.Text = atividadesDataGridView.CurrentRow.Cells["ID_Funcao"].Value.ToString();
+                txtDuracao.Text = atividadesDataGridView.CurrentRow.Cells["Duracao_min"].Value.ToString();
+
+                dataDateTimePicker.Value = Convert.ToDateTime(
+                    atividadesDataGridView.CurrentRow.Cells["Data"].Value);
+
+                if (atividadesDataGridView.CurrentRow.Cells["Obs"].Value != null)
+                {
+                    txtObs.Text = atividadesDataGridView.CurrentRow.Cells["Obs"].Value.ToString();
+                }
+                else
+                {
+                    txtObs.Text = "";
+                }
+            }
+        }
     }
     }
-}

@@ -21,45 +21,61 @@ namespace AdotaPatas
         {
             try
             {
-                if (txtUtilizador.Text == "")
+                if (txtUtil.Text == "")
                 {
                     MessageBox.Show("Introduza o utilizador.");
                     return;
                 }
 
-                if (txtPass.Text == "")
+                if (txtPasse.Text == "")
                 {
                     MessageBox.Show("Introduza a password.");
                     return;
                 }
 
-                int existe = (int)this.utilizadoresTableAdapter.VerificarUser(txtUtilizador.Text);
-                int pass = (int)this.utilizadoresTableAdapter.VerificarPass(txtUtilizador.Text, txtPass.Text);
+                bool utilizadorExiste = false;
+                bool passwordCorreta = false;
 
-                if (existe > 0)
+                foreach (DataRow linha in abrigoDataSet.Utilizadores.Rows)
                 {
-                    if (pass > 0)
+                    string utilizador = linha["Utilizador"].ToString();
+                    string password = linha["Password"].ToString();
+
+                    if (utilizador == txtUtil.Text)
                     {
-                        Menu menu = new Menu(txtUtilizador.Text);
-                        menu.Show(this);
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("A password nao esta correta");
-                        txtPass.Text = "";
+                        utilizadorExiste = true;
+
+                        if (password == txtPasse.Text)
+                        {
+                            passwordCorreta = true;
+                        }
+
+                        break;
                     }
                 }
-                else
+
+                if (!utilizadorExiste)
                 {
                     MessageBox.Show("O utilizador nao se encontra registado!");
-                    txtUtilizador.Text = "";
-                    txtPass.Text = "";
+                    txtUtil.Text = "";
+                    txtPasse.Text = "";
+                    return;
                 }
+
+                if (!passwordCorreta)
+                {
+                    MessageBox.Show("A password nao esta correta");
+                    txtPasse.Text = "";
+                    return;
+                }
+
+                Menu menu = new Menu();
+                menu.Show(this);
+                this.Hide();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar iniciar sessão.");
+                MessageBox.Show("Ocorreu um erro ao tentar iniciar sessão: " + ex.Message);
             }
         }
 
