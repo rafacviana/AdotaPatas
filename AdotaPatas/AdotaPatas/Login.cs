@@ -21,40 +21,40 @@ namespace AdotaPatas
         {
             try
             {
-                if (txtUtilizador.Text == "")
+                if (txtUtil.Text == "")
                 {
                     MessageBox.Show("Introduza o utilizador.");
                     return;
                 }
 
-                if (txtPass.Text == "")
+                if (txtPasse.Text == "")
                 {
                     MessageBox.Show("Introduza a password.");
                     return;
                 }
 
-                int existe = (int)this.utilizadoresTableAdapter.VerificarUser(txtUtilizador.Text);
-                int pass = (int)this.utilizadoresTableAdapter.VerificarPass(txtUtilizador.Text, txtPass.Text);
+                int existe = (int)this.utilizadoresTableAdapter.VerificarUser(txtUtil.Text);
+                int pass = (int)this.utilizadoresTableAdapter.VerificarPass(txtUtil.Text, txtPasse.Text);
 
                 if (existe > 0)
                 {
                     if (pass > 0)
                     {
-                        Menu menu = new Menu(txtUtilizador.Text);
+                        Menu menu = new Menu(txtUtil.Text);
                         menu.Show(this);
                         this.Hide();
                     }
                     else
                     {
                         MessageBox.Show("A password nao esta correta");
-                        txtPass.Text = "";
+                        txtPasse.Text = "";
                     }
                 }
                 else
                 {
                     MessageBox.Show("O utilizador nao se encontra registado!");
-                    txtUtilizador.Text = "";
-                    txtPass.Text = "";
+                    txtUtil.Text = "";
+                    txtPasse.Text = "";
                 }
             }
             catch

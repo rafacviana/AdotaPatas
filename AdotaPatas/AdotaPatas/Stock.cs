@@ -117,7 +117,7 @@ namespace AdotaPatas
                 linha.Especie_Animal = txtEspecie.Text;
                 linha.Tamanho = txtTamanho.Text;
                 linha.Categoria = txtCategoria.Text;
-                linha.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                linha.Quantidade = txtQuantidade.Text;
                 linha.Data_Validade = dateTimePickerValidade.Value;
                 linha.Obs = txtObser.Text;
 
@@ -137,13 +137,13 @@ namespace AdotaPatas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "")
+            if (txtId.Text == "")
             {
                 MessageBox.Show("Selecione um consumível.");
                 return;
             }
 
-            int id = Convert.ToInt32(txtID.Text);
+            int id = Convert.ToInt32(txtId.Text);
 
             AbrigoDataSet.ConsumiveisRow linha;
 
@@ -184,13 +184,13 @@ namespace AdotaPatas
             if (linha != null)
 
             {
-                txtID.Text = linha.ID.ToString();
+                txtId.Text = linha.ID.ToString();
                 txtNome.Text = linha.Nome;
                 txtEspecie.Text = linha.Especie_Animal;
                 txtTamanho.Text = linha.Tamanho;
                 txtCategoria.Text = linha.Categoria;
                 txtQuantidade.Text = linha.Quantidade.ToString();
-                dateTimePickerValidade.Value = linha.Data_Validade;
+                data_ValidadeDateTimePicker.Value = linha.Data_Validade;
 
                 if (linha.IsObsNull())
                 {
@@ -216,17 +216,18 @@ namespace AdotaPatas
 
         private void LimparCampos()
         {
-            txtAtivi.Text = "";
-            txtAnimal.Text = "";
-            txtPessoa.Text = "";
-            txtFuncao.Text = "";
-            txtDuracao.Text = "";
-            txtObs.Text = "";
-            txtPesq.Text = "";
+            txtId.Text = "";
+            txtNome.Text = "";
+            txtEspecie.Text = "";
+            txtTamanho.Text = "";
+            txtCategoria.Text = "";
+            txtQuantidade.Text = "";
+            txtObser.Text = "";
+            txtPesqui.Text = "";
 
-            dateTimePickerData.Value = DateTime.Now;
+            data_ValidadeDateTimePicker.Value = DateTime.Now;
 
-            dataGridView1.ClearSelection();
+            consumiveisDataGridView.ClearSelection();
         }
 
         private void button6_Click(object sender, EventArgs e)
