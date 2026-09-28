@@ -360,7 +360,6 @@
             // 
             // txtId
             // 
-            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "ID", true));
             this.txtId.Location = new System.Drawing.Point(566, 70);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(361, 37);
@@ -368,7 +367,6 @@
             // 
             // txtNome
             // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Nome", true));
             this.txtNome.Location = new System.Drawing.Point(566, 113);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(361, 37);
@@ -376,7 +374,6 @@
             // 
             // txtEspecie
             // 
-            this.txtEspecie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Especie_Animal", true));
             this.txtEspecie.Location = new System.Drawing.Point(566, 156);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(361, 37);
@@ -384,7 +381,6 @@
             // 
             // txtTamanho
             // 
-            this.txtTamanho.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Tamanho", true));
             this.txtTamanho.Location = new System.Drawing.Point(566, 199);
             this.txtTamanho.Name = "txtTamanho";
             this.txtTamanho.Size = new System.Drawing.Size(361, 37);
@@ -392,7 +388,6 @@
             // 
             // txtCategoria
             // 
-            this.txtCategoria.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Categoria", true));
             this.txtCategoria.Location = new System.Drawing.Point(1082, 66);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(361, 37);
@@ -400,7 +395,6 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Quantidade", true));
             this.txtQuantidade.Location = new System.Drawing.Point(1082, 109);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(361, 37);
@@ -416,7 +410,6 @@
             // 
             // txtObser
             // 
-            this.txtObser.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.consumiveisBindingSource, "Obs", true));
             this.txtObser.Location = new System.Drawing.Point(1082, 196);
             this.txtObser.Name = "txtObser";
             this.txtObser.Size = new System.Drawing.Size(361, 37);

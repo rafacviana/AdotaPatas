@@ -15,106 +15,248 @@ namespace AdotaPatas
         public Stock()
         {
             InitializeComponent();
+
+            txtId.DataBindings.Clear();
+            txtNome.DataBindings.Clear();
+            txtEspecie.DataBindings.Clear();
+            txtTamanho.DataBindings.Clear();
+            txtCategoria.DataBindings.Clear();
+            txtQuantidade.DataBindings.Clear();
+            txtObser.DataBindings.Clear();
+            data_ValidadeDateTimePicker.DataBindings.Clear();
+            txtPesqui.DataBindings.Clear();
+
+            consumiveisDataGridView.SelectionChanged += consumiveisDataGridView_SelectionChanged;
+            consumiveisDataGridView.CellClick += consumiveisDataGridView_CellClick;
         }
 
         private void Stock_Load(object sender, EventArgs e)
         {
-            consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
+            try
+            {
+                consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
+
+                consumiveisDataGridView.ClearSelection();
+
+                LimparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar o stock:\n\n" + ex.Message);
+            }
+        }
+
+        private void consumiveisDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            PreencherPelaLinhaSelecionada();
+        }
+
+        private void consumiveisDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                consumiveisDataGridView.Rows[e.RowIndex].Selected = true;
+                PreencherPelaLinhaSelecionada();
+            }
+        }
+
+        private void PreencherPelaLinhaSelecionada()
+        {
+            if (consumiveisDataGridView.CurrentRow == null)
+                return;
+
+            if (consumiveisDataGridView.CurrentRow.IsNewRow)
+                return;
+
+            object item = consumiveisDataGridView.CurrentRow.DataBoundItem;
+
+            if (item == null)
+                return;
+
+            DataRowView dataRowView = item as DataRowView;
+
+            if (dataRowView == null)
+                return;
+
+            DataRow row = dataRowView.Row;
+
+            if (row.IsNull("ID"))
+                return;
+
+            txtId.Text = row["ID"].ToString();
+
+            if (!row.IsNull("Nome"))
+                txtNome.Text = row["Nome"].ToString();
+            else
+                txtNome.Text = "";
+
+            if (!row.IsNull("Especie_Animal"))
+                txtEspecie.Text = row["Especie_Animal"].ToString();
+            else
+                txtEspecie.Text = "";
+
+            if (!row.IsNull("Tamanho"))
+                txtTamanho.Text = row["Tamanho"].ToString();
+            else
+                txtTamanho.Text = "";
+
+            if (!row.IsNull("Categoria"))
+                txtCategoria.Text = row["Categoria"].ToString();
+            else
+                txtCategoria.Text = "";
+
+            if (!row.IsNull("Quantidade"))
+                txtQuantidade.Text = row["Quantidade"].ToString();
+            else
+                txtQuantidade.Text = "";
+
+            if (!row.IsNull("Data_Validade"))
+            {
+                data_ValidadeDateTimePicker.Value =
+                    Convert.ToDateTime(row["Data_Validade"]);
+            }
+
+            if (row.Table.Columns.Contains("Obs") && !row.IsNull("Obs"))
+                txtObser.Text = row["Obs"].ToString();
+            else
+                txtObser.Text = "";
         }
 
         private void consumiveisBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.consumiveisBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+            try
+            {
+                Validate();
+                consumiveisBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(abrigoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao guardar:\n\n" + ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == "" ||
-                txtEspecie.Text == "" ||
-                txtTamanho.Text == "" ||
-                txtCategoria.Text == "" ||
-                txtQuantidade.Text == "")
+            if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                string.IsNullOrWhiteSpace(txtEspecie.Text) ||
+                string.IsNullOrWhiteSpace(txtTamanho.Text) ||
+                string.IsNullOrWhiteSpace(txtCategoria.Text) ||
+                string.IsNullOrWhiteSpace(txtQuantidade.Text))
             {
                 MessageBox.Show("Preencha os campos obrigatórios.");
                 return;
             }
-           
 
-            AbrigoDataSet.ConsumiveisRow linha;
-
-            linha = abrigoDataSet.Consumiveis.NewConsumiveisRow();
-
-            linha.Nome = txtNome.Text;
-            linha.Especie_Animal = txtEspecie.Text;
-            linha.Tamanho = txtTamanho.Text;
-            linha.Categoria = txtCategoria.Text;
-            linha.Quantidade = txtQuantidade.Text;
-            linha.Data_Validade = data_ValidadeDateTimePicker.Value;
-            linha.Obs = txtObser.Text;
-
-            abrigoDataSet.Consumiveis.AddConsumiveisRow(linha);
-
-            consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
-            consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
-
-            MessageBox.Show("Consumível adicionado com sucesso!");
-
-            LimparCampos();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (txtId.Text == "")
+            try
             {
-                MessageBox.Show("Selecione um consumível.");
-                return;
-            }
+                AbrigoDataSet.ConsumiveisRow linha =
+                    abrigoDataSet.Consumiveis.NewConsumiveisRow();
 
-            int id = Convert.ToInt32(txtId.Text);
-
-            AbrigoDataSet.ConsumiveisRow linha;
-
-            linha = abrigoDataSet.Consumiveis.FindByID(id);
-
-            if (linha != null)
-            {
                 linha.Nome = txtNome.Text;
                 linha.Especie_Animal = txtEspecie.Text;
                 linha.Tamanho = txtTamanho.Text;
                 linha.Categoria = txtCategoria.Text;
                 linha.Quantidade = txtQuantidade.Text;
                 linha.Data_Validade = data_ValidadeDateTimePicker.Value;
-                linha.Obs = txtObser.Text;
+
+                if (string.IsNullOrWhiteSpace(txtObser.Text))
+                    linha.SetObsNull();
+                else
+                    linha.Obs = txtObser.Text;
+
+                abrigoDataSet.Consumiveis.AddConsumiveisRow(linha);
+
+                consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
+                consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
+
+                MessageBox.Show("Consumível adicionado com sucesso!");
+
+                LimparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar:\n\n" + ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Selecione um consumível.");
+                return;
+            }
+
+            int id;
+
+            if (!int.TryParse(txtId.Text, out id))
+            {
+                MessageBox.Show("ID inválido.");
+                return;
+            }
+
+            try
+            {
+                AbrigoDataSet.ConsumiveisRow linha =
+                    abrigoDataSet.Consumiveis.FindByID(id);
+
+                if (linha == null)
+                {
+                    MessageBox.Show("Consumível não encontrado.");
+                    return;
+                }
+
+                linha.Nome = txtNome.Text;
+                linha.Especie_Animal = txtEspecie.Text;
+                linha.Tamanho = txtTamanho.Text;
+                linha.Categoria = txtCategoria.Text;
+                linha.Quantidade = txtQuantidade.Text;
+                linha.Data_Validade = data_ValidadeDateTimePicker.Value;
+
+                if (string.IsNullOrWhiteSpace(txtObser.Text))
+                    linha.SetObsNull();
+                else
+                    linha.Obs = txtObser.Text;
 
                 consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
                 consumiveisTableAdapter.Fill(abrigoDataSet.Consumiveis);
 
                 MessageBox.Show("Consumível alterado com sucesso!");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Consumível não encontrado.");
+                MessageBox.Show("Erro ao alterar:\n\n" + ex.Message);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
+            if (string.IsNullOrWhiteSpace(txtId.Text))
             {
                 MessageBox.Show("Selecione um consumível.");
                 return;
             }
 
-            int id = Convert.ToInt32(txtId.Text);
+            int id;
 
-            AbrigoDataSet.ConsumiveisRow linha;
-
-            linha = abrigoDataSet.Consumiveis.FindByID(id);
-
-            if (linha != null)
+            if (!int.TryParse(txtId.Text, out id))
             {
+                MessageBox.Show("ID inválido.");
+                return;
+            }
+
+            try
+            {
+                AbrigoDataSet.ConsumiveisRow linha =
+                    abrigoDataSet.Consumiveis.FindByID(id);
+
+                if (linha == null)
+                {
+                    MessageBox.Show("Consumível não encontrado.");
+                    return;
+                }
+
                 linha.Delete();
 
                 consumiveisTableAdapter.Update(abrigoDataSet.Consumiveis);
@@ -124,17 +266,17 @@ namespace AdotaPatas
 
                 LimparCampos();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Consumível não encontrado.");
+                MessageBox.Show("Erro ao eliminar:\n\n" + ex.Message);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtPesqui.Text == "")
+            if (string.IsNullOrWhiteSpace(txtPesqui.Text))
             {
-                consumiveisBindingSource.RemoveFilter();
+                MessageBox.Show("Introduza o ID do consumível.");
                 return;
             }
 
@@ -146,33 +288,49 @@ namespace AdotaPatas
                 return;
             }
 
-            AbrigoDataSet.ConsumiveisRow linha =
-                abrigoDataSet.Consumiveis.FindByID(id);
-
-            if (linha != null)
+            try
             {
+                AbrigoDataSet.ConsumiveisRow linha =
+                    abrigoDataSet.Consumiveis.FindByID(id);
+
+                if (linha == null)
+                {
+                    MessageBox.Show("Consumível não encontrado.");
+                    return;
+                }
+
                 txtId.Text = linha.ID.ToString();
                 txtNome.Text = linha.Nome;
                 txtEspecie.Text = linha.Especie_Animal;
                 txtTamanho.Text = linha.Tamanho;
                 txtCategoria.Text = linha.Categoria;
                 txtQuantidade.Text = linha.Quantidade.ToString();
-                data_ValidadeDateTimePicker.Value = linha.Data_Validade;
+
+                if (!linha.IsData_ValidadeNull())
+                    data_ValidadeDateTimePicker.Value = linha.Data_Validade;
 
                 if (linha.IsObsNull())
-                {
                     txtObser.Text = "";
-                }
                 else
-                {
                     txtObser.Text = linha.Obs;
-                }
 
-                consumiveisBindingSource.Filter = "ID = " + id;
+                foreach (DataGridViewRow row in consumiveisDataGridView.Rows)
+                {
+                    if (row.DataBoundItem is DataRowView dataRowView)
+                    {
+                        if (dataRowView.Row["ID"] != DBNull.Value &&
+                            Convert.ToInt32(dataRowView.Row["ID"]) == id)
+                        {
+                            row.Selected = true;
+                            consumiveisDataGridView.CurrentCell = row.Cells[0];
+                            break;
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Consumível não encontrado.");
+                MessageBox.Show("Erro na pesquisa:\n\n" + ex.Message);
             }
         }
 
@@ -194,41 +352,21 @@ namespace AdotaPatas
 
             data_ValidadeDateTimePicker.Value = DateTime.Now;
 
-            consumiveisBindingSource.RemoveFilter();
-
             consumiveisDataGridView.ClearSelection();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void consumiveisDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void consumiveisDataGridView_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
-            if (consumiveisDataGridView.CurrentRow != null)
+            if (e.RowIndex >= 0)
             {
-                txtId.Text = consumiveisDataGridView.CurrentRow.Cells["ID"].Value.ToString();
-                txtNome.Text = consumiveisDataGridView.CurrentRow.Cells["Nome"].Value.ToString();
-                txtEspecie.Text = consumiveisDataGridView.CurrentRow.Cells["Especie_Animal"].Value.ToString();
-                txtTamanho.Text = consumiveisDataGridView.CurrentRow.Cells["Tamanho"].Value.ToString();
-                txtCategoria.Text = consumiveisDataGridView.CurrentRow.Cells["Categoria"].Value.ToString();
-                txtQuantidade.Text = consumiveisDataGridView.CurrentRow.Cells["Quantidade"].Value.ToString();
-
-                if (consumiveisDataGridView.CurrentRow.Cells["Data_Validade"].Value != null)
-                {
-                    data_ValidadeDateTimePicker.Value = Convert.ToDateTime(
-                        consumiveisDataGridView.CurrentRow.Cells["Data_Validade"].Value);
-                }
-
-                if (consumiveisDataGridView.CurrentRow.Cells["Obs"].Value != null)
-                {
-                    txtObser.Text = consumiveisDataGridView.CurrentRow.Cells["Obs"].Value.ToString();
-                }
-                else
-                {
-                    txtObser.Text = "";
-                }
+                PreencherPelaLinhaSelecionada();
             }
         }
 
@@ -236,8 +374,6 @@ namespace AdotaPatas
         {
             if (string.IsNullOrWhiteSpace(txtPesqui.Text))
             {
-                consumiveisBindingSource.RemoveFilter();
-                consumiveisBindingSource.Position = -1;
                 consumiveisDataGridView.ClearSelection();
             }
         }
