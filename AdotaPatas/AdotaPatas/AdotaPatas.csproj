@@ -56,11 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AbrigoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Adopcoes.cs">
+    <Compile Include="MenuAdotantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adopcoes.Designer.cs">
-      <DependentUpon>Adopcoes.cs</DependentUpon>
+    <Compile Include="MenuAdotantes.Designer.cs">
+      <DependentUpon>MenuAdotantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Adoptantes.cs">
       <SubType>Form</SubType>
@@ -79,6 +79,12 @@
     </Compile>
     <Compile Include="Atividades.Designer.cs">
       <DependentUpon>Atividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarAdotante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarAdotante.Designer.cs">
+      <DependentUpon>CadastrarAdotante.cs</DependentUpon>
     </Compile>
     <Compile Include="ListarAdotantes.cs">
       <SubType>Form</SubType>
@@ -129,8 +135,8 @@
     <Compile Include="Voluntario.Designer.cs">
       <DependentUpon>Voluntario.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adopcoes.resx">
-      <DependentUpon>Adopcoes.cs</DependentUpon>
+    <EmbeddedResource Include="MenuAdotantes.resx">
+      <DependentUpon>MenuAdotantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adoptantes.resx">
       <DependentUpon>Adoptantes.cs</DependentUpon>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Atividades.resx">
       <DependentUpon>Atividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarAdotante.resx">
+      <DependentUpon>CadastrarAdotante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarAdotantes.resx">
       <DependentUpon>ListarAdotantes.cs</DependentUpon>

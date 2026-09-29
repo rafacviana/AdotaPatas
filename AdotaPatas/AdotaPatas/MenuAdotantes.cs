@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdotaPatas
 {
-    public partial class Adopcoes : Form
+    public partial class MenuAdotantes : Form
     {
-        public Adopcoes()
+        public MenuAdotantes()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace AdotaPatas
 
             if (Menu != null)
             {
-                ListarAdotantes listarAdotantes = new ListarAdotantes();
+                ListarAdotantes listarAdotantes = new ListarAdotantes(false);
                 listarAdotantes.TopLevel = false;
                 Menu.panel1.Controls.Clear();
                 Menu.panel1.Controls.Add(listarAdotantes);
@@ -41,7 +41,18 @@ namespace AdotaPatas
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            Menu Menu = this.ParentForm as Menu;
 
+            if (Menu != null)
+            {
+                CadastrarAdotante cadastrarAdotante = new CadastrarAdotante();
+                cadastrarAdotante.TopLevel = false;
+                Menu.panel1.Controls.Clear();
+                Menu.panel1.Controls.Add(cadastrarAdotante);
+                cadastrarAdotante.Dock = DockStyle.Fill;
+                cadastrarAdotante.BringToFront();
+                cadastrarAdotante.Show();
+            }
         }
     }
 }

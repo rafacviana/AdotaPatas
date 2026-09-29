@@ -1,6 +1,6 @@
 ﻿namespace AdotaPatas
 {
-    partial class Adopcoes
+    partial class MenuAdotantes
     {
         /// <summary>
         /// Required designer variable.
@@ -68,9 +68,9 @@
             this.label9.Location = new System.Drawing.Point(32, 42);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(240, 25);
+            this.label9.Size = new System.Drawing.Size(255, 25);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Visao geral dos Adopções";
+            this.label9.Text = "Visao geral dos Adoptantes";
             // 
             // label1
             // 
@@ -79,9 +79,9 @@
             this.label1.Location = new System.Drawing.Point(32, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Adopções";
+            this.label1.Text = "Adoptantes";
             // 
             // groupBox1
             // 
@@ -178,7 +178,7 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Novo Adotante ";
             // 
-            // Adopcoes
+            // MenuAdotantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +192,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Adopcoes";
+            this.Name = "MenuAdotantes";
             this.Text = "Adopcoes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -48,24 +48,26 @@ namespace AdotaPatas
 
         private void btnAdopcoes_Click(object sender, EventArgs e)
         {
-            Adopcoes Adopcoes = new Adopcoes();
-            Adopcoes.TopLevel = false;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(Adopcoes);
-            Adopcoes.Show();
-
-
-        }
-
-        private void btnDash_Click(object sender, EventArgs e)
-        {
-            ListarAdotantes listarAdotantes = new ListarAdotantes();
+            ListarAdotantes listarAdotantes = new ListarAdotantes(true);
             listarAdotantes.TopLevel = false;
             panel1.Controls.Clear();
             panel1.Controls.Add(listarAdotantes);
             listarAdotantes.Dock = DockStyle.Fill;
             listarAdotantes.BringToFront();
             listarAdotantes.Show();
+
+
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            MenuAdotantes menuAdoptantes = new MenuAdotantes();
+            menuAdoptantes.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(menuAdoptantes);
+            menuAdoptantes.Show();
+
+            
         }
     }
 }

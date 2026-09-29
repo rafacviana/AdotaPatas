@@ -13,14 +13,26 @@ namespace AdotaPatas
 {
     public partial class ListarAdotantes : Form
     {
-        private string conexaoString = @"Server=RAFA-NOTE\SQLEXPRESS;Database=Abrigo;Trusted_Connection=True;";
-        //lembrem de colocarem o caminho da vossa BD. 
+      
+
 
         public int idAdotanteSelecionado = -1;
 
-        public ListarAdotantes()
+        public ListarAdotantes(bool modoSelecao)
         {
             InitializeComponent();
+            btnSelecionarAnimal.Visible = modoSelecao;
+
+            if (modoSelecao == false)
+            {
+                label1.Text = "Adoptantes";
+            }
+            else
+            {
+                label1.Text = "Registrar Adopção";
+                label9.Text = "Selecione um adoptante";
+            }
+
         }
 
         private void ListarAdotantes_Load(object sender, EventArgs e)
@@ -112,7 +124,18 @@ namespace AdotaPatas
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Menu Menu = this.ParentForm as Menu;
+
+            if (Menu != null)
+            {
+                MenuAdotantes menuAdoptantes = new MenuAdotantes();
+                menuAdoptantes.TopLevel = false;
+                Menu.panel1.Controls.Clear();
+                Menu.panel1.Controls.Add(menuAdoptantes);
+                menuAdoptantes.Show();
+                this.Close();
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

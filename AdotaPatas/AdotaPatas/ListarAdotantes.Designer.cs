@@ -37,27 +37,6 @@
             System.Windows.Forms.Label espaco_EsteriorLabel;
             System.Windows.Forms.Label motivo_RecusaLabel;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
-            this.adotanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.adotanteTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.AdotanteTableAdapter();
-            this.pessoasTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.PessoasTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.adotanteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
-            this.horas_sozinho_diaTextBox = new System.Windows.Forms.TextBox();
-            this.outros_AnimaisCheckBox = new System.Windows.Forms.CheckBox();
-            this.criancasCheckBox = new System.Windows.Forms.CheckBox();
-            this.n_AgregadosTextBox = new System.Windows.Forms.TextBox();
-            this.estado_CandidaturaTextBox = new System.Windows.Forms.TextBox();
-            this.espaco_EsteriorCheckBox = new System.Windows.Forms.CheckBox();
-            this.motivo_RecusaTextBox = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.fillComPessoasToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillComPessoasToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.iDPessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +59,25 @@
             this.estadoCandidaturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataCandidaturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motivoRecusaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adotanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
+            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.adotanteTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.AdotanteTableAdapter();
+            this.pessoasTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.PessoasTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.adotanteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
+            this.horas_sozinho_diaTextBox = new System.Windows.Forms.TextBox();
+            this.outros_AnimaisCheckBox = new System.Windows.Forms.CheckBox();
+            this.criancasCheckBox = new System.Windows.Forms.CheckBox();
+            this.n_AgregadosTextBox = new System.Windows.Forms.TextBox();
+            this.estado_CandidaturaTextBox = new System.Windows.Forms.TextBox();
+            this.espaco_EsteriorCheckBox = new System.Windows.Forms.CheckBox();
+            this.motivo_RecusaTextBox = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnSelecionarAnimal = new System.Windows.Forms.Button();
             horas_sozinho_diaLabel = new System.Windows.Forms.Label();
             outros_AnimaisLabel = new System.Windows.Forms.Label();
             criancasLabel = new System.Windows.Forms.Label();
@@ -88,11 +86,10 @@
             espaco_EsteriorLabel = new System.Windows.Forms.Label();
             motivo_RecusaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adotanteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adotanteBindingSource1)).BeginInit();
-            this.fillComPessoasToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // horas_sozinho_diaLabel
@@ -130,11 +127,10 @@
             // 
             // n_AgregadosLabel
             // 
-            n_AgregadosLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            n_AgregadosLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             n_AgregadosLabel.AutoSize = true;
             n_AgregadosLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            n_AgregadosLabel.Location = new System.Drawing.Point(313, 519);
+            n_AgregadosLabel.Location = new System.Drawing.Point(302, 519);
             n_AgregadosLabel.Name = "n_AgregadosLabel";
             n_AgregadosLabel.Size = new System.Drawing.Size(97, 17);
             n_AgregadosLabel.TabIndex = 36;
@@ -216,210 +212,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(975, 359);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // pessoasBindingSource
-            // 
-            this.pessoasBindingSource.DataMember = "Pessoas";
-            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
-            // 
-            // abrigoDataSet
-            // 
-            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
-            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adotanteBindingSource
-            // 
-            this.adotanteBindingSource.DataMember = "Adotante";
-            this.adotanteBindingSource.DataSource = this.abrigoDataSet;
-            // 
-            // adotanteTableAdapter
-            // 
-            this.adotanteTableAdapter.ClearBeforeFill = true;
-            // 
-            // pessoasTableAdapter
-            // 
-            this.pessoasTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(316, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 20);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
-            this.label9.Location = new System.Drawing.Point(30, 45);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 25);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Existentes na base de dados";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Adoptantes";
-            // 
-            // adotanteBindingSource1
-            // 
-            this.adotanteBindingSource1.DataMember = "FK_Adotante_Pessoas";
-            this.adotanteBindingSource1.DataSource = this.pessoasBindingSource;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AdocaoTableAdapter = null;
-            this.tableAdapterManager.AdotanteTableAdapter = this.adotanteTableAdapter;
-            this.tableAdapterManager.AnimaisTableAdapter = null;
-            this.tableAdapterManager.AtividadesTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ConsumiveisTableAdapter = null;
-            this.tableAdapterManager.FuncoesTableAdapter = null;
-            this.tableAdapterManager.PessoasTableAdapter = this.pessoasTableAdapter;
-            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtilizadoresTableAdapter = null;
-            this.tableAdapterManager.VoluntariosTableAdapter = null;
-            // 
-            // horas_sozinho_diaTextBox
-            // 
-            this.horas_sozinho_diaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.horas_sozinho_diaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Horas_sozinho_dia", true));
-            this.horas_sozinho_diaTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horas_sozinho_diaTextBox.Location = new System.Drawing.Point(215, 516);
-            this.horas_sozinho_diaTextBox.Name = "horas_sozinho_diaTextBox";
-            this.horas_sozinho_diaTextBox.Size = new System.Drawing.Size(64, 25);
-            this.horas_sozinho_diaTextBox.TabIndex = 34;
-            // 
-            // outros_AnimaisCheckBox
-            // 
-            this.outros_AnimaisCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.outros_AnimaisCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Outros_Animais", true));
-            this.outros_AnimaisCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outros_AnimaisCheckBox.Location = new System.Drawing.Point(175, 482);
-            this.outros_AnimaisCheckBox.Name = "outros_AnimaisCheckBox";
-            this.outros_AnimaisCheckBox.Size = new System.Drawing.Size(21, 24);
-            this.outros_AnimaisCheckBox.TabIndex = 35;
-            this.outros_AnimaisCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // criancasCheckBox
-            // 
-            this.criancasCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.criancasCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Criancas", true));
-            this.criancasCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criancasCheckBox.Location = new System.Drawing.Point(285, 482);
-            this.criancasCheckBox.Name = "criancasCheckBox";
-            this.criancasCheckBox.Size = new System.Drawing.Size(22, 24);
-            this.criancasCheckBox.TabIndex = 36;
-            this.criancasCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // n_AgregadosTextBox
-            // 
-            this.n_AgregadosTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.n_AgregadosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "N_Agregados", true));
-            this.n_AgregadosTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.n_AgregadosTextBox.Location = new System.Drawing.Point(416, 516);
-            this.n_AgregadosTextBox.Name = "n_AgregadosTextBox";
-            this.n_AgregadosTextBox.Size = new System.Drawing.Size(68, 25);
-            this.n_AgregadosTextBox.TabIndex = 37;
-            // 
-            // estado_CandidaturaTextBox
-            // 
-            this.estado_CandidaturaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.estado_CandidaturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Estado_Candidatura", true));
-            this.estado_CandidaturaTextBox.Location = new System.Drawing.Point(871, 480);
-            this.estado_CandidaturaTextBox.Name = "estado_CandidaturaTextBox";
-            this.estado_CandidaturaTextBox.Size = new System.Drawing.Size(161, 20);
-            this.estado_CandidaturaTextBox.TabIndex = 38;
-            // 
-            // espaco_EsteriorCheckBox
-            // 
-            this.espaco_EsteriorCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.espaco_EsteriorCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Espaco_Esterior", true));
-            this.espaco_EsteriorCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.espaco_EsteriorCheckBox.Location = new System.Drawing.Point(424, 482);
-            this.espaco_EsteriorCheckBox.Name = "espaco_EsteriorCheckBox";
-            this.espaco_EsteriorCheckBox.Size = new System.Drawing.Size(24, 24);
-            this.espaco_EsteriorCheckBox.TabIndex = 39;
-            this.espaco_EsteriorCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // motivo_RecusaTextBox
-            // 
-            this.motivo_RecusaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.motivo_RecusaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Motivo_Recusa", true));
-            this.motivo_RecusaTextBox.Location = new System.Drawing.Point(863, 509);
-            this.motivo_RecusaTextBox.Multiline = true;
-            this.motivo_RecusaTextBox.Name = "motivo_RecusaTextBox";
-            this.motivo_RecusaTextBox.Size = new System.Drawing.Size(169, 37);
-            this.motivo_RecusaTextBox.TabIndex = 40;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(67, 568);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(188, 40);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Voltar ";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(854, 568);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 40);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Próximo";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // fillComPessoasToolStrip
-            // 
-            this.fillComPessoasToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillComPessoasToolStripButton});
-            this.fillComPessoasToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillComPessoasToolStrip.Name = "fillComPessoasToolStrip";
-            this.fillComPessoasToolStrip.Size = new System.Drawing.Size(1106, 25);
-            this.fillComPessoasToolStrip.TabIndex = 43;
-            this.fillComPessoasToolStrip.Text = "fillComPessoasToolStrip";
-            // 
-            // fillComPessoasToolStripButton
-            // 
-            this.fillComPessoasToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillComPessoasToolStripButton.Name = "fillComPessoasToolStripButton";
-            this.fillComPessoasToolStripButton.Size = new System.Drawing.Size(93, 22);
-            this.fillComPessoasToolStripButton.Text = "FillComPessoas";
-            this.fillComPessoasToolStripButton.Click += new System.EventHandler(this.fillComPessoasToolStripButton_Click);
             // 
             // iDPessoaDataGridViewTextBoxColumn
             // 
@@ -591,13 +383,199 @@
             this.motivoRecusaDataGridViewTextBoxColumn.ReadOnly = true;
             this.motivoRecusaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // adotanteBindingSource
+            // 
+            this.adotanteBindingSource.DataMember = "Adotante";
+            this.adotanteBindingSource.DataSource = this.abrigoDataSet;
+            // 
+            // abrigoDataSet
+            // 
+            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
+            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pessoasBindingSource
+            // 
+            this.pessoasBindingSource.DataMember = "Pessoas";
+            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
+            // 
+            // adotanteTableAdapter
+            // 
+            this.adotanteTableAdapter.ClearBeforeFill = true;
+            // 
+            // pessoasTableAdapter
+            // 
+            this.pessoasTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(316, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(520, 20);
+            this.textBox1.TabIndex = 29;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
+            this.label9.Location = new System.Drawing.Point(30, 45);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(258, 25);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Existentes na base de dados";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Adoptantes";
+            // 
+            // adotanteBindingSource1
+            // 
+            this.adotanteBindingSource1.DataMember = "FK_Adotante_Pessoas";
+            this.adotanteBindingSource1.DataSource = this.pessoasBindingSource;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AdocaoTableAdapter = null;
+            this.tableAdapterManager.AdotanteTableAdapter = this.adotanteTableAdapter;
+            this.tableAdapterManager.AnimaisTableAdapter = null;
+            this.tableAdapterManager.AtividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ConsumiveisTableAdapter = null;
+            this.tableAdapterManager.FuncoesTableAdapter = null;
+            this.tableAdapterManager.PessoasTableAdapter = this.pessoasTableAdapter;
+            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilizadoresTableAdapter = null;
+            this.tableAdapterManager.VoluntariosTableAdapter = null;
+            // 
+            // horas_sozinho_diaTextBox
+            // 
+            this.horas_sozinho_diaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.horas_sozinho_diaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Horas_sozinho_dia", true));
+            this.horas_sozinho_diaTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horas_sozinho_diaTextBox.Location = new System.Drawing.Point(215, 516);
+            this.horas_sozinho_diaTextBox.Name = "horas_sozinho_diaTextBox";
+            this.horas_sozinho_diaTextBox.Size = new System.Drawing.Size(64, 25);
+            this.horas_sozinho_diaTextBox.TabIndex = 34;
+            // 
+            // outros_AnimaisCheckBox
+            // 
+            this.outros_AnimaisCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.outros_AnimaisCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Outros_Animais", true));
+            this.outros_AnimaisCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outros_AnimaisCheckBox.Location = new System.Drawing.Point(175, 482);
+            this.outros_AnimaisCheckBox.Name = "outros_AnimaisCheckBox";
+            this.outros_AnimaisCheckBox.Size = new System.Drawing.Size(21, 24);
+            this.outros_AnimaisCheckBox.TabIndex = 35;
+            this.outros_AnimaisCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // criancasCheckBox
+            // 
+            this.criancasCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.criancasCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Criancas", true));
+            this.criancasCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.criancasCheckBox.Location = new System.Drawing.Point(285, 482);
+            this.criancasCheckBox.Name = "criancasCheckBox";
+            this.criancasCheckBox.Size = new System.Drawing.Size(22, 24);
+            this.criancasCheckBox.TabIndex = 36;
+            this.criancasCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // n_AgregadosTextBox
+            // 
+            this.n_AgregadosTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.n_AgregadosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "N_Agregados", true));
+            this.n_AgregadosTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.n_AgregadosTextBox.Location = new System.Drawing.Point(424, 516);
+            this.n_AgregadosTextBox.Name = "n_AgregadosTextBox";
+            this.n_AgregadosTextBox.Size = new System.Drawing.Size(68, 25);
+            this.n_AgregadosTextBox.TabIndex = 37;
+            // 
+            // estado_CandidaturaTextBox
+            // 
+            this.estado_CandidaturaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.estado_CandidaturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Estado_Candidatura", true));
+            this.estado_CandidaturaTextBox.Location = new System.Drawing.Point(871, 480);
+            this.estado_CandidaturaTextBox.Name = "estado_CandidaturaTextBox";
+            this.estado_CandidaturaTextBox.Size = new System.Drawing.Size(161, 20);
+            this.estado_CandidaturaTextBox.TabIndex = 38;
+            // 
+            // espaco_EsteriorCheckBox
+            // 
+            this.espaco_EsteriorCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.espaco_EsteriorCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource1, "Espaco_Esterior", true));
+            this.espaco_EsteriorCheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.espaco_EsteriorCheckBox.Location = new System.Drawing.Point(424, 482);
+            this.espaco_EsteriorCheckBox.Name = "espaco_EsteriorCheckBox";
+            this.espaco_EsteriorCheckBox.Size = new System.Drawing.Size(24, 24);
+            this.espaco_EsteriorCheckBox.TabIndex = 39;
+            this.espaco_EsteriorCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // motivo_RecusaTextBox
+            // 
+            this.motivo_RecusaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.motivo_RecusaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource1, "Motivo_Recusa", true));
+            this.motivo_RecusaTextBox.Location = new System.Drawing.Point(863, 509);
+            this.motivo_RecusaTextBox.Multiline = true;
+            this.motivo_RecusaTextBox.Name = "motivo_RecusaTextBox";
+            this.motivo_RecusaTextBox.Size = new System.Drawing.Size(169, 37);
+            this.motivo_RecusaTextBox.TabIndex = 40;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(67, 568);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(188, 40);
+            this.button6.TabIndex = 41;
+            this.button6.Text = "Voltar ";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnSelecionarAnimal
+            // 
+            this.btnSelecionarAnimal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecionarAnimal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
+            this.btnSelecionarAnimal.FlatAppearance.BorderSize = 0;
+            this.btnSelecionarAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecionarAnimal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionarAnimal.ForeColor = System.Drawing.Color.White;
+            this.btnSelecionarAnimal.Location = new System.Drawing.Point(854, 568);
+            this.btnSelecionarAnimal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSelecionarAnimal.Name = "btnSelecionarAnimal";
+            this.btnSelecionarAnimal.Size = new System.Drawing.Size(188, 40);
+            this.btnSelecionarAnimal.TabIndex = 42;
+            this.btnSelecionarAnimal.Text = "Selecionar Animal";
+            this.btnSelecionarAnimal.UseVisualStyleBackColor = false;
+            this.btnSelecionarAnimal.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ListarAdotantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1106, 631);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSelecionarAnimal);
             this.Controls.Add(this.button6);
             this.Controls.Add(motivo_RecusaLabel);
             this.Controls.Add(this.motivo_RecusaTextBox);
@@ -617,19 +595,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.fillComPessoasToolStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(210, 53);
             this.Name = "ListarAdotantes";
             this.Text = "ListarAdotantes";
             this.Load += new System.EventHandler(this.ListarAdotantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adotanteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adotanteBindingSource1)).EndInit();
-            this.fillComPessoasToolStrip.ResumeLayout(false);
-            this.fillComPessoasToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,9 +631,7 @@
         private System.Windows.Forms.CheckBox espaco_EsteriorCheckBox;
         private System.Windows.Forms.TextBox motivo_RecusaTextBox;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStrip fillComPessoasToolStrip;
-        private System.Windows.Forms.ToolStripButton fillComPessoasToolStripButton;
+        private System.Windows.Forms.Button btnSelecionarAnimal;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPessoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Nascimento;
