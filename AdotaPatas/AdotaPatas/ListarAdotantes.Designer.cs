@@ -78,6 +78,8 @@
             this.motivo_RecusaTextBox = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnSelecionarAnimal = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             horas_sozinho_diaLabel = new System.Windows.Forms.Label();
             outros_AnimaisLabel = new System.Windows.Forms.Label();
             criancasLabel = new System.Windows.Forms.Label();
@@ -410,7 +412,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(316, 53);
+            this.textBox1.Location = new System.Drawing.Point(315, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(520, 20);
             this.textBox1.TabIndex = 29;
@@ -569,12 +571,45 @@
             this.btnSelecionarAnimal.UseVisualStyleBackColor = false;
             this.btnSelecionarAnimal.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(56)))), ((int)(((byte)(75)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(959, 38);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 42);
+            this.btnEliminar.TabIndex = 43;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(182)))), ((int)(((byte)(64)))));
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.White;
+            this.btnNovo.Location = new System.Drawing.Point(871, 38);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 42);
+            this.btnNovo.TabIndex = 44;
+            this.btnNovo.Text = "Editar";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // ListarAdotantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1106, 631);
+            this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSelecionarAnimal);
             this.Controls.Add(this.button6);
             this.Controls.Add(motivo_RecusaLabel);
@@ -598,6 +633,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(210, 53);
             this.Name = "ListarAdotantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ListarAdotantes";
             this.Load += new System.EventHandler(this.ListarAdotantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -654,5 +690,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoCandidaturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataCandidaturaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn motivoRecusaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

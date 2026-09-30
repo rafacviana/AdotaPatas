@@ -36,7 +36,6 @@
             System.Windows.Forms.Label moradaLabel;
             System.Windows.Forms.Label bILabel;
             System.Windows.Forms.Label profissaoLabel;
-            System.Windows.Forms.Label iD_HabitacaoLabel;
             System.Windows.Forms.Label espaco_EsteriorLabel;
             System.Windows.Forms.Label habitacao_ArrendadaLabel;
             System.Windows.Forms.Label autorizacao_SenhorioLabel;
@@ -46,14 +45,17 @@
             System.Windows.Forms.Label experiencia_PreviaLabel;
             System.Windows.Forms.Label horas_sozinho_diaLabel;
             System.Windows.Forms.Label aceita_AcompanhamentoLabel;
+            System.Windows.Forms.Label obs_Label;
+            System.Windows.Forms.Label estado_CandidaturaLabel;
+            System.Windows.Forms.Label outros_AnimaisLabel;
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
             this.adotanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adotanteTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.AdotanteTableAdapter();
             this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
-            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pessoasTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.PessoasTableAdapter();
+            this.pessoasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.data_NascimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.telemovelTextBox = new System.Windows.Forms.TextBox();
@@ -61,7 +63,6 @@
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.bITextBox = new System.Windows.Forms.TextBox();
             this.profissaoTextBox = new System.Windows.Forms.TextBox();
-            this.cmbHabitacao = new System.Windows.Forms.ComboBox();
             this.espaco_EsteriorCheckBox = new System.Windows.Forms.CheckBox();
             this.habitacao_ArrendadaCheckBox = new System.Windows.Forms.CheckBox();
             this.autorizacao_SenhorioCheckBox = new System.Windows.Forms.CheckBox();
@@ -72,8 +73,11 @@
             this.n_AgregadosNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.aceita_AcompanhamentoCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.obs_TextBox = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.estado_CandidaturaComboBox = new System.Windows.Forms.ComboBox();
+            this.outros_AnimaisCheckBox = new System.Windows.Forms.CheckBox();
             nomeLabel = new System.Windows.Forms.Label();
             data_NascimentoLabel = new System.Windows.Forms.Label();
             telemovelLabel = new System.Windows.Forms.Label();
@@ -81,7 +85,6 @@
             moradaLabel = new System.Windows.Forms.Label();
             bILabel = new System.Windows.Forms.Label();
             profissaoLabel = new System.Windows.Forms.Label();
-            iD_HabitacaoLabel = new System.Windows.Forms.Label();
             espaco_EsteriorLabel = new System.Windows.Forms.Label();
             habitacao_ArrendadaLabel = new System.Windows.Forms.Label();
             autorizacao_SenhorioLabel = new System.Windows.Forms.Label();
@@ -91,6 +94,9 @@
             experiencia_PreviaLabel = new System.Windows.Forms.Label();
             horas_sozinho_diaLabel = new System.Windows.Forms.Label();
             aceita_AcompanhamentoLabel = new System.Windows.Forms.Label();
+            obs_Label = new System.Windows.Forms.Label();
+            estado_CandidaturaLabel = new System.Windows.Forms.Label();
+            outros_AnimaisLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adotanteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasBindingSource)).BeginInit();
@@ -98,6 +104,159 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_AgregadosNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(28, 44);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(55, 20);
+            nomeLabel.TabIndex = 22;
+            nomeLabel.Text = "Nome:";
+            // 
+            // data_NascimentoLabel
+            // 
+            data_NascimentoLabel.AutoSize = true;
+            data_NascimentoLabel.Location = new System.Drawing.Point(442, 45);
+            data_NascimentoLabel.Name = "data_NascimentoLabel";
+            data_NascimentoLabel.Size = new System.Drawing.Size(130, 20);
+            data_NascimentoLabel.TabIndex = 23;
+            data_NascimentoLabel.Text = "Data Nascimento:";
+            // 
+            // telemovelLabel
+            // 
+            telemovelLabel.AutoSize = true;
+            telemovelLabel.Location = new System.Drawing.Point(811, 81);
+            telemovelLabel.Name = "telemovelLabel";
+            telemovelLabel.Size = new System.Drawing.Size(82, 20);
+            telemovelLabel.TabIndex = 24;
+            telemovelLabel.Text = "Telemóvel:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(444, 81);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(50, 20);
+            emailLabel.TabIndex = 25;
+            emailLabel.Text = "Email:";
+            // 
+            // moradaLabel
+            // 
+            moradaLabel.AutoSize = true;
+            moradaLabel.Location = new System.Drawing.Point(27, 85);
+            moradaLabel.Name = "moradaLabel";
+            moradaLabel.Size = new System.Drawing.Size(67, 20);
+            moradaLabel.TabIndex = 26;
+            moradaLabel.Text = "Morada:";
+            // 
+            // bILabel
+            // 
+            bILabel.AutoSize = true;
+            bILabel.Location = new System.Drawing.Point(866, 41);
+            bILabel.Name = "bILabel";
+            bILabel.Size = new System.Drawing.Size(26, 20);
+            bILabel.TabIndex = 27;
+            bILabel.Text = "BI:";
+            // 
+            // profissaoLabel
+            // 
+            profissaoLabel.AutoSize = true;
+            profissaoLabel.Location = new System.Drawing.Point(28, 127);
+            profissaoLabel.Name = "profissaoLabel";
+            profissaoLabel.Size = new System.Drawing.Size(75, 20);
+            profissaoLabel.TabIndex = 28;
+            profissaoLabel.Text = "Profissão:";
+            // 
+            // espaco_EsteriorLabel
+            // 
+            espaco_EsteriorLabel.AutoSize = true;
+            espaco_EsteriorLabel.Location = new System.Drawing.Point(442, 127);
+            espaco_EsteriorLabel.Name = "espaco_EsteriorLabel";
+            espaco_EsteriorLabel.Size = new System.Drawing.Size(119, 20);
+            espaco_EsteriorLabel.TabIndex = 30;
+            espaco_EsteriorLabel.Text = "Espaco Exterior:";
+            // 
+            // habitacao_ArrendadaLabel
+            // 
+            habitacao_ArrendadaLabel.AutoSize = true;
+            habitacao_ArrendadaLabel.Location = new System.Drawing.Point(601, 127);
+            habitacao_ArrendadaLabel.Name = "habitacao_ArrendadaLabel";
+            habitacao_ArrendadaLabel.Size = new System.Drawing.Size(159, 20);
+            habitacao_ArrendadaLabel.TabIndex = 31;
+            habitacao_ArrendadaLabel.Text = "Habitacao Arrendada:";
+            // 
+            // autorizacao_SenhorioLabel
+            // 
+            autorizacao_SenhorioLabel.AutoSize = true;
+            autorizacao_SenhorioLabel.Location = new System.Drawing.Point(811, 124);
+            autorizacao_SenhorioLabel.Name = "autorizacao_SenhorioLabel";
+            autorizacao_SenhorioLabel.Size = new System.Drawing.Size(161, 20);
+            autorizacao_SenhorioLabel.TabIndex = 32;
+            autorizacao_SenhorioLabel.Text = "Autorização Senhorio:";
+            // 
+            // n_AgregadosLabel
+            // 
+            n_AgregadosLabel.AutoSize = true;
+            n_AgregadosLabel.Location = new System.Drawing.Point(28, 169);
+            n_AgregadosLabel.Name = "n_AgregadosLabel";
+            n_AgregadosLabel.Size = new System.Drawing.Size(110, 20);
+            n_AgregadosLabel.TabIndex = 33;
+            n_AgregadosLabel.Text = "Nº Agregados:";
+            // 
+            // criancasLabel
+            // 
+            criancasLabel.AutoSize = true;
+            criancasLabel.Location = new System.Drawing.Point(217, 170);
+            criancasLabel.Name = "criancasLabel";
+            criancasLabel.Size = new System.Drawing.Size(70, 20);
+            criancasLabel.TabIndex = 34;
+            criancasLabel.Text = "Crianças:";
+            // 
+            // motivo_AdocaoLabel
+            // 
+            motivo_AdocaoLabel.AutoSize = true;
+            motivo_AdocaoLabel.Location = new System.Drawing.Point(442, 217);
+            motivo_AdocaoLabel.Name = "motivo_AdocaoLabel";
+            motivo_AdocaoLabel.Size = new System.Drawing.Size(139, 20);
+            motivo_AdocaoLabel.TabIndex = 35;
+            motivo_AdocaoLabel.Text = "Motivo da Adoção:";
+            // 
+            // experiencia_PreviaLabel
+            // 
+            experiencia_PreviaLabel.AutoSize = true;
+            experiencia_PreviaLabel.Location = new System.Drawing.Point(442, 171);
+            experiencia_PreviaLabel.Name = "experiencia_PreviaLabel";
+            experiencia_PreviaLabel.Size = new System.Drawing.Size(139, 20);
+            experiencia_PreviaLabel.TabIndex = 36;
+            experiencia_PreviaLabel.Text = "Experiência Prévia:";
+            // 
+            // horas_sozinho_diaLabel
+            // 
+            horas_sozinho_diaLabel.AutoSize = true;
+            horas_sozinho_diaLabel.Location = new System.Drawing.Point(623, 171);
+            horas_sozinho_diaLabel.Name = "horas_sozinho_diaLabel";
+            horas_sozinho_diaLabel.Size = new System.Drawing.Size(163, 20);
+            horas_sozinho_diaLabel.TabIndex = 37;
+            horas_sozinho_diaLabel.Text = "Horas sozinho por dia:";
+            // 
+            // aceita_AcompanhamentoLabel
+            // 
+            aceita_AcompanhamentoLabel.AutoSize = true;
+            aceita_AcompanhamentoLabel.Location = new System.Drawing.Point(28, 217);
+            aceita_AcompanhamentoLabel.Name = "aceita_AcompanhamentoLabel";
+            aceita_AcompanhamentoLabel.Size = new System.Drawing.Size(185, 20);
+            aceita_AcompanhamentoLabel.TabIndex = 39;
+            aceita_AcompanhamentoLabel.Text = "Aceita Acompanhamento:";
+            // 
+            // obs_Label
+            // 
+            obs_Label.AutoSize = true;
+            obs_Label.Location = new System.Drawing.Point(28, 256);
+            obs_Label.Name = "obs_Label";
+            obs_Label.Size = new System.Drawing.Size(39, 20);
+            obs_Label.TabIndex = 40;
+            obs_Label.Text = "Obs:";
             // 
             // label9
             // 
@@ -150,23 +309,14 @@
             this.tableAdapterManager.UtilizadoresTableAdapter = null;
             this.tableAdapterManager.VoluntariosTableAdapter = null;
             // 
-            // pessoasBindingSource
-            // 
-            this.pessoasBindingSource.DataMember = "Pessoas";
-            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
-            // 
             // pessoasTableAdapter
             // 
             this.pessoasTableAdapter.ClearBeforeFill = true;
             // 
-            // nomeLabel
+            // pessoasBindingSource
             // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(28, 44);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(55, 20);
-            nomeLabel.TabIndex = 22;
-            nomeLabel.Text = "Nome:";
+            this.pessoasBindingSource.DataMember = "Pessoas";
+            this.pessoasBindingSource.DataSource = this.abrigoDataSet;
             // 
             // nomeTextBox
             // 
@@ -176,15 +326,6 @@
             this.nomeTextBox.Size = new System.Drawing.Size(331, 27);
             this.nomeTextBox.TabIndex = 23;
             // 
-            // data_NascimentoLabel
-            // 
-            data_NascimentoLabel.AutoSize = true;
-            data_NascimentoLabel.Location = new System.Drawing.Point(442, 45);
-            data_NascimentoLabel.Name = "data_NascimentoLabel";
-            data_NascimentoLabel.Size = new System.Drawing.Size(130, 20);
-            data_NascimentoLabel.TabIndex = 23;
-            data_NascimentoLabel.Text = "Data Nascimento:";
-            // 
             // data_NascimentoDateTimePicker
             // 
             this.data_NascimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pessoasBindingSource, "Data_Nascimento", true));
@@ -192,15 +333,6 @@
             this.data_NascimentoDateTimePicker.Name = "data_NascimentoDateTimePicker";
             this.data_NascimentoDateTimePicker.Size = new System.Drawing.Size(200, 27);
             this.data_NascimentoDateTimePicker.TabIndex = 24;
-            // 
-            // telemovelLabel
-            // 
-            telemovelLabel.AutoSize = true;
-            telemovelLabel.Location = new System.Drawing.Point(811, 81);
-            telemovelLabel.Name = "telemovelLabel";
-            telemovelLabel.Size = new System.Drawing.Size(82, 20);
-            telemovelLabel.TabIndex = 24;
-            telemovelLabel.Text = "Telemóvel:";
             // 
             // telemovelTextBox
             // 
@@ -210,15 +342,6 @@
             this.telemovelTextBox.Size = new System.Drawing.Size(144, 27);
             this.telemovelTextBox.TabIndex = 25;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(444, 81);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(50, 20);
-            emailLabel.TabIndex = 25;
-            emailLabel.Text = "Email:";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Email", true));
@@ -226,15 +349,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(276, 27);
             this.emailTextBox.TabIndex = 26;
-            // 
-            // moradaLabel
-            // 
-            moradaLabel.AutoSize = true;
-            moradaLabel.Location = new System.Drawing.Point(27, 85);
-            moradaLabel.Name = "moradaLabel";
-            moradaLabel.Size = new System.Drawing.Size(67, 20);
-            moradaLabel.TabIndex = 26;
-            moradaLabel.Text = "Morada:";
             // 
             // moradaTextBox
             // 
@@ -244,15 +358,6 @@
             this.moradaTextBox.Size = new System.Drawing.Size(321, 27);
             this.moradaTextBox.TabIndex = 27;
             // 
-            // bILabel
-            // 
-            bILabel.AutoSize = true;
-            bILabel.Location = new System.Drawing.Point(866, 41);
-            bILabel.Name = "bILabel";
-            bILabel.Size = new System.Drawing.Size(26, 20);
-            bILabel.TabIndex = 27;
-            bILabel.Text = "BI:";
-            // 
             // bITextBox
             // 
             this.bITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "BI", true));
@@ -261,15 +366,6 @@
             this.bITextBox.Size = new System.Drawing.Size(144, 27);
             this.bITextBox.TabIndex = 28;
             // 
-            // profissaoLabel
-            // 
-            profissaoLabel.AutoSize = true;
-            profissaoLabel.Location = new System.Drawing.Point(28, 127);
-            profissaoLabel.Name = "profissaoLabel";
-            profissaoLabel.Size = new System.Drawing.Size(75, 20);
-            profissaoLabel.TabIndex = 28;
-            profissaoLabel.Text = "Profissão:";
-            // 
             // profissaoTextBox
             // 
             this.profissaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "Profissao", true));
@@ -277,33 +373,6 @@
             this.profissaoTextBox.Name = "profissaoTextBox";
             this.profissaoTextBox.Size = new System.Drawing.Size(129, 27);
             this.profissaoTextBox.TabIndex = 29;
-            // 
-            // iD_HabitacaoLabel
-            // 
-            iD_HabitacaoLabel.AutoSize = true;
-            iD_HabitacaoLabel.Location = new System.Drawing.Point(252, 127);
-            iD_HabitacaoLabel.Name = "iD_HabitacaoLabel";
-            iD_HabitacaoLabel.Size = new System.Drawing.Size(101, 20);
-            iD_HabitacaoLabel.TabIndex = 29;
-            iD_HabitacaoLabel.Text = "ID Habitacao:";
-            // 
-            // cmbHabitacao
-            // 
-            this.cmbHabitacao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "ID_Habitacao", true));
-            this.cmbHabitacao.FormattingEnabled = true;
-            this.cmbHabitacao.Location = new System.Drawing.Point(358, 124);
-            this.cmbHabitacao.Name = "cmbHabitacao";
-            this.cmbHabitacao.Size = new System.Drawing.Size(60, 28);
-            this.cmbHabitacao.TabIndex = 30;
-            // 
-            // espaco_EsteriorLabel
-            // 
-            espaco_EsteriorLabel.AutoSize = true;
-            espaco_EsteriorLabel.Location = new System.Drawing.Point(442, 127);
-            espaco_EsteriorLabel.Name = "espaco_EsteriorLabel";
-            espaco_EsteriorLabel.Size = new System.Drawing.Size(117, 20);
-            espaco_EsteriorLabel.TabIndex = 30;
-            espaco_EsteriorLabel.Text = "Espaco Esterior:";
             // 
             // espaco_EsteriorCheckBox
             // 
@@ -314,15 +383,6 @@
             this.espaco_EsteriorCheckBox.TabIndex = 31;
             this.espaco_EsteriorCheckBox.UseVisualStyleBackColor = true;
             // 
-            // habitacao_ArrendadaLabel
-            // 
-            habitacao_ArrendadaLabel.AutoSize = true;
-            habitacao_ArrendadaLabel.Location = new System.Drawing.Point(601, 127);
-            habitacao_ArrendadaLabel.Name = "habitacao_ArrendadaLabel";
-            habitacao_ArrendadaLabel.Size = new System.Drawing.Size(159, 20);
-            habitacao_ArrendadaLabel.TabIndex = 31;
-            habitacao_ArrendadaLabel.Text = "Habitacao Arrendada:";
-            // 
             // habitacao_ArrendadaCheckBox
             // 
             this.habitacao_ArrendadaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Habitacao_Arrendada", true));
@@ -331,15 +391,6 @@
             this.habitacao_ArrendadaCheckBox.Size = new System.Drawing.Size(23, 24);
             this.habitacao_ArrendadaCheckBox.TabIndex = 32;
             this.habitacao_ArrendadaCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // autorizacao_SenhorioLabel
-            // 
-            autorizacao_SenhorioLabel.AutoSize = true;
-            autorizacao_SenhorioLabel.Location = new System.Drawing.Point(811, 124);
-            autorizacao_SenhorioLabel.Name = "autorizacao_SenhorioLabel";
-            autorizacao_SenhorioLabel.Size = new System.Drawing.Size(161, 20);
-            autorizacao_SenhorioLabel.TabIndex = 32;
-            autorizacao_SenhorioLabel.Text = "Autorização Senhorio:";
             // 
             // autorizacao_SenhorioCheckBox
             // 
@@ -350,24 +401,6 @@
             this.autorizacao_SenhorioCheckBox.TabIndex = 33;
             this.autorizacao_SenhorioCheckBox.UseVisualStyleBackColor = true;
             // 
-            // n_AgregadosLabel
-            // 
-            n_AgregadosLabel.AutoSize = true;
-            n_AgregadosLabel.Location = new System.Drawing.Point(28, 169);
-            n_AgregadosLabel.Name = "n_AgregadosLabel";
-            n_AgregadosLabel.Size = new System.Drawing.Size(110, 20);
-            n_AgregadosLabel.TabIndex = 33;
-            n_AgregadosLabel.Text = "Nº Agregados:";
-            // 
-            // criancasLabel
-            // 
-            criancasLabel.AutoSize = true;
-            criancasLabel.Location = new System.Drawing.Point(217, 170);
-            criancasLabel.Name = "criancasLabel";
-            criancasLabel.Size = new System.Drawing.Size(70, 20);
-            criancasLabel.TabIndex = 34;
-            criancasLabel.Text = "Crianças:";
-            // 
             // criancasCheckBox
             // 
             this.criancasCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Criancas", true));
@@ -377,15 +410,6 @@
             this.criancasCheckBox.TabIndex = 35;
             this.criancasCheckBox.UseVisualStyleBackColor = true;
             // 
-            // motivo_AdocaoLabel
-            // 
-            motivo_AdocaoLabel.AutoSize = true;
-            motivo_AdocaoLabel.Location = new System.Drawing.Point(442, 217);
-            motivo_AdocaoLabel.Name = "motivo_AdocaoLabel";
-            motivo_AdocaoLabel.Size = new System.Drawing.Size(139, 20);
-            motivo_AdocaoLabel.TabIndex = 35;
-            motivo_AdocaoLabel.Text = "Motivo da Adoção:";
-            // 
             // motivo_AdocaoTextBox
             // 
             this.motivo_AdocaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "Motivo_Adocao", true));
@@ -393,15 +417,6 @@
             this.motivo_AdocaoTextBox.Name = "motivo_AdocaoTextBox";
             this.motivo_AdocaoTextBox.Size = new System.Drawing.Size(457, 27);
             this.motivo_AdocaoTextBox.TabIndex = 36;
-            // 
-            // experiencia_PreviaLabel
-            // 
-            experiencia_PreviaLabel.AutoSize = true;
-            experiencia_PreviaLabel.Location = new System.Drawing.Point(442, 171);
-            experiencia_PreviaLabel.Name = "experiencia_PreviaLabel";
-            experiencia_PreviaLabel.Size = new System.Drawing.Size(139, 20);
-            experiencia_PreviaLabel.TabIndex = 36;
-            experiencia_PreviaLabel.Text = "Experiência Prévia:";
             // 
             // experiencia_PreviaCheckBox
             // 
@@ -411,15 +426,6 @@
             this.experiencia_PreviaCheckBox.Size = new System.Drawing.Size(19, 24);
             this.experiencia_PreviaCheckBox.TabIndex = 37;
             this.experiencia_PreviaCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // horas_sozinho_diaLabel
-            // 
-            horas_sozinho_diaLabel.AutoSize = true;
-            horas_sozinho_diaLabel.Location = new System.Drawing.Point(623, 171);
-            horas_sozinho_diaLabel.Name = "horas_sozinho_diaLabel";
-            horas_sozinho_diaLabel.Size = new System.Drawing.Size(163, 20);
-            horas_sozinho_diaLabel.TabIndex = 37;
-            horas_sozinho_diaLabel.Text = "Horas sozinho por dia:";
             // 
             // horas_sozinho_diaNumericUpDown
             // 
@@ -437,15 +443,6 @@
             this.n_AgregadosNumericUpDown.Size = new System.Drawing.Size(54, 27);
             this.n_AgregadosNumericUpDown.TabIndex = 39;
             // 
-            // aceita_AcompanhamentoLabel
-            // 
-            aceita_AcompanhamentoLabel.AutoSize = true;
-            aceita_AcompanhamentoLabel.Location = new System.Drawing.Point(28, 217);
-            aceita_AcompanhamentoLabel.Name = "aceita_AcompanhamentoLabel";
-            aceita_AcompanhamentoLabel.Size = new System.Drawing.Size(185, 20);
-            aceita_AcompanhamentoLabel.TabIndex = 39;
-            aceita_AcompanhamentoLabel.Text = "Aceita Acompanhamento:";
-            // 
             // aceita_AcompanhamentoCheckBox
             // 
             this.aceita_AcompanhamentoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Aceita_Acompanhamento", true));
@@ -457,6 +454,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(outros_AnimaisLabel);
+            this.groupBox1.Controls.Add(this.outros_AnimaisCheckBox);
+            this.groupBox1.Controls.Add(estado_CandidaturaLabel);
+            this.groupBox1.Controls.Add(this.estado_CandidaturaComboBox);
+            this.groupBox1.Controls.Add(obs_Label);
+            this.groupBox1.Controls.Add(this.obs_TextBox);
             this.groupBox1.Controls.Add(aceita_AcompanhamentoLabel);
             this.groupBox1.Controls.Add(this.aceita_AcompanhamentoCheckBox);
             this.groupBox1.Controls.Add(this.n_AgregadosNumericUpDown);
@@ -475,8 +478,6 @@
             this.groupBox1.Controls.Add(this.habitacao_ArrendadaCheckBox);
             this.groupBox1.Controls.Add(espaco_EsteriorLabel);
             this.groupBox1.Controls.Add(this.espaco_EsteriorCheckBox);
-            this.groupBox1.Controls.Add(iD_HabitacaoLabel);
-            this.groupBox1.Controls.Add(this.cmbHabitacao);
             this.groupBox1.Controls.Add(profissaoLabel);
             this.groupBox1.Controls.Add(this.profissaoTextBox);
             this.groupBox1.Controls.Add(bILabel);
@@ -494,10 +495,18 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(24, 131);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1105, 296);
+            this.groupBox1.Size = new System.Drawing.Size(1105, 354);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
+            // 
+            // obs_TextBox
+            // 
+            this.obs_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Obs:", true));
+            this.obs_TextBox.Location = new System.Drawing.Point(73, 253);
+            this.obs_TextBox.Name = "obs_TextBox";
+            this.obs_TextBox.Size = new System.Drawing.Size(345, 27);
+            this.obs_TextBox.TabIndex = 41;
             // 
             // button6
             // 
@@ -531,6 +540,46 @@
             this.btnNovo.Text = "Salvar";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // estado_CandidaturaLabel
+            // 
+            estado_CandidaturaLabel.AutoSize = true;
+            estado_CandidaturaLabel.Location = new System.Drawing.Point(435, 260);
+            estado_CandidaturaLabel.Name = "estado_CandidaturaLabel";
+            estado_CandidaturaLabel.Size = new System.Drawing.Size(146, 20);
+            estado_CandidaturaLabel.TabIndex = 41;
+            estado_CandidaturaLabel.Text = "Estado Candidatura:";
+            // 
+            // estado_CandidaturaComboBox
+            // 
+            this.estado_CandidaturaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "Estado_Candidatura", true));
+            this.estado_CandidaturaComboBox.FormattingEnabled = true;
+            this.estado_CandidaturaComboBox.Items.AddRange(new object[] {
+            "Aprovada",
+            "Em analise",
+            "Recusada"});
+            this.estado_CandidaturaComboBox.Location = new System.Drawing.Point(587, 257);
+            this.estado_CandidaturaComboBox.Name = "estado_CandidaturaComboBox";
+            this.estado_CandidaturaComboBox.Size = new System.Drawing.Size(146, 28);
+            this.estado_CandidaturaComboBox.TabIndex = 42;
+            // 
+            // outros_AnimaisLabel
+            // 
+            outros_AnimaisLabel.AutoSize = true;
+            outros_AnimaisLabel.Location = new System.Drawing.Point(855, 171);
+            outros_AnimaisLabel.Name = "outros_AnimaisLabel";
+            outros_AnimaisLabel.Size = new System.Drawing.Size(117, 20);
+            outros_AnimaisLabel.TabIndex = 42;
+            outros_AnimaisLabel.Text = "Outros Animais:";
+            // 
+            // outros_AnimaisCheckBox
+            // 
+            this.outros_AnimaisCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Outros_Animais", true));
+            this.outros_AnimaisCheckBox.Location = new System.Drawing.Point(978, 170);
+            this.outros_AnimaisCheckBox.Name = "outros_AnimaisCheckBox";
+            this.outros_AnimaisCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.outros_AnimaisCheckBox.TabIndex = 43;
+            this.outros_AnimaisCheckBox.UseVisualStyleBackColor = true;
             // 
             // CadastrarAdotante
             // 
@@ -577,7 +626,6 @@
         private System.Windows.Forms.TextBox moradaTextBox;
         private System.Windows.Forms.TextBox bITextBox;
         private System.Windows.Forms.TextBox profissaoTextBox;
-        private System.Windows.Forms.ComboBox cmbHabitacao;
         private System.Windows.Forms.CheckBox espaco_EsteriorCheckBox;
         private System.Windows.Forms.CheckBox habitacao_ArrendadaCheckBox;
         private System.Windows.Forms.CheckBox autorizacao_SenhorioCheckBox;
@@ -590,5 +638,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.TextBox obs_TextBox;
+        private System.Windows.Forms.ComboBox estado_CandidaturaComboBox;
+        private System.Windows.Forms.CheckBox outros_AnimaisCheckBox;
     }
 }

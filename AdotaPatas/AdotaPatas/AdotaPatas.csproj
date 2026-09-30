@@ -118,11 +118,6 @@
     <Compile Include="Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rent_A_CarDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rent_A_CarDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,17 +202,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Rent_A_CarDataSet.xsc">
-      <DependentUpon>Rent_A_CarDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Rent_A_CarDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Rent_A_CarDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Rent_A_CarDataSet.xss">
-      <DependentUpon>Rent_A_CarDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\imgLogin.jpeg" />
   </ItemGroup>
   <ItemGroup>

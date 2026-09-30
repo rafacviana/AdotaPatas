@@ -162,5 +162,55 @@ namespace AdotaPatas
                 MessageBox.Show("Erro ao avançar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (idAdotanteSelecionado == -1 || dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor, selecione um adotante para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("Tem a certeza de que deseja eliminar este adotante?", "Confirmar Eliminação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    this.adotanteBindingSource.RemoveCurrent();
+
+                    this.adotanteBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
+
+                    MessageBox.Show("Adotante eliminado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao eliminar o adotante: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
+                    this.adotanteTableAdapter.FillComPessoas(this.abrigoDataSet.Adotante);
+                }
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.abrigoDataSet.EnforceConstraints = false;
+                this.adotanteTableAdapter.FillComPessoas(this.abrigoDataSet.Adotante);
+
+                dataGridView1.ReadOnly = false;
+
+                if (dataGridView1.Columns["ID_Pessoa"] != null)
+                    dataGridView1.Columns["ID_Pessoa"].ReadOnly = true;
+                if (dataGridView1.Columns["ID_Pessoas"] != null)
+                    dataGridView1.Columns["ID_Pessoas"].ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os adotantes: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

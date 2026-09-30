@@ -1334,6 +1334,7 @@ namespace AdotaPatas {
                 base.Columns.Add(this.columnMotivo_Recusa);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Pessoa}, true));
+                this.columnID_Pessoa.AutoIncrementStep = -1;
                 this.columnID_Pessoa.AllowDBNull = false;
                 this.columnID_Pessoa.Unique = true;
                 this.columnBI.AllowDBNull = false;
@@ -6521,7 +6522,7 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
         public virtual int Delete(
-                    int Original_ID_Pessoa, 
+                    global::System.Nullable<int> Original_ID_Pessoa, 
                     string Original_BI, 
                     string Original_Profissao, 
                     int Original_ID_Habitacao, 
@@ -6538,7 +6539,12 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
                     string Original_Estado_Candidatura, 
                     System.DateTime Original_Data_Candidatura, 
                     string Original_Motivo_Recusa) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Pessoa));
+            if ((Original_ID_Pessoa.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Pessoa.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_BI == null)) {
                 throw new global::System.ArgumentNullException("Original_BI");
             }
@@ -6603,7 +6609,7 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    int ID_Pessoa, 
+                    global::System.Nullable<int> ID_Pessoa, 
                     string BI, 
                     string Profissao, 
                     int ID_Habitacao, 
@@ -6620,7 +6626,12 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
                     string Estado_Candidatura, 
                     System.DateTime Data_Candidatura, 
                     string Motivo_Recusa) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Pessoa));
+            if ((ID_Pessoa.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Pessoa.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((BI == null)) {
                 throw new global::System.ArgumentNullException("BI");
             }
@@ -6683,7 +6694,7 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int ID_Pessoa, 
+                    global::System.Nullable<int> ID_Pessoa, 
                     string BI, 
                     string Profissao, 
                     int ID_Habitacao, 
@@ -6700,7 +6711,7 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
                     string Estado_Candidatura, 
                     System.DateTime Data_Candidatura, 
                     string Motivo_Recusa, 
-                    int Original_ID_Pessoa, 
+                    global::System.Nullable<int> Original_ID_Pessoa, 
                     string Original_BI, 
                     string Original_Profissao, 
                     int Original_ID_Habitacao, 
@@ -6717,7 +6728,12 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
                     string Original_Estado_Candidatura, 
                     System.DateTime Original_Data_Candidatura, 
                     string Original_Motivo_Recusa) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Pessoa));
+            if ((ID_Pessoa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Pessoa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((BI == null)) {
                 throw new global::System.ArgumentNullException("BI");
             }
@@ -6759,7 +6775,12 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Motivo_Recusa));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_ID_Pessoa));
+            if ((Original_ID_Pessoa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_ID_Pessoa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             if ((Original_BI == null)) {
                 throw new global::System.ArgumentNullException("Original_BI");
             }
@@ -6840,7 +6861,7 @@ INNER JOIN Adotante a ON p.ID_Pessoas = a.ID_Pessoa";
                     string Estado_Candidatura, 
                     System.DateTime Data_Candidatura, 
                     string Motivo_Recusa, 
-                    int Original_ID_Pessoa, 
+                    global::System.Nullable<int> Original_ID_Pessoa, 
                     string Original_BI, 
                     string Original_Profissao, 
                     int Original_ID_Habitacao, 

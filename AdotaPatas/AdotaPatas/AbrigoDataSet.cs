@@ -4,6 +4,13 @@
 
     partial class AbrigoDataSet
     {
+        partial class AdotanteDataTable
+        {
+        }
+
+        partial class AtividadesDataTable
+        {
+        }
     }
 }
 
