@@ -144,7 +144,7 @@
             this.btnVoluntarios.Name = "btnVoluntarios";
             this.btnVoluntarios.Size = new System.Drawing.Size(188, 40);
             this.btnVoluntarios.TabIndex = 9;
-            this.btnVoluntarios.Text = "Voluntarios";
+            this.btnVoluntarios.Text = "Voluntários";
             this.btnVoluntarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVoluntarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoluntarios.UseVisualStyleBackColor = false;
@@ -163,7 +163,7 @@
             this.btnAdopcoes.Name = "btnAdopcoes";
             this.btnAdopcoes.Size = new System.Drawing.Size(188, 40);
             this.btnAdopcoes.TabIndex = 10;
-            this.btnAdopcoes.Text = "Adopcoes";
+            this.btnAdopcoes.Text = "Adopções";
             this.btnAdopcoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdopcoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdopcoes.UseVisualStyleBackColor = false;
@@ -200,7 +200,7 @@
             this.btnDefinicoes.Name = "btnDefinicoes";
             this.btnDefinicoes.Size = new System.Drawing.Size(188, 40);
             this.btnDefinicoes.TabIndex = 12;
-            this.btnDefinicoes.Text = "Definicoes";
+            this.btnDefinicoes.Text = "Adoptantes";
             this.btnDefinicoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDefinicoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDefinicoes.UseVisualStyleBackColor = false;
