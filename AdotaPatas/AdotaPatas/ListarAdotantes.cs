@@ -102,7 +102,7 @@ namespace AdotaPatas
                     adotanteBindingSource.Filter = string.Empty;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 adotanteBindingSource.Filter = string.Empty;
             }

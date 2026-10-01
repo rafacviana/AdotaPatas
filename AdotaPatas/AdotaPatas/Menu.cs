@@ -59,14 +59,7 @@ namespace AdotaPatas
 
         }
 
-        private void btnDash_Click(object sender, EventArgs e)
-        {
-           
-
-            
-        }
-
-        private void btnDefinicoes_Click(object sender, EventArgs e)
+        private void btnDefinicoes_Click_1(object sender, EventArgs e)
         {
             MenuAdotantes menuAdoptantes = new MenuAdotantes();
             menuAdoptantes.TopLevel = false;

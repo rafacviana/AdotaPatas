@@ -62,12 +62,6 @@
     <Compile Include="MenuAdotantes.Designer.cs">
       <DependentUpon>MenuAdotantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Adoptantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adoptantes.Designer.cs">
-      <DependentUpon>Adoptantes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Animais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +126,6 @@
     </Compile>
     <EmbeddedResource Include="MenuAdotantes.resx">
       <DependentUpon>MenuAdotantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adoptantes.resx">
-      <DependentUpon>Adoptantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Animais.resx">
       <DependentUpon>Animais.cs</DependentUpon>

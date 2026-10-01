@@ -33,15 +33,6 @@ namespace AdotaPatas
             }
             
         }
-
-        private void adotanteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.adotanteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
-
-        }
-
  
 
         private void btnNovo_Click(object sender, EventArgs e)

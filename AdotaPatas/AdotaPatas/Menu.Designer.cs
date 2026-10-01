@@ -1,6 +1,6 @@
 ﻿namespace AdotaPatas
 {
-    partial class Menu
+    partial class Menu 
     {
         /// <summary>
         /// Required designer variable.
@@ -11,14 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
 
         #region Windows Form Designer generated code
 
@@ -114,11 +107,10 @@
             this.btnDash.Name = "btnDash";
             this.btnDash.Size = new System.Drawing.Size(188, 40);
             this.btnDash.TabIndex = 16;
-            this.btnDash.Text = "Adoptantes";
+            this.btnDash.Text = "Stock";
             this.btnDash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDash.UseVisualStyleBackColor = false;
-            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
             // btnAnimais
             // 
@@ -212,7 +204,7 @@
             this.btnDefinicoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDefinicoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDefinicoes.UseVisualStyleBackColor = false;
-            this.btnDefinicoes.Click += new System.EventHandler(this.btnDefinicoes_Click);
+            this.btnDefinicoes.Click += new System.EventHandler(this.btnDefinicoes_Click_1);
             // 
             // button6
             // 
@@ -227,7 +219,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(188, 40);
             this.button6.TabIndex = 13;
-            this.button6.Text = "Terminar Sessao";
+            this.button6.Text = "Terminar Sessão";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button2
