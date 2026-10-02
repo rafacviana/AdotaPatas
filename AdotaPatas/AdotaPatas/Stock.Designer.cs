@@ -215,13 +215,13 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.consumiveisDataGridView.DataSource = this.consumiveisBindingSource;
-            this.consumiveisDataGridView.Location = new System.Drawing.Point(392, 269);
+            this.consumiveisDataGridView.Location = new System.Drawing.Point(465, 381);
             this.consumiveisDataGridView.Name = "consumiveisDataGridView";
             this.consumiveisDataGridView.RowHeadersVisible = false;
             this.consumiveisDataGridView.RowHeadersWidth = 62;
             this.consumiveisDataGridView.RowTemplate.Height = 28;
             this.consumiveisDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.consumiveisDataGridView.Size = new System.Drawing.Size(1054, 371);
+            this.consumiveisDataGridView.Size = new System.Drawing.Size(1204, 461);
             this.consumiveisDataGridView.TabIndex = 21;
             this.consumiveisDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.consumiveisDataGridView_CellContentClick);
             // 
@@ -292,7 +292,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(192, 537);
+            this.button5.Location = new System.Drawing.Point(215, 603);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(194, 103);
             this.button5.TabIndex = 39;
@@ -302,7 +302,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(0, 537);
+            this.button4.Location = new System.Drawing.Point(0, 603);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(186, 103);
             this.button4.TabIndex = 38;
@@ -312,7 +312,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(192, 436);
+            this.button3.Location = new System.Drawing.Point(215, 466);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 95);
             this.button3.TabIndex = 37;
@@ -322,7 +322,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(0, 436);
+            this.button2.Location = new System.Drawing.Point(0, 466);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 95);
             this.button2.TabIndex = 36;
@@ -350,9 +350,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(0, 646);
+            this.button6.Location = new System.Drawing.Point(0, 766);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(386, 76);
+            this.button6.Size = new System.Drawing.Size(409, 76);
             this.button6.TabIndex = 40;
             this.button6.Text = "Voltar";
             this.button6.UseVisualStyleBackColor = true;
