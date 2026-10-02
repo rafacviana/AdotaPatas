@@ -28,118 +28,450 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label nomeLabel;
+            System.Windows.Forms.Label especie_AnimalLabel;
+            System.Windows.Forms.Label tamanhoLabel;
+            System.Windows.Forms.Label categoriaLabel;
+            System.Windows.Forms.Label quantidadeLabel;
+            System.Windows.Forms.Label data_ValidadeLabel;
+            System.Windows.Forms.Label obsLabel;
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.abrigoDataSet = new AdotaPatas.AbrigoDataSet();
+            this.consumiveisTableAdapter = new AdotaPatas.AbrigoDataSetTableAdapters.ConsumiveisTableAdapter();
+            this.consumiveisDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consumiveisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtPesqui = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEspecie = new System.Windows.Forms.TextBox();
+            this.txtTamanho = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.data_ValidadeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.txtObser = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableAdapterManager = new AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager();
+            nomeLabel = new System.Windows.Forms.Label();
+            especie_AnimalLabel = new System.Windows.Forms.Label();
+            tamanhoLabel = new System.Windows.Forms.Label();
+            categoriaLabel = new System.Windows.Forms.Label();
+            quantidadeLabel = new System.Windows.Forms.Label();
+            data_ValidadeLabel = new System.Windows.Forms.Label();
+            obsLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumiveisDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumiveisBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // nomeLabel
             // 
-            this.pictureBox1.Image = global::AdotaPatas.Properties.Resources.imgLogin;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(436, 420);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(67, 35);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(53, 20);
+            nomeLabel.TabIndex = 42;
+            nomeLabel.Text = "Nome:";
             // 
-            // textBox3
+            // especie_AnimalLabel
             // 
-            this.textBox3.Location = new System.Drawing.Point(649, 207);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(459, 37);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.Text = "Idade";
+            especie_AnimalLabel.AutoSize = true;
+            especie_AnimalLabel.Location = new System.Drawing.Point(7, 102);
+            especie_AnimalLabel.Name = "especie_AnimalLabel";
+            especie_AnimalLabel.Size = new System.Drawing.Size(113, 20);
+            especie_AnimalLabel.TabIndex = 44;
+            especie_AnimalLabel.Text = "Especie Animal:";
             // 
-            // textBox2
+            // tamanhoLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(649, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(459, 37);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.Text = "Raça:";
+            tamanhoLabel.AutoSize = true;
+            tamanhoLabel.Location = new System.Drawing.Point(289, 70);
+            tamanhoLabel.Name = "tamanhoLabel";
+            tamanhoLabel.Size = new System.Drawing.Size(72, 20);
+            tamanhoLabel.TabIndex = 46;
+            tamanhoLabel.Text = "Tamanho:";
             // 
-            // textBox1
+            // categoriaLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(649, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(459, 37);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.Text = "Animal:";
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(351, 36);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(77, 20);
+            categoriaLabel.TabIndex = 48;
+            categoriaLabel.Text = "Categoria:";
+            // 
+            // quantidadeLabel
+            // 
+            quantidadeLabel.AutoSize = true;
+            quantidadeLabel.Location = new System.Drawing.Point(29, 69);
+            quantidadeLabel.Name = "quantidadeLabel";
+            quantidadeLabel.Size = new System.Drawing.Size(90, 20);
+            quantidadeLabel.TabIndex = 50;
+            quantidadeLabel.Text = "Quantidade:";
+            // 
+            // data_ValidadeLabel
+            // 
+            data_ValidadeLabel.AutoSize = true;
+            data_ValidadeLabel.Location = new System.Drawing.Point(554, 65);
+            data_ValidadeLabel.Name = "data_ValidadeLabel";
+            data_ValidadeLabel.Size = new System.Drawing.Size(106, 20);
+            data_ValidadeLabel.TabIndex = 52;
+            data_ValidadeLabel.Text = "Data Validade:";
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Location = new System.Drawing.Point(391, 98);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new System.Drawing.Size(96, 20);
+            obsLabel.TabIndex = 54;
+            obsLabel.Text = "Observações:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(769, 9);
+            this.label1.Location = new System.Drawing.Point(45, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 45);
+            this.label1.Size = new System.Drawing.Size(82, 30);
             this.label1.TabIndex = 14;
-            this.label1.Text = "ATIVIDADES";
+            this.label1.Text = "STOCK";
             // 
-            // textBox4
+            // abrigoDataSet
             // 
-            this.textBox4.Location = new System.Drawing.Point(649, 264);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(459, 37);
-            this.textBox4.TabIndex = 18;
-            this.textBox4.Text = "Género: ";
+            this.abrigoDataSet.DataSetName = "AbrigoDataSet";
+            this.abrigoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox5
+            // consumiveisTableAdapter
             // 
-            this.textBox5.Location = new System.Drawing.Point(649, 324);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(459, 37);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.Text = "Estado:";
+            this.consumiveisTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox6
+            // consumiveisDataGridView
             // 
-            this.textBox6.Location = new System.Drawing.Point(649, 382);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(459, 37);
-            this.textBox6.TabIndex = 20;
-            this.textBox6.Text = "Quantidade:";
+            this.consumiveisDataGridView.AutoGenerateColumns = false;
+            this.consumiveisDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.consumiveisDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consumiveisDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.consumiveisDataGridView.DataSource = this.consumiveisBindingSource;
+            this.consumiveisDataGridView.Location = new System.Drawing.Point(53, 274);
+            this.consumiveisDataGridView.Name = "consumiveisDataGridView";
+            this.consumiveisDataGridView.RowHeadersVisible = false;
+            this.consumiveisDataGridView.RowHeadersWidth = 62;
+            this.consumiveisDataGridView.RowTemplate.Height = 28;
+            this.consumiveisDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.consumiveisDataGridView.Size = new System.Drawing.Size(1010, 270);
+            this.consumiveisDataGridView.TabIndex = 21;
+            this.consumiveisDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.consumiveisDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Especie_Animal";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Especie_Animal";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Tamanho";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tamanho";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Quantidade";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Data_Validade";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Data Validade";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Obs";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Obs";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // consumiveisBindingSource
+            // 
+            this.consumiveisBindingSource.DataMember = "Consumiveis";
+            this.consumiveisBindingSource.DataSource = this.abrigoDataSet;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(808, 15);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(81, 41);
+            this.button5.TabIndex = 39;
+            this.button5.Text = "Limpar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(763, 213);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(87, 41);
+            this.button4.TabIndex = 38;
+            this.button4.Text = "Editar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(856, 213);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(88, 41);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(712, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 41);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "Adicionar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtPesqui
+            // 
+            this.txtPesqui.Location = new System.Drawing.Point(249, 220);
+            this.txtPesqui.Name = "txtPesqui";
+            this.txtPesqui.Size = new System.Drawing.Size(368, 27);
+            this.txtPesqui.TabIndex = 35;
+            this.txtPesqui.TextChanged += new System.EventHandler(this.txtPesqui_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(637, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 41);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(53, 567);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(176, 42);
+            this.button6.TabIndex = 40;
+            this.button6.Text = "Voltar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(126, 32);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(201, 27);
+            this.txtNome.TabIndex = 43;
+            // 
+            // txtEspecie
+            // 
+            this.txtEspecie.Location = new System.Drawing.Point(126, 99);
+            this.txtEspecie.Name = "txtEspecie";
+            this.txtEspecie.Size = new System.Drawing.Size(174, 27);
+            this.txtEspecie.TabIndex = 45;
+            // 
+            // txtTamanho
+            // 
+            this.txtTamanho.Location = new System.Drawing.Point(364, 66);
+            this.txtTamanho.Name = "txtTamanho";
+            this.txtTamanho.Size = new System.Drawing.Size(123, 27);
+            this.txtTamanho.TabIndex = 47;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(434, 33);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(171, 27);
+            this.txtCategoria.TabIndex = 49;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(125, 66);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(77, 27);
+            this.txtQuantidade.TabIndex = 51;
+            // 
+            // data_ValidadeDateTimePicker
+            // 
+            this.data_ValidadeDateTimePicker.Location = new System.Drawing.Point(663, 65);
+            this.data_ValidadeDateTimePicker.Name = "data_ValidadeDateTimePicker";
+            this.data_ValidadeDateTimePicker.Size = new System.Drawing.Size(198, 27);
+            this.data_ValidadeDateTimePicker.TabIndex = 53;
+            // 
+            // txtObser
+            // 
+            this.txtObser.Location = new System.Drawing.Point(500, 99);
+            this.txtObser.Name = "txtObser";
+            this.txtObser.Size = new System.Drawing.Size(361, 27);
+            this.txtObser.TabIndex = 55;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(nomeLabel);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(especie_AnimalLabel);
+            this.groupBox1.Controls.Add(this.txtEspecie);
+            this.groupBox1.Controls.Add(tamanhoLabel);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.txtTamanho);
+            this.groupBox1.Controls.Add(categoriaLabel);
+            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(quantidadeLabel);
+            this.groupBox1.Controls.Add(this.txtQuantidade);
+            this.groupBox1.Controls.Add(data_ValidadeLabel);
+            this.groupBox1.Controls.Add(this.data_ValidadeDateTimePicker);
+            this.groupBox1.Controls.Add(obsLabel);
+            this.groupBox1.Controls.Add(this.txtObser);
+            this.groupBox1.Location = new System.Drawing.Point(148, 43);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(915, 149);
+            this.groupBox1.TabIndex = 56;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registar Materiais";
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AdocaoTableAdapter = null;
+            this.tableAdapterManager.AdotanteTableAdapter = null;
+            this.tableAdapterManager.AnimaisTableAdapter = null;
+            this.tableAdapterManager.AtividadesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.ConsumiveisTableAdapter = null;
+            this.tableAdapterManager.FuncoesTableAdapter = null;
+            this.tableAdapterManager.PessoasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = AdotaPatas.AbrigoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtilizadoresTableAdapter = null;
+            this.tableAdapterManager.VoluntariosTableAdapter = null;
             // 
             // Stock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(192)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1769, 1050);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(221)))), ((int)(((byte)(232)))));
+            this.ClientSize = new System.Drawing.Size(1106, 631);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtPesqui);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.consumiveisDataGridView);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Stock";
             this.Text = "Stock";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Stock_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.abrigoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumiveisDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumiveisBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private AbrigoDataSet abrigoDataSet;
+        private System.Windows.Forms.BindingSource consumiveisBindingSource;
+        private AbrigoDataSetTableAdapters.ConsumiveisTableAdapter consumiveisTableAdapter;
+        private AbrigoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView consumiveisDataGridView;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtPesqui;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtEspecie;
+        private System.Windows.Forms.TextBox txtTamanho;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.DateTimePicker data_ValidadeDateTimePicker;
+        private System.Windows.Forms.TextBox txtObser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

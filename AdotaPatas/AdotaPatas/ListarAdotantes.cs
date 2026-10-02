@@ -13,7 +13,7 @@ namespace AdotaPatas
 {
     public partial class ListarAdotantes : Form
     {
-      
+
 
 
         public int idAdotanteSelecionado = -1;
@@ -151,11 +151,17 @@ namespace AdotaPatas
                 this.adotanteBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.abrigoDataSet);
 
-                Animais animais = new Animais();    //(idAdotanteSelecionado);
+                Menu Menu = this.ParentForm as Menu;
 
-                this.Hide();
-                animais.ShowDialog();
-                this.Close();
+                if (Menu != null)
+                {
+                    Animais animais = new Animais(idAdotanteSelecionado);
+                    animais.TopLevel = false;
+                    Menu.panel1.Controls.Clear();
+                    Menu.panel1.Controls.Add(animais);
+                    animais.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -187,7 +193,7 @@ namespace AdotaPatas
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao eliminar o adotante: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           
+
                     this.adotanteTableAdapter.FillComPessoas(this.abrigoDataSet.Adotante);
                 }
             }

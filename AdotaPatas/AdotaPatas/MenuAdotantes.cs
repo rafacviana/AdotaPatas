@@ -54,5 +54,10 @@ namespace AdotaPatas
                 cadastrarAdotante.Show();
             }
         }
+
+        private void MenuAdotantes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

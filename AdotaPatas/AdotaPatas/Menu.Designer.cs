@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+
 
         /// <summary>
         /// Clean up any resources being used.
@@ -57,7 +57,7 @@
             // 
             this.panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(244)))));
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(-4, 59);
+            this.panel.Location = new System.Drawing.Point(-37, 39);
             this.panel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1106, 0);
@@ -70,7 +70,7 @@
             this.panelNavegacao.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNavegacao.Location = new System.Drawing.Point(0, 0);
             this.panelNavegacao.Name = "panelNavegacao";
-            this.panelNavegacao.Size = new System.Drawing.Size(210, 684);
+            this.panelNavegacao.Size = new System.Drawing.Size(210, 660);
             this.panelNavegacao.TabIndex = 18;
             // 
             // flowLayoutPanel1
@@ -89,8 +89,8 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 81);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 603);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(210, 579);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -111,6 +111,7 @@
             this.btnDash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDash.UseVisualStyleBackColor = false;
+            this.btnDash.Click += new System.EventHandler(this.btnDash_Click);
             // 
             // btnAnimais
             // 
@@ -182,10 +183,11 @@
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(188, 40);
             this.btnEventos.TabIndex = 11;
-            this.btnEventos.Text = "Eventos";
+            this.btnEventos.Text = "Atividades";
             this.btnEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEventos.UseVisualStyleBackColor = false;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // btnDefinicoes
             // 
@@ -221,6 +223,7 @@
             this.button6.TabIndex = 13;
             this.button6.Text = "Terminar Sessão";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button2
             // 
@@ -269,9 +272,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::AdotaPatas.Properties.Resources.imgLogin;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 46);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -279,7 +283,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(84, 0);
+            this.label3.Location = new System.Drawing.Point(57, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 73);
             this.label3.TabIndex = 0;
@@ -288,14 +292,15 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusUtilizador,
             this.toolStripStatusLabel2,
             this.toolStripStatusData});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 684);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 660);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1316, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1283, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -311,7 +316,7 @@
             // 
             this.toolStripStatusUtilizador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(116)))), ((int)(((byte)(128)))));
             this.toolStripStatusUtilizador.Name = "toolStripStatusUtilizador";
-            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(1001, 17);
+            this.toolStripStatusUtilizador.Size = new System.Drawing.Size(968, 17);
             this.toolStripStatusUtilizador.Spring = true;
             this.toolStripStatusUtilizador.Text = "Utilizador:";
             // 
@@ -339,16 +344,17 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(210, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1106, 53);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1073, 53);
             this.flowLayoutPanel2.TabIndex = 22;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::AdotaPatas.Properties.Resources.sair_branco_64;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(1028, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(1021, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 32);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -361,20 +367,21 @@
             this.panel1.Location = new System.Drawing.Point(210, 53);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 631);
+            this.panel1.Size = new System.Drawing.Size(1073, 607);
             this.panel1.TabIndex = 23;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 706);
+            this.ClientSize = new System.Drawing.Size(1283, 682);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panelNavegacao);
             this.Controls.Add(this.statusStrip1);
-            this.MaximumSize = new System.Drawing.Size(1332, 745);
-            this.MinimumSize = new System.Drawing.Size(1332, 718);
+            this.MaximumSize = new System.Drawing.Size(1330, 739);
+            this.MinimumSize = new System.Drawing.Size(915, 480);
             this.Name = "Menu";
             this.Text = "Menu";
             this.panelNavegacao.ResumeLayout(false);

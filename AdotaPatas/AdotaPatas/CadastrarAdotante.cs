@@ -33,80 +33,81 @@ namespace AdotaPatas
             }
             
         }
- 
+
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(nomeTextBox.Text))
+            {
+                MessageBox.Show("O campo 'Nome' é obrigatório.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                nomeTextBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(bITextBox.Text) || bITextBox.Text.Length < 8)
+            {
+                MessageBox.Show("Insira um número de BI/Cartão de Cidadão válido.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bITextBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(telemovelTextBox.Text) || telemovelTextBox.Text.Length != 9 || !telemovelTextBox.Text.StartsWith("9"))
+            {
+                MessageBox.Show("O telemóvel tem de ter exatamente 9 dígitos e começar por '9'.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                telemovelTextBox.Focus();
+                return;
+            }
+
+            bool apenasNumeros = true;
+            foreach (char c in telemovelTextBox.Text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    apenasNumeros = false;
+                    break;
+                }
+            }
+
+            if (!apenasNumeros)
+            {
+                MessageBox.Show("O telemóvel deve conter apenas números.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                telemovelTextBox.Focus();
+                return;
+            }
+
+            long telemovelInt = Convert.ToInt64(telemovelTextBox.Text);
+
+            if (string.IsNullOrWhiteSpace(emailTextBox.Text) || !emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains("."))
+            {
+                MessageBox.Show("O email inserido não é válido. Deve conter '@' e '.'.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                emailTextBox.Focus();
+                return;
+            }
+
+            DateTime dataNascimento = data_NascimentoDateTimePicker.Value;
+            int idade = DateTime.Today.Year - dataNascimento.Year;
+            if (dataNascimento.Date > DateTime.Today.AddYears(-idade))
+            {
+                idade--;
+            }
+
+            if (idade < 18)
+            {
+                MessageBox.Show("O adotante tem de ter pelo menos 18 anos de idade.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                data_NascimentoDateTimePicker.Focus();
+                return;
+            }
+
             try
             {
-                if (string.IsNullOrWhiteSpace(nomeTextBox.Text))
-                {
-                    MessageBox.Show("O campo 'Nome' é obrigatório.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    nomeTextBox.Focus();
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(bITextBox.Text) || bITextBox.Text.Length < 8)
-                {
-                    MessageBox.Show("Insira um número de BI/Cartão de Cidadão válido.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    bITextBox.Focus();
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(telemovelTextBox.Text) || telemovelTextBox.Text.Length != 9 || !telemovelTextBox.Text.StartsWith("9"))
-                {
-                    MessageBox.Show("O telemóvel tem de ter exatamente 9 dígitos e começar por '9'.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    telemovelTextBox.Focus();
-                    return;
-                }
-
-                bool apenasNumeros = true;
-                foreach (char c in telemovelTextBox.Text)
-                {
-                    if (!char.IsDigit(c))
-                    {
-                        apenasNumeros = false;
-                        break;
-                    }
-                }
-
-                if (!apenasNumeros)
-                {
-                    MessageBox.Show("O telemóvel deve conter apenas números.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    telemovelTextBox.Focus();
-                    return;
-                }
-
-                long telemovelInt = Convert.ToInt64(telemovelTextBox.Text);
-
-                if (string.IsNullOrWhiteSpace(emailTextBox.Text) || !emailTextBox.Text.Contains("@") || !emailTextBox.Text.Contains("."))
-                {
-                    MessageBox.Show("O email inserido não é válido. Deve conter '@' e '.'.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    emailTextBox.Focus();
-                    return;
-                }
-
-                DateTime dataNascimento = data_NascimentoDateTimePicker.Value;
-                int idade = DateTime.Today.Year - dataNascimento.Year;
-                if (dataNascimento.Date > DateTime.Today.AddYears(-idade))
-                {
-                    idade--;
-                }
-
-                if (idade < 18)
-                {
-                    MessageBox.Show("O adotante tem de ter pelo menos 18 anos de idade.", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    data_NascimentoDateTimePicker.Focus();
-                    return;
-                }
-
                 this.Validate();
 
                 DataRowView pessoasRow = (DataRowView)this.pessoasBindingSource.Current;
                 DataRowView adotanteRow = (DataRowView)this.adotanteBindingSource.Current;
 
                 pessoasRow["Telemovel"] = telemovelInt;
-                pessoasRow["Obs:"] = obs_TextBox.Text;
+                pessoasRow["Obs"] = obs_TextBox.Text;
+                pessoasRow["Data_Nascimento"] = dataNascimento; 
 
                 adotanteRow["Espaco_Esterior"] = espaco_EsteriorCheckBox.Checked;
                 adotanteRow["Habitacao_Arrendada"] = habitacao_ArrendadaCheckBox.Checked;
@@ -144,19 +145,22 @@ namespace AdotaPatas
 
                 idAdotanteSalvo = Convert.ToInt32(adotanteRow["ID_Pessoa"]);
                 MessageBox.Show("Adotante registado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparCampos();
             }
             catch (Exception ex)
             {
+                this.pessoasBindingSource.CancelEdit();
+                this.adotanteBindingSource.CancelEdit();
+
                 MessageBox.Show("Erro ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            LimparCampos();
         }
+
 
         private void LimparCampos()
         {
             this.pessoasBindingSource.AddNew();
-            this.adotanteBindingSource.AddNew();
 
             nomeTextBox.Clear();
             bITextBox.Clear();
@@ -165,8 +169,10 @@ namespace AdotaPatas
             emailTextBox.Clear();
             obs_TextBox.Clear();
             motivo_AdocaoTextBox.Clear();
+
             n_AgregadosNumericUpDown.Value = 0;
             horas_sozinho_diaNumericUpDown.Value = 0;
+
             espaco_EsteriorCheckBox.Checked = false;
             habitacao_ArrendadaCheckBox.Checked = false;
             autorizacao_SenhorioCheckBox.Checked = false;
@@ -175,18 +181,31 @@ namespace AdotaPatas
             experiencia_PreviaCheckBox.Checked = false;
             aceita_AcompanhamentoCheckBox.Checked = false;
 
-            DataRowView adotanteRowInit = (DataRowView)this.adotanteBindingSource.Current;
-            adotanteRowInit["ID_Pessoa"] = -1;
-            adotanteRowInit["Espaco_Esterior"] = false;
-            adotanteRowInit["Habitacao_Arrendada"] = false;
-            adotanteRowInit["Autorizacao_Senhorio"] = false;
-            adotanteRowInit["Criancas"] = false;
-            adotanteRowInit["Outros_Animais"] = false;
-            adotanteRowInit["Experiencia_Previa"] = false;
-            adotanteRowInit["Aceita_Acompanhamento"] = false;
-            adotanteRowInit["N_Agregados"] = 0;
-            adotanteRowInit["Horas_sozinho_dia"] = 0;
-            adotanteRowInit["ID_Habitacao"] = 1;
+            data_NascimentoDateTimePicker.Value = DateTime.Today.AddYears(-18);
+
+            if (this.adotanteBindingSource.Count == 0)
+            {
+                this.adotanteBindingSource.AddNew();
+            }
+            else
+            {
+                this.adotanteBindingSource.MoveLast();
+            }
+
+            if (this.adotanteBindingSource.Current is DataRowView adotanteRowInit)
+            {
+                adotanteRowInit["ID_Pessoa"] = -1;
+                adotanteRowInit["Espaco_Esterior"] = false;
+                adotanteRowInit["Habitacao_Arrendada"] = false;
+                adotanteRowInit["Autorizacao_Senhorio"] = false;
+                adotanteRowInit["Criancas"] = false;
+                adotanteRowInit["Outros_Animais"] = false;
+                adotanteRowInit["Experiencia_Previa"] = false;
+                adotanteRowInit["Aceita_Acompanhamento"] = false;
+                adotanteRowInit["N_Agregados"] = 0;
+                adotanteRowInit["Horas_sozinho_dia"] = 0;
+                adotanteRowInit["ID_Habitacao"] = 1;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

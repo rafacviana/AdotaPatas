@@ -73,11 +73,11 @@
             this.n_AgregadosNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.aceita_AcompanhamentoCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.outros_AnimaisCheckBox = new System.Windows.Forms.CheckBox();
+            this.estado_CandidaturaComboBox = new System.Windows.Forms.ComboBox();
             this.obs_TextBox = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.estado_CandidaturaComboBox = new System.Windows.Forms.ComboBox();
-            this.outros_AnimaisCheckBox = new System.Windows.Forms.CheckBox();
             nomeLabel = new System.Windows.Forms.Label();
             data_NascimentoLabel = new System.Windows.Forms.Label();
             telemovelLabel = new System.Windows.Forms.Label();
@@ -257,6 +257,24 @@
             obs_Label.Size = new System.Drawing.Size(39, 20);
             obs_Label.TabIndex = 40;
             obs_Label.Text = "Obs:";
+            // 
+            // estado_CandidaturaLabel
+            // 
+            estado_CandidaturaLabel.AutoSize = true;
+            estado_CandidaturaLabel.Location = new System.Drawing.Point(435, 260);
+            estado_CandidaturaLabel.Name = "estado_CandidaturaLabel";
+            estado_CandidaturaLabel.Size = new System.Drawing.Size(146, 20);
+            estado_CandidaturaLabel.TabIndex = 41;
+            estado_CandidaturaLabel.Text = "Estado Candidatura:";
+            // 
+            // outros_AnimaisLabel
+            // 
+            outros_AnimaisLabel.AutoSize = true;
+            outros_AnimaisLabel.Location = new System.Drawing.Point(855, 171);
+            outros_AnimaisLabel.Name = "outros_AnimaisLabel";
+            outros_AnimaisLabel.Size = new System.Drawing.Size(117, 20);
+            outros_AnimaisLabel.TabIndex = 42;
+            outros_AnimaisLabel.Text = "Outros Animais:";
             // 
             // label9
             // 
@@ -500,9 +518,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pessoais";
             // 
+            // outros_AnimaisCheckBox
+            // 
+            this.outros_AnimaisCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Outros_Animais", true));
+            this.outros_AnimaisCheckBox.Location = new System.Drawing.Point(978, 170);
+            this.outros_AnimaisCheckBox.Name = "outros_AnimaisCheckBox";
+            this.outros_AnimaisCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.outros_AnimaisCheckBox.TabIndex = 43;
+            this.outros_AnimaisCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // estado_CandidaturaComboBox
+            // 
+            this.estado_CandidaturaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "Estado_Candidatura", true));
+            this.estado_CandidaturaComboBox.FormattingEnabled = true;
+            this.estado_CandidaturaComboBox.Items.AddRange(new object[] {
+            "Aprovada",
+            "Em analise",
+            "Recusada"});
+            this.estado_CandidaturaComboBox.Location = new System.Drawing.Point(587, 257);
+            this.estado_CandidaturaComboBox.Name = "estado_CandidaturaComboBox";
+            this.estado_CandidaturaComboBox.Size = new System.Drawing.Size(146, 28);
+            this.estado_CandidaturaComboBox.TabIndex = 42;
+            // 
             // obs_TextBox
             // 
-            this.obs_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Obs:", true));
+            this.obs_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pessoasBindingSource, "Obs", true));
             this.obs_TextBox.Location = new System.Drawing.Point(73, 253);
             this.obs_TextBox.Name = "obs_TextBox";
             this.obs_TextBox.Size = new System.Drawing.Size(345, 27);
@@ -540,46 +580,6 @@
             this.btnNovo.Text = "Salvar";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // estado_CandidaturaLabel
-            // 
-            estado_CandidaturaLabel.AutoSize = true;
-            estado_CandidaturaLabel.Location = new System.Drawing.Point(435, 260);
-            estado_CandidaturaLabel.Name = "estado_CandidaturaLabel";
-            estado_CandidaturaLabel.Size = new System.Drawing.Size(146, 20);
-            estado_CandidaturaLabel.TabIndex = 41;
-            estado_CandidaturaLabel.Text = "Estado Candidatura:";
-            // 
-            // estado_CandidaturaComboBox
-            // 
-            this.estado_CandidaturaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adotanteBindingSource, "Estado_Candidatura", true));
-            this.estado_CandidaturaComboBox.FormattingEnabled = true;
-            this.estado_CandidaturaComboBox.Items.AddRange(new object[] {
-            "Aprovada",
-            "Em analise",
-            "Recusada"});
-            this.estado_CandidaturaComboBox.Location = new System.Drawing.Point(587, 257);
-            this.estado_CandidaturaComboBox.Name = "estado_CandidaturaComboBox";
-            this.estado_CandidaturaComboBox.Size = new System.Drawing.Size(146, 28);
-            this.estado_CandidaturaComboBox.TabIndex = 42;
-            // 
-            // outros_AnimaisLabel
-            // 
-            outros_AnimaisLabel.AutoSize = true;
-            outros_AnimaisLabel.Location = new System.Drawing.Point(855, 171);
-            outros_AnimaisLabel.Name = "outros_AnimaisLabel";
-            outros_AnimaisLabel.Size = new System.Drawing.Size(117, 20);
-            outros_AnimaisLabel.TabIndex = 42;
-            outros_AnimaisLabel.Text = "Outros Animais:";
-            // 
-            // outros_AnimaisCheckBox
-            // 
-            this.outros_AnimaisCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.adotanteBindingSource, "Outros_Animais", true));
-            this.outros_AnimaisCheckBox.Location = new System.Drawing.Point(978, 170);
-            this.outros_AnimaisCheckBox.Name = "outros_AnimaisCheckBox";
-            this.outros_AnimaisCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.outros_AnimaisCheckBox.TabIndex = 43;
-            this.outros_AnimaisCheckBox.UseVisualStyleBackColor = true;
             // 
             // CadastrarAdotante
             // 

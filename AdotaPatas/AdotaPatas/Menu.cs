@@ -48,13 +48,13 @@ namespace AdotaPatas
 
         private void btnAdopcoes_Click(object sender, EventArgs e)
         {
-            ListarAdotantes listarAdotantes = new ListarAdotantes(true);
-            listarAdotantes.TopLevel = false;
+            MenuAdocoes MenuAdocoes = new MenuAdocoes();
+            MenuAdocoes.TopLevel = false;
             panel1.Controls.Clear();
-            panel1.Controls.Add(listarAdotantes);
-            listarAdotantes.Dock = DockStyle.Fill;
-            listarAdotantes.BringToFront();
-            listarAdotantes.Show();
+            panel1.Controls.Add(MenuAdocoes);
+            MenuAdocoes.Dock = DockStyle.Fill;
+            MenuAdocoes.BringToFront();
+            MenuAdocoes.Show();
 
 
         }
@@ -66,6 +66,34 @@ namespace AdotaPatas
             panel1.Controls.Clear();
             panel1.Controls.Add(menuAdoptantes);
             menuAdoptantes.Show();
+        }
+
+        private void btnDash_Click(object sender, EventArgs e)
+        {
+            Stock stock = new Stock();
+            stock.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(stock);
+            stock.Show();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            Atividades ativity = new Atividades();
+            ativity.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(ativity);
+            ativity.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
